@@ -1,1 +1,2 @@
-import('./helpers/api.js');
+import './helpers/api.js';
+import './js/character.js';
