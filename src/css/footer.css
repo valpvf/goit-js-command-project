@@ -1,1 +1,122 @@
 @import url(./costants.css);
+
+.footer {
+    background-color: #0C0B0B;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    gap: 14px;
+}
+
+.footer-wrap {
+    display: flex;
+    gap: 158px;
+    align-content: flex-start;
+}
+
+.footer-logo {}
+
+.footer-list:first-child {
+    margin-bottom: 14px;
+}
+
+.footer-item {}
+
+.footer-link {
+    font-size: 14px;
+    line-height: 1.29;
+    color: #FAFAFA;
+}
+
+.footer-social {
+    width: 124px;
+}
+
+.footer-soc-list {
+    display: flex;
+    gap: 14px;
+}
+
+.footer-soc-item {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(250, 250, 250, 0.15);
+    border-radius: 6px;
+}
+
+.footer-soc-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-soc-img {
+    fill: #fafafa;
+    /* stroke: #fafafa; */
+    height: 14px;
+}
+
+
+.bottom-page {
+    background-color: #34387f;
+}
+
+.bottom-txt {
+    font-family: 'Poppins';
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: rgba(250, 250, 250, 0.4);
+    text-align: center;
+    padding: 16px 83px;
+}
+
+@media screen and (min-width: 375px) {}
+
+@media screen and (min-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 64px;
+        padding-bottom: 64px;
+        gap: 118px;
+    }
+
+    .footer-wrap {
+        gap: 142px;
+    }
+
+    .footer-list:first-child {
+        margin-bottom: 16px;
+    }
+
+    .footer-link {
+        font-size: 16px;
+        line-height: 1.12;
+    }
+
+    .footer-soc-list {
+        gap: 16px;
+    }
+
+    .footer-soc-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-soc-img {
+        height: 19px;
+    }
+
+    .bottom-txt {
+        font-size: 14px;
+        line-height: 1.29;
+    }
+}
+
+@media screen and (min-width: 1440px) {}
