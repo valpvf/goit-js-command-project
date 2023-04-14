@@ -18,7 +18,7 @@
 <symbol id="icon-facebook-mob" viewBox="0 0 32 32">
 <path d="M21.445 5.312h3.088v-5.088c-1.495-0.151-2.997-0.226-4.501-0.224-4.468 0-7.523 2.656-7.523 7.52v4.192h-5.043v5.696h5.043v14.592h6.045v-14.592h5.026l0.756-5.696h-5.782v-3.632c0-1.68 0.46-2.768 2.891-2.768z"></path>
 </symbol>
-<symbol id="icon-logo-mob" viewBox="0 0 209 32">
+<symbol id="icon-logo" viewBox="0 0 209 32">
 <symbol id="icon-arrow" viewBox="0 0 32 32">
 <path fill="#34387f" style="fill: var(--color1, #34387f); stroke: var(--color1, #34387f)" stroke="#34387f" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.4706" d="M27.454 7.096l-23.972 23.962-2.541-2.541 23.962-23.981h-23.962v-3.595h30.118v30.118h-3.605v-23.962z"></path>
 </symbol>
