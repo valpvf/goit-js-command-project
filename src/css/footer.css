@@ -7,6 +7,7 @@
 .footer-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 40px 20px;
     gap: 14px;
 }
@@ -17,7 +18,10 @@
     align-content: flex-start;
 }
 
-.footer-logo {}
+.footer-logo {
+    width: 98px;
+    height: 15px;
+}
 
 .footer-list:first-child {
     margin-bottom: 14px;
@@ -89,6 +93,11 @@
 
     .footer-wrap {
         gap: 142px;
+    }
+
+    .footer-logo {
+        width: 202px;
+        height: 31px;
     }
 
     .footer-list:first-child {
