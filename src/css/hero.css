@@ -1,4 +1,5 @@
 @import url(./costants.css);
+
 body {
   background-color: var(--background);
 }
@@ -129,10 +130,8 @@ body {
   line-height: 1.17;
   color: var(--text05);
 }
-@media screen and (min-width: 375px) {
-  .slider-img,
-  .img-card {
-    width: 237px;
-    height: 343px;
-  }
+.slider-img,
+.img-card {
+  width: 237px;
+  height: 343px;
 }
