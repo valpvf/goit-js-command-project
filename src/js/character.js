@@ -1,8 +1,22 @@
-import '../css/character.css';
+import datepicker from 'js-datepicker';
 
-const charFormEl = document.querySelector('.char-search-form');
+const refs = {
+  charFormEl: document.querySelector('.char-search-form'),
+  searchComicsEl: charFormEl.elements.searchComics,
+  searchNameEl: charFormEl.elements.searchName,
+  selectEl: charFormEl.elements.select,
+  searchDateEl: charFormEl.elements.searchDate,
+};
+console.log(refs.selectEl);
+const picker = datepicker(refs.searchDateEl, {
+  onSelect: (instance, date) => {
+    // Do stuff when a date is selected (or unselected) on the calendar.
+    // You have access to the datepicker instance for convenience.
+  },
+});
 
-log(charFormEl.elements.searchComics);
+refs.searchComicsEl.addEventListener('submit', onComicsEl);
+
 // addEventListener(`change`, e => {
 //   const $select = e.target;
 
