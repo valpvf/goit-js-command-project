@@ -1,1 +1,74 @@
 @import url(./costants.css);
+body {
+  background-color: var(--background);
+}
+.hero-section {
+  font-family: 'Poppins';
+  color: var(--text);
+}
+.hero-subtitle {
+  text-transform: uppercase;
+  color: var(--text07);
+  margin-bottom: 14px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+}
+.hero-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.hero-desc {
+  margin-bottom: 20px;
+}
+.hero-buttons-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-btn-characters {
+  background-color: var(--btn3);
+  color: var(--text);
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+}
+.hero-btn-comics {
+  background-color: transparent;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid var(--text05);
+}
+/* NEEDS TO BE CHANGED AFTER JS SLIDER*/
+.spiderman-slider-img,
+.hulk-slider-img,
+.spiderman-card-img,
+.hulk-card-img,
+.hero-arrow {
+  display: none;
+}
+/* NEEDS TO BE CHANGED AFTER JS SLIDER*/
+@media screen and (min-width: 375px) {
+  .slider-img,
+  .img-card {
+    width: 237px;
+    height: 343px;
+  }
+}
