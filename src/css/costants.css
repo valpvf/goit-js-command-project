@@ -1,1 +1,53 @@
-:root {}
+:root {    
+    
+    --logo: #ED1D24;
+    --background:  #0C0B0B;
+    --find: #171717;
+    --text: #FAFAFA;
+    --text07: rgba(255, 255, 255, 0.7);
+    --text05: rgba(255, 255, 255, 0.5);
+    --text03: rgba(255, 255, 255, 0.3);
+    --border: rgba(250, 250, 250, 0.15);
+    --btn1: #600404;
+    --btn2: #5B7F3C;
+    --btn3: #34387F;
+    --random_characters: #4B50AD;
+
+    --duration: 250ms;
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  @media screen and (min-width: 375px) {
+    .container {
+      width: 375px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      width: 768px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+  
+  @media screen and (min-width: 1440px) {
+    .container {
+      width: 1440px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+  

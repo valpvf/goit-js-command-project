@@ -22,7 +22,7 @@ export const api = {
     nameStartsWith = '',
     offset = 0,
     limit = 16,
-    comics = '',
+    comics = 0,
     orderBy = '',
     modifiedSince = '',
   }) => {
@@ -61,6 +61,7 @@ export const api = {
     limit = 16,
     offset = 0,
     orderBy = '',
+    dateDescriptor = '',
   }) => {
     try {
       const res = await axiosInst.get('/comics', {
@@ -71,6 +72,7 @@ export const api = {
           ...(limit && { limit }),
           ...(startYear && { startYear }),
           ...(orderBy && { orderBy }),
+          ...(dateDescriptor && { dateDescriptor }),
         },
       });
       const data = res.data.data.results;
