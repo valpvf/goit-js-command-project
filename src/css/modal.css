@@ -168,7 +168,7 @@ fill: white;
         width: 332px;
         height: 445px;
         margin-top: 64px;
-        margin-left: 32px;
+        margin-left: 0px;
         margin-right: 8px;
        }
 
@@ -236,24 +236,30 @@ fill: white;
 
 @media screen and (min-width: 601px) and (max-width: 1000px) {
     .modal-main-img {
+        width: 332px;
+        height: 445px;
         margin-top: 50px;
         margin-left: 32px;
-        margin-right: 16px;
-           
-        }
+    }
     
     .modal-hero {
         display: block;
-        margin-right: 33px;
-        margin-left: 26px;
+        margin-right: 16px;
+       
     }
 
     .modal{
         display: flex;
     }
 
+    .modal-slide-list {
+      padding-left: 12px;
+        gap: 8px;
+    }
+
     .comics-list-el {
         width: 174px;
+        height: 200px;
         
     }
 
@@ -289,13 +295,20 @@ fill: white;
     .comics-list-title {
         font-size: 24px;
         line-height: 1.0;
+        margin-top: 64px;
     }
 
     .comics-list-movie {
         font-size: 14px;
     }
 
-     
+    .comics-list-item {
+        display: block;
+        margin-top: 16px;
+        margin-bottom: 0px;
+        margin-right: 16px;
+       
+    }
 
    }
 
