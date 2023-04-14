@@ -1,9 +1,10 @@
 import { api } from '../helpers/api.js';
+
 const getRandomOffset = () => {
     return Math.round(Math.random() * 1561);
   };
   
-  const getRandomFive = async () => {
+   const getRandomFive = async () => {
     let results = [];
     for (let i = 0; i < 5; i += 1) {
       const result = await api.getCharacters({ limit: 1, offset: getRandomOffset() });
