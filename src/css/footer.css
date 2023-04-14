@@ -9,7 +9,6 @@
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     padding-top: 40px;
     padding-bottom: 40px;
     gap: 14px;
@@ -18,7 +17,6 @@
 .footer-wrap {
     display: flex;
     gap: 158px;
-    /* align-content: flex-start; */
 }
 
 .footer-logo {
@@ -38,9 +36,7 @@
     color: var(--text);
 }
 
-.footer-social {
-    /* width: 124px; */
-}
+/* .footer-social {} */
 
 .footer-soc-list {
     display: flex;
@@ -79,7 +75,7 @@
     letter-spacing: 0.02em;
     color: rgba(250, 250, 250, 0.4);
     text-align: center;
-    padding: 16px 83px;
+    padding: 16px 0;
 }
 
 @media screen and (min-width: 375px) {}
@@ -87,10 +83,11 @@
 @media screen and (min-width: 768px) {
     .footer-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         padding-top: 64px;
         padding-bottom: 64px;
         gap: 118px;
+        align-items: center;
     }
 
     .footer-wrap {
@@ -128,6 +125,7 @@
     .bottom-txt {
         font-size: 14px;
         line-height: 1.29;
+        padding: 18px 0;
     }
 }
 
