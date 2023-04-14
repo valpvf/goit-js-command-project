@@ -1,10 +1,32 @@
 @import url(./costants.css);
 
+
+
+.header-icon {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  fill: #FAFAFA;
+}
+
+  .header-form {
+    position: relative;
+  }
+
+.header-btn {
+  background: transparent;
+  /* position: relative; */
+  /* position: absolute;  */
+
+}
 .header {
   padding: 20px 0;
-  background-color: #0C0B0B;
-  background-color: var(#0C0B0B);
   justify-content: center;
+  position: sticky;
+  top: 0px;
 }
 .header-el{
   display: flex;
@@ -17,13 +39,17 @@
   height: 15px;
 }
 
+
 .header-input {
-  box-sizing: border-box;
-  background: transparent;
-flex-direction: row;
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+text-decoration-color: #FAFAFA;
+background: transparent;
 justify-content: center;
 align-items: center;
-padding: 12px 24px;
+padding: 12px 18px 12px 42px;
 gap: 8px;
 width: 108px;
 height: 28px;
@@ -54,7 +80,14 @@ border-radius: 1000px;
 
   .header-input {
   width: 130px;
-height: 42px;}
+height: 42px;
+padding: 12px 18px 12px 50px;}
+
+.header-icon {
+  width: 18px;
+  height: 18px;
+  left: 24px;
+}
  
 }
 
