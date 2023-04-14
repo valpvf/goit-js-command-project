@@ -234,4 +234,70 @@ fill: white;
 }
 
 
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+    .modal-main-img {
+        margin-top: 50px;
+        margin-left: 32px;
+        margin-right: 16px;
+           
+        }
+    
+    .modal-hero {
+        display: block;
+        margin-right: 33px;
+        margin-left: 26px;
+    }
+
+    .modal{
+        display: flex;
+    }
+
+    .comics-list-el {
+        width: 174px;
+        
+    }
+
+    .comics-title-date {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 10px;
+    }
+
+    .comics-list {
+        display: flex;
+    justify-content: space-between;
+    }
+
+    .comics{
+        margin-top: 50px;
+        margin-left: 0;
+    }
+
+    .comics-title-date {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 16px;
+    }
+    
+   .comics-description {
+       font-size: 16px;
+       line-height: 1.12;
+       width: 556px;
+       
+   }
+  
+    .comics-list-title {
+        font-size: 24px;
+        line-height: 1.0;
+    }
+
+    .comics-list-movie {
+        font-size: 14px;
+    }
+
+     
+
+   }
+
+
 
