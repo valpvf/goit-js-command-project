@@ -1,21 +1,74 @@
+@import url(./costants.css);
+
 .header {
   padding: 20px 0;
+  background-color: #0C0B0B;
+  background-color: var(#0C0B0B);
+  justify-content: center;
 }
-
-.nav-list {
+.header-el{
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  justify-content: space-between;
 }
 
-.nav-link {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+.header-logo {
+  width: 98px;
+  height: 15px;
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+.header-input {
+  box-sizing: border-box;
+  background: transparent;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 24px;
+gap: 8px;
+width: 108px;
+height: 28px;
+  border: 1px solid rgba(250, 250, 250, 0.3);
+border-radius: 1000px;
 }
+
+.header-input::placeholder {
+  font-weight: bold;
+  /* opacity: 0.5; */
+  color: var(#FAFAFA);
+  color: #FAFAFA;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .header-logo {
+    width: 202px;
+    height: 31px;
+  }
+
+  .header-input {
+  width: 130px;
+height: 42px;}
+ 
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+}
+
+
+
+
+
+
