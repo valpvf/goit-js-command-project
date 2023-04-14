@@ -1,21 +1,24 @@
 @import url(./costants.css);
+@import url(./reset.css);
+
 
 .footer {
-    background-color: #0C0B0B;
+    background-color: var(--background);
 }
 
 .footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 40px 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     gap: 14px;
 }
 
 .footer-wrap {
     display: flex;
     gap: 158px;
-    align-content: flex-start;
+    /* align-content: flex-start; */
 }
 
 .footer-logo {
@@ -32,11 +35,11 @@
 .footer-link {
     font-size: 14px;
     line-height: 1.29;
-    color: #FAFAFA;
+    color: var(--text);
 }
 
 .footer-social {
-    width: 124px;
+    /* width: 124px; */
 }
 
 .footer-soc-list {
@@ -47,7 +50,7 @@
 .footer-soc-item {
     width: 32px;
     height: 32px;
-    border: 1px solid rgba(250, 250, 250, 0.15);
+    border: 1px solid var(--border);
     border-radius: 6px;
 }
 
@@ -60,14 +63,13 @@
 }
 
 .footer-soc-img {
-    fill: #fafafa;
-    /* stroke: #fafafa; */
+    fill: var(--text);
     height: 14px;
 }
 
 
 .bottom-page {
-    background-color: #34387f;
+    background-color: var(--btn3);
 }
 
 .bottom-txt {
@@ -105,6 +107,7 @@
     }
 
     .footer-link {
+        font-family: 'Poppins';
         font-size: 16px;
         line-height: 1.12;
     }
@@ -128,4 +131,12 @@
     }
 }
 
-@media screen and (min-width: 1440px) {}
+@media screen and (min-width: 1440px) {
+    .footer-container {
+        gap: 488px;
+    }
+
+    .footer-wrap {
+        gap: 380px;
+    }
+}
