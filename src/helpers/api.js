@@ -56,7 +56,7 @@ export const api = {
   },
   getComics: async ({
     format = '',
-    titleStartsWith = '',
+    title = '',
     startYear = 0,
     limit = 16,
     offset = 0,
@@ -66,14 +66,14 @@ export const api = {
       const res = await axiosInst.get('/comics', {
         params: {
           ...(format && { format }),
-          ...(titleStartsWith && { titleStartsWith }),
+          ...(title && { title }),
           ...(offset && { offset }),
           ...(limit && { limit }),
           ...(startYear && { startYear }),
           ...(orderBy && { orderBy }),
         },
       });
-      const data = res.data.data.results;
+      const data = res.data.data;
       return data;
     } catch (error) {
       console.log(error);
