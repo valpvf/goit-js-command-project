@@ -1,29 +1,6 @@
 @import url(./costants.css);
 @import url(./reset.css);
 /* @import url(/node_modules/js-datepicker/dist/datepicker.min.css); */
-.container {
-  /* width: 100%; */
-  padding: 20px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 480px) {
-  .container {
-    width: 375px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1440px;
-  }
-}
 .char-form-section {
   background-color: black;
 }
