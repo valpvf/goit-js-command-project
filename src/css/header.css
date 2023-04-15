@@ -1,20 +1,27 @@
 @import url(./costants.css);
 
 
+.header-color {
+  background-color: var(--background);
+  box-shadow: 0px 0px 1px var(--text05);
+
+}
+
 .header-icon {
   position: absolute;
   top: 50%;
   left: 18px;
   width: 16px;
   height: 16px;
-  transform: translateY(50%);
-  fill: #FAFAFA;
+  transform: translateY(20%);
+  fill: var(--text);
+  
 }
 
-  .header-form {
+  /* .header-form {
     position: relative;
     
-  }
+  } */
 
 .header-btn {
   background: transparent;
@@ -35,6 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .header-logo {
@@ -47,24 +55,22 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  text-decoration-color: #FAFAFA;
+  font-size: 12px;
+  color: var(--text);
   background: transparent;
   justify-content: center;
   align-items: center;
   padding: 12px 18px 12px 42px;
   width: 108px;
   height: 28px;
-  border: 1px solid rgba(250, 250, 250, 0.3);
+  border: 1px solid  var(--text03);
   border-radius: 1000px;
-  /* text-decoration: #FAFAFA; */
 }
 
 .header-input::placeholder {
   font-weight: bold;
   /* opacity: 0.5; */
-  color: var(#FAFAFA);
-  color: #FAFAFA;
+  color: var(--text);
 }
 
 
@@ -78,12 +84,14 @@
   .header-input {
   width: 130px;
   height: 42px;
+  font-size: 14px;
   padding: 12px 18px 12px 50px;}
 
 .header-icon {
   width: 18px;
   height: 18px;
   left: 24px;
+  transform: translateY(50%);
 }
  
 }
@@ -98,6 +106,61 @@
 
 }
 
-@media screen and (min-width: 1440px) {
-  
+.header-find{
+  display: flex;
+  gap: 20px;}
+
+
+.gallery__link {
+gap: 16px;
+  /* flex-basis: calc((100% - 180px) / 4); */
+  border: none;
+  overflow: hidden;
+  transition: all 0.3s;
+ 
+}
+
+.gallery__link:hover,
+.gallery__link:focus {
+  transform: scale(1.05);
+}
+
+.gallery,
+.info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery {
+  justify-content: center;  
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 485px;
+
+}
+
+.gallery-item__img {
+  display: block;
+  /* height: 30vh; */
+
+}
+
+.header-find-img {
+  width: 335px;
+  height: 445px;
+}
+
+
+.header-find-text {
+  hyphens: auto;
+  overflow: hidden;
+  font-size: 14px;
+  font-style: normal;
+font-weight: 500;
+width: 335px;
+
 }
