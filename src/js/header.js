@@ -6,12 +6,12 @@ let lightbox = null;
 const perPage = 40;
 
 
-console.log(
-  api.getCharacters({
-    nameStartsWith: 'Hulk',
-    limit: 3,
-  })
-);
+// console.log(
+//   api.getCharacters({
+//     nameStartsWith: 'Hulk',
+//     limit: 3,
+//   })
+// );
 const headerInput = document.querySelector('.header-form');
 // const headerInput = document.querySelector('.header-input');
 // const liCharacter = document.querySelector('.character-list');
@@ -19,10 +19,10 @@ const characterOut = document.querySelector('.header-output');
 const headerIcon = document.querySelector('.header-icon');
 const headerBtn = document.querySelector('.header-btn');
 
-console.log(headerInput);
+// console.log(headerInput);
 // console.log(liCharacter);
-console.log(characterOut);
-console.log(headerIcon);
+// console.log(characterOut);
+// console.log(headerIcon);
 
 const addInput = async event => {
   event.preventDefault();
