@@ -16,7 +16,7 @@
     
     <script type="module" crossorigin src="/goit-js-command-project/assets/character-42bb5db9.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-command-project/assets/api-3012a37e.js">
-    <link rel="stylesheet" href="/goit-js-command-project/assets/api-6ca42d05.css">
+    <link rel="stylesheet" href="/goit-js-command-project/assets/api-e84a4c1a.css">
     <link rel="stylesheet" href="/goit-js-command-project/assets/character-08c22041.css">
   </head>
   <body>
@@ -27,19 +27,41 @@
         
             <a href="./index.html">
                 <svg class="header-logo">
-                  <use href="/goit-js-command-project/assets/icons-24a7545e.svg#icon-logo"></use>
+                  <use href="/goit-js-command-project/assets/icons-f3704b21.svg#icon-logo"></use>
                 </svg>
             </a>
-            <svg class="footer-soc-img">
-                <use href="/goit-js-command-project/assets/icons-24a7545e.svg#search"></use>
-            </svg>
-            <input type="text" class="header-input" id="header-input" placeholder="SEARCH" />
-           
+
+            <!-- <div class="header-form">
+                <input
+                  type="text"
+                  class="header-input"
+                  pattern="^[a-zA-Z]+$"
+                  placeholder="SEARCH"
+                />
+                <svg class="header-icon" width="18px" height="18px">
+                  <use href="./img/icons.svg#search"></use>
+                </svg>
+              </div> -->
+            
+              <form class="header-form" id="search-form">
+                
+                <input
+                  type="text"
+                  name="searchQuery"
+                  class="header-input"
+                  autocomplete="off"
+                  placeholder="SEARCH"
+                />
+                <button class="header-btn" type="submit">
+                    <svg class="header-icon" width="18px" height="18px">
+                        <use href="/goit-js-command-project/assets/icons-f3704b21.svg#search"></use>
+                      </svg></button>
+              </form>
        
-    </div>
+
  
 </header>
-<h1>input character:<span id="header-output"></span>!</h1>
+<h1>input character:<span class="header-output"></span>!</h1>
     </header>
     <main>
       <section>
@@ -118,7 +140,7 @@
     <div class="footer-wrap">
       <a href="./index.html">
         <svg class="footer-logo">
-          <use href="/goit-js-command-project/assets/icons-24a7545e.svg#icon-logo"></use>
+          <use href="/goit-js-command-project/assets/icons-f3704b21.svg#icon-logo"></use>
         </svg>
       </a>
       <ul class="footer-list list">
@@ -140,7 +162,7 @@
             rel="noopener noreferrer nofollow"
           >
             <svg class="footer-soc-img">
-              <use href="/goit-js-command-project/assets/icons-24a7545e.svg#icon-facebook"></use>
+              <use href="/goit-js-command-project/assets/icons-f3704b21.svg#icon-facebook"></use>
             </svg>
           </a>
         </li>
@@ -152,7 +174,7 @@
             rel="noopener noreferrer nofollow"
           >
             <svg class="footer-soc-img">
-              <use href="/goit-js-command-project/assets/icons-24a7545e.svg#icon-instagram"></use>
+              <use href="/goit-js-command-project/assets/icons-f3704b21.svg#icon-instagram"></use>
             </svg>
           </a>
         </li>
@@ -164,7 +186,7 @@
             rel="noopener noreferrer nofollow"
           >
             <svg class="footer-soc-img">
-              <use href="/goit-js-command-project/assets/icons-24a7545e.svg#icon-twitter"></use>
+              <use href="/goit-js-command-project/assets/icons-f3704b21.svg#icon-twitter"></use>
             </svg>
           </a>
         </li>
