@@ -6,7 +6,7 @@ async function getCharacter(id) {
   return character;
 }
 
-console.log('hello');
+// console.log('hello');
 
 // getCharacter(1017322);
 
