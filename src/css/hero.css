@@ -236,13 +236,47 @@ body {
   .hero {
     display: flex;
   }
+  .hero-card-section {
+    position: relative;
+  }
   .hero-slider-section {
     display: flex;
     justify-content: end;
   }
   .slider-buttons {
     transform: rotate(90deg);
-    left: 10px;
-    top: 100px;
+    left: -22px;
+    top: 245px;
+  }
+  .slider-img,
+  .img-card {
+    width: 352px;
+    height: 540px;
+  }
+  .img-card {
+    position: absolute;
+    top: -120px;
+    left: 45px;
+  }
+  .slider-img {
+    position: relative;
+    top: 110px;
+  }
+  .characters-border-line {
+    top: 400px;
+    left: 46px;
+  }
+  .characters-section {
+    top: 400px;
+    left: 45px;
+  }
+  .hero-arrow {
+    /* display: block; */
+    position: relative;
+    top: 0;
+    right: 5px;
+    fill: #ffffff;
+    width: 33px;
+    height: 32px;
   }
 }
