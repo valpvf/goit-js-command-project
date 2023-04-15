@@ -1,4 +1,4 @@
-import{a as o}from"./api-e87358eb.js";const n=()=>Math.round(Math.random()*1561),i=async()=>{let e=[];for(let t=0;t<5;t+=1){const s=await o.getCharacters({limit:1,offset:n()});e.push(s[0])}return console.log(e),u(e)};function u(e){const t=e.map(({thumbnail:s,name:r,description:a})=>`  <li class='rc-item'>
+import{a as o}from"./api-6da0aff2.js";const n=()=>Math.round(Math.random()*1561),i=async()=>{let e=[];for(let t=0;t<5;t+=1){const s=await o.getCharacters({limit:1,offset:n()});e.push(s[0])}return console.log(e),u(e)};function u(e){const t=e.map(({thumbnail:s,name:r,description:a})=>`  <li class='rc-item'>
       <img
         src='${s.path}.${s.extension}'
         alt=''
