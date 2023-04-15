@@ -28,6 +28,10 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+
+body {
+  font-family:'Poppins';
+}
   
   @media screen and (min-width: 375px) {
     .container {
