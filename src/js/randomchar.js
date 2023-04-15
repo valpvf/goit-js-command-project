@@ -35,7 +35,7 @@ const getRandomOffset = () => {
       </ul>
     </li>`
   }).join('')
-  rcList.insertAdjacentHTML(markup)
+  // rcList.insertAdjacentHTML(markup)
   // console.log(markup);;
   }
 
