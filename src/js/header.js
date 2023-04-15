@@ -26,7 +26,7 @@ const headerBtn = document.querySelector('.header-btn');
 // console.log(liCharacter);
 // console.log(characterOut);
 // console.log(headerIcon);
-console.log(headerFindResult);
+// console.log(headerFindResult);
 
 
 function createGallery(array) {
@@ -60,10 +60,10 @@ const addInput = async event => {
   event.preventDefault();
   const { target: formEl } = event;
   
-  console.log(formEl.elements.searchQuery.value);
+  // console.log(formEl.elements.searchQuery.value);
   query = formEl.elements.searchQuery.value;
  
-  console.log(query);
+  // console.log(query);
 
   headerInput.reset();
   
@@ -73,7 +73,7 @@ const addInput = async event => {
   }
     // try {
     const result = await  api.getCharacters({nameStartsWith: query})
-    console.log(result);
+    // console.log(result);
 
 if (result.lengt == 0) {
   console.log(

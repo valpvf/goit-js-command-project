@@ -22,12 +22,7 @@
     pointer-events: none;
   }
   
-.container {
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+
 
 body {
 font-family:'Poppins';
@@ -36,6 +31,44 @@ font-weight: 400;
 color: #FAFAFA;
 }
   
+
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 365px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 734px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1406px;
+  
+  }
+}
+
+/* 
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
   @media screen and (min-width: 375px) {
     .container {
       width: 375px;
@@ -57,4 +90,4 @@ color: #FAFAFA;
       padding-right: 32px;
     }
   }
-  
+   */
