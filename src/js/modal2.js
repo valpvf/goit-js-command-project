@@ -102,3 +102,16 @@ export const createModal = obj => {
 
     `;
 };
+
+{
+  /* <div class="char-card">
+  <a class="char-image-wrap" data-set="hero-id" href="#">
+    <img class="char-card-image" src="" alt="" loading="lazy" />
+    <div class="char-card-descr">
+      <p class="char-card-descr-name">Black Widow</p>
+    </div>
+  </a>
+</div>; */
+}
+
+// Звідси ти забираєш data-set="hero-id"
