@@ -16,7 +16,7 @@
     
     <script type="module" crossorigin src="/goit-js-command-project/assets/character-fd30007b.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-command-project/assets/api-6da0aff2.js">
-    <link rel="stylesheet" href="/goit-js-command-project/assets/api-882d65c5.css">
+    <link rel="stylesheet" href="/goit-js-command-project/assets/api-a945d6c9.css">
     <link rel="stylesheet" href="/goit-js-command-project/assets/character-08c22041.css">
   </head>
   <body>
@@ -69,9 +69,9 @@
 
       </section>
       <section>
-        <div class="char-form-section">
-  <form class="char-search-form container">
-    <div class="char-form-wrapper">
+        <div class="container char-form-section">
+  <form class="char-search-form">
+    <div class="char-form-wrapper char-form-btn-wrap">
       <p class="char-form-label">Comics</p>
       <input
         class="char-form-input"
@@ -86,12 +86,13 @@
           <use href="../images/search_001.svg"></use>
         </svg>
       </button> -->
+
+      <button type="submit" class="char-form-btn">
+        <!-- <svg class="char-search-icon" width="18" height="18">
+          <use href="./img/search_001.svg"></use>
+        </svg> -->
+      </button>
     </div>
-    <button type="submit" class="char-form-btn">
-      <svg class="char-search-icon" width="18" height="18">
-        <use href="/goit-js-command-project/assets/search_001-dba2a374.svg"></use>
-      </svg>
-    </button>
     <div class="char-form-wrapper">
       <p class="char-form-label">Name</p>
       <input
@@ -121,7 +122,7 @@
       <div class="char-form-wrapper">
         <p class="char-form-label">Date</p>
         <input
-          class="char-form-input"
+          class="char-form-input char-data-select"
           name="searchDate"
           placeholder="Select date..."
         />
@@ -129,7 +130,73 @@
     </div>
   </form>
 
-  <div class="card-container"></div>
+  <div class="char-card-container">
+    <div class="char-card">
+      <a class="char-image-wrap" href="#">
+        <img
+          class="char-card-image"
+          src="https://cdn.pixabay.com/photo/2023/03/27/08/53/woman-7880177_1280.jpg"
+          alt=""
+          loading="lazy"
+        />
+        <div class="char-card-descr">
+          <p class="char-card-descr-name">Black Widow</p>
+        </div>
+      </a>
+    </div>
+    <div class="char-card">
+      <a class="char-image-wrap" href="#">
+        <img
+          class="char-card-image"
+          src="https://cdn.pixabay.com/photo/2023/03/27/08/53/woman-7880177_1280.jpg"
+          alt=""
+          loading="lazy"
+        />
+        <div class="char-card-descr">
+          <p class="char-card-descr-name">Black Widow</p>
+        </div>
+      </a>
+    </div>
+    <div class="char-card">
+      <a class="char-image-wrap" href="#">
+        <img
+          class="char-card-image"
+          src="https://cdn.pixabay.com/photo/2023/03/27/08/53/woman-7880177_1280.jpg"
+          alt=""
+          loading="lazy"
+        />
+        <div class="char-card-descr">
+          <p class="char-card-descr-name">Black Widow</p>
+        </div>
+      </a>
+    </div>
+    <div class="char-card">
+      <a class="char-image-wrap" href="#">
+        <img
+          class="char-card-image"
+          src="https://cdn.pixabay.com/photo/2023/03/27/08/53/woman-7880177_1280.jpg"
+          alt=""
+          loading="lazy"
+        />
+        <div class="char-card-descr">
+          <p class="char-card-descr-name">Black Widow</p>
+        </div>
+      </a>
+    </div>
+    <div class="char-card">
+      <a class="char-image-wrap" href="#">
+        <img
+          class="char-card-image"
+          src="https://cdn.pixabay.com/photo/2023/03/27/08/53/woman-7880177_1280.jpg"
+          alt=""
+          loading="lazy"
+        />
+        <div class="char-card-descr">
+          <p class="char-card-descr-name">Black Widow</p>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
       </section>
