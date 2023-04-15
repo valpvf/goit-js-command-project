@@ -31,4 +31,4 @@ import{a as U}from"./api-6da0aff2.js";function se(t){return t!==null&&typeof t==
         <img src="${e}.${s}" alt="" class="lastcomics-image">
        <h3 class="lastcomics-comics-title">${i}</h3>
     </a></div>
-     `).join("")}function Jt(t){Kt.insertAdjacentHTML("beforeend",t)}console.log("hello");
+     `).join("")}function Jt(t){Kt.insertAdjacentHTML("beforeend",t)}
