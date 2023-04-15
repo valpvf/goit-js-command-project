@@ -110,12 +110,13 @@ body {
 .hero-arrow {
   /* display: block; */
   position: relative;
-  top: -141px;
-  right: -285.5px;
+  top: -45.5px;
+  right: -304px;
   fill: #34387f;
-  width: 33px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
 }
+
 .hero-arrow-green,
 .hero-arrow-red {
   display: none;
@@ -193,6 +194,15 @@ body {
   .img-card {
     position: relative;
     top: -65px;
+  }
+  .hero-arrow {
+    /* display: block; */
+    position: relative;
+    top: -141px;
+    right: -285.5px;
+    fill: #34387f;
+    width: 33px;
+    height: 32px;
   }
   .characters-border-line {
     width: 336px;
