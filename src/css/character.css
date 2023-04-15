@@ -2,11 +2,18 @@
 @import url(./reset.css);
 /* @import url(/node_modules/js-datepicker/dist/datepicker.min.css); */
 .char-form-section {
-  background-color: black;
+  background-color: var(--background);
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
+@media screen and (min-width: 768px) {
+  .char-form-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
 .char-search-form {
-  position: relative;
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -14,13 +21,39 @@
   /* justify-content: center; */
   text-align: left;
 }
+
+@media screen and (min-width: 768px) {
+  .char-search-form {
+    flex-direction: row;
+    gap: 8px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .char-search-form {
+    padding-right: 290px;
+    padding-left: 290px;
+    gap: 16px;
+  }
+}
+.char-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.char-form-btn-wrap {
+  position: relative;
+}
+@media screen and (min-width: 1440px) {
+  .char-form-btn-wrap {
+    width: 150%;
+  }
+}
 .char-form-btn {
   position: absolute;
-  top: 50px;
-  right: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 20px;
+  height: 20px;
+  top: 36px;
+  right: 16px;
   border: none;
   cursor: pointer;
   outline: none;
@@ -29,26 +62,16 @@
 
   background-color: transparent;
 }
-.char-search-icon {
-  fill: #fafafa;
-}
-.char-form-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.char-form-label {
-  color: rgba(250, 250, 250, 0.3);
-  margin: 0px 0px 4px;
-  padding: 0;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 
+.char-form-label {
+  color: var(--text03);
+  margin: 0px 0px 8px;
+  padding: 0;
   font-size: 12px;
   line-height: 1.17;
 }
 
 .char-form-input {
-  /* display: block; */
   background-color: transparent;
   color: #fafafa;
   box-sizing: border-box;
@@ -58,7 +81,7 @@
   /* width: 335px; */
   height: 46px;
 
-  border: 2px solid #34387f;
+  border: 2px solid var(--btn3);
   border-radius: 100px;
 }
 
@@ -66,10 +89,10 @@
   color: #fafafa;
 }
 .char-form-input:hover {
-  background-color: #34387f;
+  background-color: var(--btn3);
 }
 .char-order-select {
-  /* width: 170px; */
+  cursor: pointer;
   padding-right: 24px;
   appearance: none;
   overflow: hidden;
@@ -77,11 +100,84 @@
   background-position: 95% 50%;
 }
 .char-order-select:hover {
-  background-color: black;
+  background-color: var(--background);
+}
+.char-data-select {
+  cursor: pointer;
+  background: url('../img/chevron-down.svg') no-repeat;
+  background-position: 95% 50%;
 }
 .char-form-wrapper-add {
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .char-form-wrapper-add {
+    /* flex-grow: 2; */
+    width: 200%;
+  }
+}
+.char-card-container {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 40px;
+}
+@media screen and (min-width: 768px) {
+  .char-card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 32px;
+    row-gap: 32px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .char-card-container {
+    padding-top: 64px;
+
+    column-gap: 16px;
+    row-gap: 64px;
+  }
+}
+.char-card {
+  transform: scale(1);
+  transition: transform var(--duration);
+}
+.char-card:hover {
+  transform: scale(1.01);
+}
+.char-card-image {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 335px;
+  height: 445px;
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+@media screen and (min-width: 1440px) {
+  .char-card-image {
+    width: 332px;
+  }
+}
+.char-card-descr {
+  margin-top: 16px;
+}
+.char-card-descr-name {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: -0.02em;
+}
+@media screen and (min-width: 768px) {
+  .char-card-descr-name {
+    font-size: 24px;
+    line-height: 1;
+  }
 }
