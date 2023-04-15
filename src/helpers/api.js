@@ -1,8 +1,9 @@
+import { key } from './credentials.js';
 import hash from './hash.js';
 import axios from 'axios';
 
-const PRIVATE_KEY = 'bebc14fb8e0de0eb1ddaa7489aa94e51c83d5ba9';
-const PUBLIC_KEY = '10d9adf698c7e03e826886b469f64fda';
+const PRIVATE_KEY = key.privatekey;
+const PUBLIC_KEY = key.publickey;
 const API_URL = 'https://gateway.marvel.com/v1/public';
 const timeStamp = 1;
 
@@ -14,8 +15,6 @@ const axiosInst = axios.create({
     ts: timeStamp,
   },
 });
-
-// console.log(hash({timeStamp, PRIVATE_KEY, PUBLIC_KEY}));
 
 export const api = {
   getCharacters: async ({
@@ -38,7 +37,6 @@ export const api = {
         },
       });
       const data = res.data.data.results;
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
@@ -48,7 +46,6 @@ export const api = {
     try {
       const res = await axiosInst.get(`/characters/${characterId}`);
       const data = res.data.data.results;
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
@@ -82,5 +79,3 @@ export const api = {
     }
   },
 };
-
-// console.log(api.getCharacters({}));
