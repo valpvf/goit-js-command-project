@@ -8,6 +8,7 @@
     padding-top: 14px;
     padding-bottom: 40px;
     width: 335px;
+    min-width: 95%;
 }
 
 .comics-discription {
@@ -171,6 +172,7 @@
 @media screen and (min-width: 480px) and (max-width: 600px) {
     .backdrop {
         width: 600px;
+        min-width: 95%;
     }
     .modal-main-img {
         width: 332px;
@@ -244,7 +246,7 @@
 
 @media screen and (min-width: 601px) and (max-width: 1000px) {
 .backdrop {
-      
+      min-width: 95%;
         width: 1000px;
     }
    
