@@ -135,3 +135,7 @@ body {
   width: 237px;
   height: 343px;
 }
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1440px) {
+}
