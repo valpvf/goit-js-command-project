@@ -1,21 +1,103 @@
+@import url(./costants.css);
+
+
+.header-icon {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(50%);
+  fill: #FAFAFA;
+}
+
+  .header-form {
+    position: relative;
+    
+  }
+
+.header-btn {
+  background: transparent;
+  /* position: relative; */
+  position: absolute; 
+  outline: none;
+  border-color: transparent;
+
+}
 .header {
   padding: 20px 0;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
 }
 
-.nav-list {
+.header-el {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  justify-content: space-between;
 }
 
-.nav-link {
+.header-logo {
+  width: 98px;
+  height: 15px;
+}
+
+
+.header-input {
+  font-family: 'Poppins';
+  font-style: normal;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+  font-size: 14px;
+  text-decoration-color: #FAFAFA;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 18px 12px 42px;
+  width: 108px;
+  height: 28px;
+  border: 1px solid rgba(250, 250, 250, 0.3);
+  border-radius: 1000px;
+  /* text-decoration: #FAFAFA; */
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+.header-input::placeholder {
+  font-weight: bold;
+  /* opacity: 0.5; */
+  color: var(#FAFAFA);
+  color: #FAFAFA;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .header-logo {
+    width: 202px;
+    height: 31px;
+  }
+
+  .header-input {
+  width: 130px;
+  height: 42px;
+  padding: 12px 18px 12px 50px;}
+
+.header-icon {
+  width: 18px;
+  height: 18px;
+  left: 24px;
+}
+ 
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+  }
+
+}
+
+@media screen and (min-width: 1440px) {
+  
 }
