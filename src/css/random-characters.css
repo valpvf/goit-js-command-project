@@ -1,5 +1,16 @@
 @import url(./costants.css);
 
+
+.swiper-slide {
+opacity: 0;
+visibility: hidden;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  visibility: visible;
+}
+
 .rc-section {
   padding: 40px 0;
   background-color: var(--background);
@@ -92,7 +103,10 @@
 
     margin-bottom: 64px;
   }
-
+  .swiper-slide {
+    width: 704px;
+    height: 704px;
+  }
   .rc-img {
     width: 704px;
     height: 704px;
@@ -126,8 +140,11 @@
   .rc-descr-list {
     width: 846px
   }
-
-  .rc-img {
+  .swiper-slide {
+       width: 496px;
+    height: 704px;
+  }
+  .swiper-container {
     width: 496px;
     height: 704px;
   }
