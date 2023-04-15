@@ -8,7 +8,7 @@ async function getCharacter(id) {
 
 console.log('hello');
 
-getCharacter(1017322);
+// getCharacter(1017322);
 
 export const createModal = obj => {
   return `
