@@ -1,4 +1,5 @@
-@import url(./costants.css);
+/* @import url(./costants.css);
+@import url(./reset.css);
 
 
 .backdrop {
@@ -6,6 +7,7 @@
     background-color: black;
     padding-top: 14px;
     padding-bottom: 40px;
+    width: 335px;
 }
 
 .comics-discription {
@@ -167,11 +169,14 @@
 
 
 @media screen and (min-width: 480px) and (max-width: 600px) {
+    .backdrop {
+        width: 600px;
+    }
     .modal-main-img {
         width: 332px;
         height: 445px;
         margin-top: 64px;
-        margin-left: 0px;
+        margin-left: 32px;
         margin-right: 8px;
        }
 
@@ -238,6 +243,11 @@
 
 
 @media screen and (min-width: 601px) and (max-width: 1000px) {
+.backdrop {
+      
+        width: 1000px;
+    }
+   
     .modal-main-img {
         width: 332px;
         height: 445px;
@@ -248,11 +258,13 @@
     .modal-hero {
         display: block;
         margin-right: 16px;
+        width: 332px;
+        height: 445px;
        
     }
 
     .modal{
-        display: flex;
+      display: flex;
     }
 
     .modal-slide-list {
@@ -279,7 +291,7 @@
 
     .comics{
         margin-top: 50px;
-        margin-left: 0;
+        margin-left: 36px;
     }
 
     .comics-title-date {
@@ -316,4 +328,4 @@
    }
 
 
-
+ */
