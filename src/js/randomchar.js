@@ -90,9 +90,8 @@ function randomMarkup(array) {
     })
     .join('');
   rcList.innerHTML = markup;
-
 }
-  // console.log(markup);;
+ // console.log(markup);
 
 
 // function renderMarkup(markup) {
