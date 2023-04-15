@@ -1,6 +1,6 @@
 <!--HERO SECTION-->
 <section class="hero container">
-  <section class="hero-section">
+  <div class="hero-section">
     <p class="hero-subtitle">Web-based platform</p>
     <h1 class="hero-title">Marvelous Adventures</h1>
     <p class="hero-desc">
@@ -11,34 +11,34 @@
     </p>
     <ul class="hero-buttons-list">
       <li class="hero-button-item">
-        <button class="hero-btn-characters">Characters</button>
+        <button class="hero-btn-characters"><a href="./character.html">Characters</a></button>
       </li>
       <li class="hero-button-item">
-        <button class="hero-btn-comics">Comics</button>
+        <button class="hero-btn-comics"><a href="./comics.html">Comics</a></button>
       </li>
     </ul>
-  </section>
+  </div>
   <!--SLIDER SECTION-->
-  <section class="hero-slider-section">
+  <div class="hero-slider-section">
     <!--SLIDER BUTTONS-->
     <ul class="slider-buttons">
-      <li><button class="first-slider-btn"></button></li>
-      <li><button class="middle-slider-btn"></button></li>
-      <li><button class="last-slider-btn"></button></li>
+      <li><button class="first-slider-btn slider-btn"></button></li>
+      <li><button class="middle-slider-btn slider-btn"></button></li>
+      <li><button class="last-slider-btn slider-btn"></button></li>
     </ul>
     <!--SLIDER IMAGES-->
     <div class="hero-slider">
       <ul class="hero-slider-images">
         <li>
           <img
-            src="../img/hero-images/panther-slider.svg"
+            src="./img/hero-images/panther-slider.svg"
             class="blackpanther-slider-img slider-img"
             alt="blackpanther-hero"
           />
         </li>
         <li>
           <img
-            src="../img/hero-images/spiderman-slider.svg"
+            src="./img/hero-images/spiderman-slider.svg"
             width="200"
             class="spiderman-slider-img slider-img"
             alt="spiderman-hero"
@@ -46,7 +46,7 @@
         </li>
         <li>
           <img
-            src="../img/hero-images/hulk-slider.svg"
+            src="./img/hero-images/hulk-slider.svg"
             class="hulk-slider-img slider-img"
             alt="hulk-hero"
           />
@@ -59,21 +59,21 @@
       <ul class="hero-slider-images">
         <li>
           <img
-            src="../img/hero-images/panther-card.svg"
+            src="./img/hero-images/panther-card.svg"
             class="blackpanther-card-img img-card"
             alt="blackpanther-hero"
           />
         </li>
         <li>
           <img
-            src="../img/hero-images/spiderman-card.svg"
+            src="./img/hero-images/spiderman-card.svg"
             class="spiderman-card-img img-card"
             alt="spiderman-hero"
           />
         </li>
         <li>
           <img
-            src="../img/hero-images/hulk-card.svg"
+            src="./img/hero-images/hulk-card.svg"
             class="hulk-card-img img-card"
             alt="hulk-hero"
           />
@@ -81,15 +81,16 @@
       </ul>
       <!--ARROW ICON BUTTON-->
       <svg class="hero-arrow">
-        <use href="/src/img/hero-images/symbol-defs.svg#icon-icon-arrow"></use>
+        <use href="./img/icons.svg#icon-icon-arrow"></use>
       </svg>
       <!--THIN LINE-->
-      <div class="characters-border-line"></div>
+      <img src="./img/hero-images/line.svg" class="characters-border-line">
+      </img>
       <!--CHARACTERS INFO SECTION-->
       <div class="characters-section">
         <h3 class="characters">Characters</h3>
         <!--CHARACTERS DESCRIPTION-->
-        <p class="characters-desc-blackpanther">
+        <p class="characters-desc-blackpanther characters-desc">
           T’Challa is the king of the secretive and highly advanced African
           nation of Wakanda - as well as the powerful warrior known as the Black
           Panther.
@@ -104,5 +105,5 @@
         </p>
       </div>
     </div>
-  </section>
+  </div>
 </section>
