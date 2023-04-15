@@ -115,7 +115,6 @@
 }
 @media screen and (min-width: 768px) {
   .char-form-wrapper-add {
-    /* flex-grow: 2; */
     width: 200%;
   }
 }
@@ -124,7 +123,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  column-gap: 40px;
+  row-gap: 40px;
 }
 @media screen and (min-width: 768px) {
   .char-card-container {
@@ -180,4 +179,15 @@
     font-size: 24px;
     line-height: 1;
   }
+}
+.char-error {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 267px;
+  height: 152px;
+  background: url('../img/frame_error.svg') no-repeat;
+  background-position: 50% 50%;
+
+  background-color: transparent;
 }
