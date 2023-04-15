@@ -72,7 +72,6 @@ body {
 .hulk-slider-img,
 .spiderman-card-img,
 .hulk-card-img,
-.hero-arrow,
 .characters-desc-spiderman,
 .characters-desc-hulk {
   display: none;
@@ -107,6 +106,19 @@ body {
   margin-bottom: 14px;
   box-shadow: -5px 80px 60px 10px #3840da4d;
   background: #171717;
+}
+.hero-arrow {
+  /* display: block; */
+  position: relative;
+  top: -141px;
+  right: -285.5px;
+  fill: #34387f;
+  width: 33px;
+  height: 32px;
+}
+.hero-arrow-green,
+.hero-arrow-red {
+  display: none;
 }
 .characters-border-line {
   position: relative;
