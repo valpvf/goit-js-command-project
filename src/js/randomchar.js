@@ -1,5 +1,7 @@
 import { api } from '../helpers/api.js';
 
+const rcList = document.querySelector(".rc-list");
+
 const getRandomOffset = () => {
     return Math.round(Math.random() * 1561);
   };
@@ -10,15 +12,15 @@ const getRandomOffset = () => {
       const result = await api.getCharacters({ limit: 1, offset: getRandomOffset() });
       results.push(result[0])
     } 
-    console.log(results)
+    // console.log(results)
     return randomMarkup(results)
 
   }
   
   function randomMarkup(array) {
-      const markup = array.map(({thumbnail, name, description}) => {
+      const markup = array.map(({id, thumbnail, name, description}) => {
       return `  <li class='rc-item'>
-      <img
+      <img data-set="${id}"
         src='${thumbnail.path}.${thumbnail.extension}'
         alt=''
         class='rc-img'
@@ -27,13 +29,14 @@ const getRandomOffset = () => {
       />
       <ul class='rc-descr-list'>
         <li class='rc-descr-item'>
-          <h3 class='rc-descr-title'>${name}</h3>
-          <p class='rc-descr-text'>${description}</p>
+          <h3 data-set="${id}" class='rc-descr-title'>${name}</h3>
+          <p  data-set="${id}"class='rc-descr-text'>${description}</p>
         </li>
       </ul>
     </li>`
   }).join('')
-  console.log(markup);
+  rcList.insertAdjacentHTML(markup)
+  // console.log(markup);;
   }
 
 //   function randomDescrMarkup(array) {
