@@ -223,4 +223,26 @@ body {
   }
 }
 @media screen and (min-width: 1440px) {
+  .hero-title {
+    width: 538px;
+  }
+  .hero-desc {
+    width: 527px;
+  }
+  .hero-section {
+    margin-right: 66px;
+    gap: 134px;
+  }
+  .hero {
+    display: flex;
+  }
+  .hero-slider-section {
+    display: flex;
+    justify-content: end;
+  }
+  .slider-buttons {
+    transform: rotate(90deg);
+    left: 10px;
+    top: 100px;
+  }
 }
