@@ -1,6 +1,4 @@
-<!-- <html>
-  <head></head>
-  <body> -->
+{{#each this}}
 <div class="backdrop" data-modal="">
   <div class="modal">
     <div class="modal-hero">
@@ -11,8 +9,8 @@
       </button>
       <img
         class="modal-main-img"
-        src="./img/modal/star.jpg"
-        alt="star"
+        src="{{./img/modal/star.jpg}}"
+        alt="{{star}}"
         class="star-photo"
       />
       <div class="modal-slide">
@@ -20,8 +18,8 @@
           <li>
             <img
               class="modal-slide-img"
-              src="./img/modal/crawl.jpg"
-              alt="crawl"
+              src="{{./img/modal/crawl.jpg}}"
+              alt="{{crawl}}"
               width="80"
               hieght="80"
             />
@@ -29,8 +27,8 @@
           <li>
             <img
               class="modal-slide-img"
-              src="./img/modal/talk.jpg"
-              alt="talk"
+              src="{{./img/modal/talk.jpg}}"
+              alt="{{talk}}"
               width="80"
               hieght="80"
             />
@@ -38,8 +36,8 @@
           <li>
             <img
               class="modal-slide-img"
-              src="./img/modal/on-knee.jpg"
-              alt="on-knee"
+              src="{{./img/modal/on-knee.jpg}}"
+              alt="{{on-knee}}"
               width="80"
               hieght="80"
             />
@@ -50,46 +48,45 @@
 
     <section class="comics">
       <div class="comics-title-date">
-        <h1 class="comics-title">Black Widow</h1>
-        <p class="comics-date">July 9, 2021</p>
+        <h1 class="comics-title">{{Black Widow}}</h1>
+        <p class="comics-date">{{July 9, 2021}}</p>
       </div>
       <p class="comics-description">
-        A deadly assassin is closing in on Natasha Romanoff. Now Natasha must
+        {{A deadly assassin is closing in on Natasha Romanoff. Now Natasha must
         reunite with an unlikely group of spies from her past in order to
-        survive and stop a lethal force from being unleashed on the world.
+        survive and stop a lethal force from being unleashed on the world.}}
       </p>
       <h2 class="comics-list-title">List of comics</h2>
       <ul class="comics-list">
         <li class="comics-list-item">
           <img
             class="comics-list-el"
-            src="./img/modal/item-one.jpg"
-            alt="one"
+            src="{{./img/modal/item-one.jpg}}"
+            alt="{{one}}"
           />
-          <h3 class="comics-list-movie">Black Widow (2020)</h3>
-          <p class="comics-movie-hero">Kelly Thompson</p>
+          <h3 class="comics-list-movie">{{Black Widow (2020)}}</h3>
+          <p class="comics-movie-hero">{{Kelly Thompson}}</p>
         </li>
         <li class="comics-list-item">
           <img
             class="comics-list-el"
-            src="./img/modal/item-two.jpg"
-            alt="two"
+            src="{{./img/modal/item-two.jpg}}"
+            alt="{{two}}"
           />
-          <h3 class="comics-list-movie">Black Widow (2020)</h3>
-          <p class="comics-movie-hero">Kelly Thompson</p>
+          <h3 class="comics-list-movie">{{Black Widow (2020)}}</h3>
+          <p class="comics-movie-hero">{{Kelly Thompson}}</p>
         </li>
         <li class="comics-list-item">
           <img
             class="comics-list-el"
-            src="./img/modal/item-three.jpg"
-            alt="three"
+            src="{{./img/modal/item-three.jpg}}"
+            alt="{{three}}"
           />
-          <h3 class="comics-list-movie">Black Widow (2020)</h3>
-          <p class="comics-movie-hero">Kelly Thompson</p>
+          <h3 class="comics-list-movie">{{Black Widow (2020)}}</h3>
+          <p class="comics-movie-hero">{{Kelly Thompson}}</p>
         </li>
       </ul>
     </section>
   </div>
 </div>
-<!-- </body>
-</html> -->
+{{/each}}
