@@ -1,6 +1,6 @@
 import { api } from '../helpers/api.js';
 
-console.log('helloW');
+// console.log('helloW');
 const lastComicsEl = document.querySelector('.lastcomics-url-container');
 async function getLastWeekComics() {
     const comics = await api.getComics({
@@ -8,7 +8,7 @@ async function getLastWeekComics() {
     dateDescriptor: 'lastWeek',
     });
     createLastComicsLine(renderLastComics(comics.results))
-    console.log(comics.results)
+    // console.log(comics.results)
     //const results = comics.results;
     //return results
 }
