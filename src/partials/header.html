@@ -1,3 +1,41 @@
 <header class="header">
+
+    <div class="container header-el">
+        
+            <a href="./index.html">
+                <svg class="header-logo">
+                  <use href="./img/icons.svg#icon-logo"></use>
+                </svg>
+            </a>
+
+            <!-- <div class="header-form">
+                <input
+                  type="text"
+                  class="header-input"
+                  pattern="^[a-zA-Z]+$"
+                  placeholder="SEARCH"
+                />
+                <svg class="header-icon" width="18px" height="18px">
+                  <use href="./img/icons.svg#search"></use>
+                </svg>
+              </div> -->
+            
+              <form class="header-form" id="search-form">
+                
+                <input
+                  type="text"
+                  name="searchQuery"
+                  class="header-input"
+                  autocomplete="off"
+                  placeholder="SEARCH"
+                />
+                <button class="header-btn" type="submit">
+                    <svg class="header-icon" width="18px" height="18px">
+                        <use href="./img/icons.svg#search"></use>
+                      </svg></button>
+              </form>
+       
+
  
 </header>
+<h1>input character:<span class="header-output"></span>!</h1>

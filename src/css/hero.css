@@ -1,1 +1,137 @@
 @import url(./costants.css);
+
+body {
+  background-color: var(--background);
+}
+.hero-section {
+  font-family: 'Poppins';
+  color: var(--text);
+}
+.hero-subtitle {
+  text-transform: uppercase;
+  color: var(--text07);
+  margin-bottom: 14px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+}
+.hero-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.hero-desc {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.29;
+}
+.hero-buttons-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-btn-characters {
+  background-color: var(--btn3);
+  color: var(--text);
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+}
+.hero-btn-characters:hover {
+  background-color: #272a65;
+}
+.hero-btn-comics {
+  background-color: transparent;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid var(--text05);
+}
+.hero-btn-comics:hover {
+  background-color: rgb(114, 65, 139);
+}
+/* NEEDS TO BE CHANGED AFTER JS SLIDER*/
+.spiderman-slider-img,
+.hulk-slider-img,
+.spiderman-card-img,
+.hulk-card-img,
+.hero-arrow,
+.characters-desc-spiderman,
+.characters-desc-hulk {
+  display: none;
+}
+/* NEEDS TO BE CHANGED AFTER JS SLIDER*/
+.slider-buttons {
+  position: relative;
+  right: 155px;
+  top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transform: rotate(90deg);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.slider-btn {
+  background-color: rgba(23, 23, 23, 0.8);
+  border: none;
+  width: 72px;
+  height: 4px;
+}
+.first-slider-btn {
+  background-color: var(--btn3);
+}
+.slider-img {
+  margin-left: 18px;
+  margin-bottom: 20px;
+}
+.img-card {
+  margin-left: 105px;
+  margin-bottom: 14px;
+  box-shadow: -5px 80px 60px 10px #3840da4d;
+  background: #171717;
+}
+.characters-border-line {
+  position: relative;
+  left: 109px;
+  width: 230px;
+  margin-bottom: 16px;
+}
+.characters {
+  color: var(--text);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.17;
+}
+.characters-section {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+.characters-desc {
+  width: 127px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--text05);
+}
+.slider-img,
+.img-card {
+  width: 237px;
+  height: 343px;
+}
