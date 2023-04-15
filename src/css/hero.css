@@ -8,6 +8,7 @@ body {
   color: var(--text);
 }
 .hero-subtitle {
+  font-family: 'Poppins';
   text-transform: uppercase;
   color: var(--text07);
   margin-bottom: 14px;
@@ -48,6 +49,7 @@ body {
 }
 .hero-btn-characters:hover {
   background-color: #272a65;
+  transition: 0.1s ease-in-out;
 }
 .hero-btn-comics {
   background-color: transparent;
@@ -70,7 +72,6 @@ body {
 .hulk-slider-img,
 .spiderman-card-img,
 .hulk-card-img,
-.hero-arrow,
 .characters-desc-spiderman,
 .characters-desc-hulk {
   display: none;
@@ -106,6 +107,20 @@ body {
   box-shadow: -5px 80px 60px 10px #3840da4d;
   background: #171717;
 }
+.hero-arrow {
+  /* display: block; */
+  position: relative;
+  top: -45.5px;
+  right: -304px;
+  fill: #34387f;
+  width: 22px;
+  height: 22px;
+}
+
+.hero-arrow-green,
+.hero-arrow-red {
+  display: none;
+}
 .characters-border-line {
   position: relative;
   left: 109px;
@@ -134,4 +149,78 @@ body {
 .img-card {
   width: 237px;
   height: 343px;
+}
+@media screen and (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .hero-title {
+    font-size: 80px;
+  }
+  .hero-desc {
+    width: 473px;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+  .hero-buttons-list {
+    margin-bottom: 90px;
+  }
+  .hero-btn-characters {
+    padding: 12px 24px;
+  }
+  .hero-btn-comics {
+    padding: 12px 24px;
+  }
+  .slider-img,
+  .img-card {
+    margin-left: 0;
+    width: 336px;
+    height: 540px;
+  }
+  .hero-slider-section {
+    display: flex;
+    column-gap: 32px;
+  }
+  .slider-buttons {
+    display: flex;
+    left: 540px;
+    top: 280px;
+    transform: rotate(0deg);
+    width: 0;
+  }
+  .img-card {
+    position: relative;
+    top: -65px;
+  }
+  .hero-arrow {
+    /* display: block; */
+    position: relative;
+    top: -141px;
+    right: -285.5px;
+    fill: #34387f;
+    width: 33px;
+    height: 32px;
+  }
+  .characters-border-line {
+    width: 336px;
+    left: 0px;
+    top: -68px;
+  }
+  .characters-section {
+    justify-content: start;
+    gap: 65px;
+    position: relative;
+    top: -70px;
+  }
+  .characters-desc {
+    width: 195px;
+  }
+  .slider-btn {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 1440px) {
 }
