@@ -2,7 +2,7 @@ import { api } from '../helpers/api.js';
 const rcImgList = document.querySelector('.rc-list');
 const rcDescrList = document.querySelector('.rc-descr-list');
 const btn = document.querySelector('.rc-btn-container')
-btn.addEventListener('click', getRandomFive)
+
 let currentSlide = 0;
 let slides = null;
 let slidesText = null;
@@ -78,3 +78,9 @@ function nextSlide() {
   slidesText[currentSlide].className = 'rc-descr-item rc-descr-active';
 }
 
+
+function getRandomFive1 () {
+  getRandomFive()
+}
+
+btn.addEventListener('click', getRandomFive1)
