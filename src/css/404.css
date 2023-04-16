@@ -1,10 +1,10 @@
 @import url(./reset.css);
 @import url(./costants.css);
-body {
+/* body {
   margin: 0;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-}
+} */
 .error-hero {
   height: 100vh;
 }
@@ -81,17 +81,9 @@ body {
 /* ============ media ================================== */
 
 @media screen and (min-width: 375px) {
-  .container {
-    width: 375px;
-  }
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
   .char-comics-error-subtitle {
     line-height: 1.6;
     margin-top: 91px;
@@ -118,11 +110,6 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
-  .container {
-    width: 1440px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
   .char-comics-error-subtitle {
     text-transform: uppercase;
     font-weight: 400;

@@ -1,9 +1,6 @@
 @import url(./costants.css);
 @import url(./reset.css);
-.char-hero {
-}
-.char-section {
-}
+
 .char-text-block {
   display: flex;
   flex-direction: column;

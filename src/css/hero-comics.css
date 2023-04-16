@@ -1,9 +1,6 @@
 @import url(./costants.css);
 @import url(./reset.css);
-.comics-hero {
-}
-.comics-section {
-}
+
 .comics-text-block {
   display: flex;
   flex-direction: column;
