@@ -17,26 +17,27 @@ getCharacter(1011071);
 //   characterCardEl.insertAdjacentHTML('beforeend', markup);
 // }
 
-// function createMarkup(character) {
-//   return character
-//     .map(card => {
-//       return `
-//     <div class="char-card">
-//       <a class="char-image-wrap" dataset="${card.id}" href="#">
-//         <img
-//           class="char-card-image"
-//           src= "${card.thumbnail.path}.${card.thumbnail.extension}"
-//           alt=""
-//           loading="lazy"
-//         />
-//         <div class="char-card-descr">
-//           <p class="char-card-descr-name">${card.name}</p>
-//         </div>
-//       </a>
-//     </div>`;
-//     })
-//     .join('');
-// }
+function createMarkup(character) {
+  const markup = array
+    .map(({ thumbnail: { path, extension }, name, description, modified }) => {
+      return `
+    <div class="char-card">
+      <a class="char-image-wrap" dataset="${card.id}" href="#">
+        <img
+          class="char-card-image"
+          src= "${card.thumbnail.path}.${card.thumbnail.extension}"
+          alt=""
+          loading="lazy"
+        />
+        <div class="char-card-descr">
+          <p class="char-card-descr-name">${card.name}</p>
+        </div>
+      </a>
+    </div>`;
+    })
+    .join('');
+  return markup;
+}
 
 // console.log(character);
 
