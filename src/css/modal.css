@@ -3,36 +3,32 @@
 
 .backdrop {
     position: relative;
-    background-color: black;
+    background-color: var(--background);
     padding-top: 14px;
     padding-bottom: 40px;
 }
 
 .modal-box{
-    min-width: 95%;
+    margin: 0 auto;
     width: 335px;
     padding-left: 8px;
     padding-right: 8px;
 }
 
-.comics-discription {
-    font-size: 10px;
 
-}
 
 .modal-close-btn{
     position: absolute;
     top: 8px;
-
     right: 14px;
     width: 20px;
     height: 20px;
     border-color: transparent;
-    background-color: black;
+    background-color: var(--background);
 }
 
 .icon {
-    fill: white;
+    fill: var(--text);
 }
 
 .modal-main-img{
@@ -42,7 +38,7 @@
     margin-left: 12px;
     margin-right: auto;
     border-radius: 8px;
-    background-color: #FFFFFF;
+    background-color: var(--text);
 }
 
 .modal-slide{
@@ -52,7 +48,7 @@
 }
 
 .modal-slide-img{
-    background-color: #FFFFFF;
+    background-color: var(--text);
     border-radius: 8px;
 }
 
@@ -64,7 +60,7 @@
 }
 
 .comics{
-    background-color: #171717;
+    background-color: var(--find);
     border-radius: 8px;
     margin-top: 16px;
     margin-right: 20px;
@@ -75,44 +71,41 @@
     width: 295px;
 }
 
-.comics-title{
-    font-family: 'Poppins';
-    font-style: normal;
+
+.comics-movie-title{
     font-weight: 500;
     font-size: 18px;
     line-height: 1.33;
     display: flex;
     align-items: center;
     letter-spacing: -0.02em;
-    color: #FAFAFA;
+    color: var(--text);
 }
 
+
 .comics-date{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
-    color: rgba(250, 250, 250, 0.5);
+    color: var(--text05);
     margin-top: 4px;
 }
 
 .comics-description{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
     display: flex;
     align-items: center;
     margin-top: 16px;
-    color: #FAFAFA;
+    color: var(--text);
     width: 263px;
 }
 
+
+/* .comics-discription {
+    font-size: 10px;
+
+} */
 .comics-list-title{
-    font-family: 'Poppins';
-    font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 1.33;
@@ -120,7 +113,7 @@
     align-items: center;
     margin-top: 32px;
     letter-spacing: -0.02em;
-    color: #FAFAFA;
+    color: var(--text);
 }
 
 .comics-list-item{
@@ -138,7 +131,7 @@
 .comics-list-el{
     width: 263px;
     height: 263px;
-    background-color: #FFFFFF;
+    background-color: var(--text);
     border-radius: 8px;
 
     
@@ -149,33 +142,28 @@
 .comics-list-movie{
     display: flex;
     align-items: center;
-    font-family: 'Poppins';
     font-weight: 500;
-    font-style: normal;
     line-height: 18px;
     font-size: 1.29;
     letter-spacing: -0.02em;
-    color: #FAFAFA;
+    color: var(--text);
     margin-top: 16px;
 }
 
 .comics-movie-hero{
     display: flex;
     align-items: center;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     margin-top: 4px;
     margin-bottom: 32px;
-    color: rgba(250, 250, 250, 0.5);
+    color: var(--text05);
 }
 
 
 
 
-@media screen and (min-width: 481px) and (max-width: 767px) {
+@media screen and (min-width: 768px) {
     .modal-box {
         width: 600px;
     
@@ -191,13 +179,14 @@
 
     .modal-hero{
         display: flex;
+        justify-content: flex-start;
        }
 
     .modal-slide-list {
-        display: block;
-        margin-top: 50px;
+      flex-direction: column;
         margin-left: 0px;
         gap: 8px;
+        margin-top: 50px;
     }
 
     .modal-slide-img {
@@ -218,7 +207,7 @@
         margin-right: 10px;
     }
 
-    .comics-title {
+    .comics-movie-title {
         font-size: 24px;
         line-height: 1.0;
     }
@@ -252,7 +241,7 @@
 }
 
 
-@media screen  and (min-width: 768px) and (max-width: 1440px) {
+@media screen  and (min-width: 1440px) {
     .modal-box {
         width: 1000px;
          
@@ -277,6 +266,8 @@
     }
 
     .modal-slide-list {
+        flex-direction: row;
+        margin-top: 8px;
       margin-left: 24px;
         gap: 8px;
     }
