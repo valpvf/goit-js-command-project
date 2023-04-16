@@ -3,10 +3,12 @@
 body {
   background-color: var(--background);
 }
+.hero {
+  margin-bottom: 80px;
+}
 .hero-section {
   font-family: 'Poppins';
   color: var(--text);
-  margin-bottom: 200px;
 }
 .hero-subtitle {
   font-family: 'Poppins';
@@ -191,7 +193,7 @@ body {
   .slider-buttons {
     display: flex;
     left: 540px;
-    top: 280px;
+    top: 290px;
     transform: rotate(0deg);
     width: 0;
   }
@@ -229,6 +231,9 @@ body {
 @media screen and (min-width: 1440px) {
   .hero-title {
     width: 538px;
+  }
+  .hero {
+    margin-bottom: 168px;
   }
   .hero-desc {
     width: 527px;
