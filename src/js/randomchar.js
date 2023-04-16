@@ -2,50 +2,45 @@ import { api } from '../helpers/api.js';
 import Swiper from 'swiper';
 import 'swiper/css';
 
-const swiper = new Swiper ('.swiper-container', 
-	{
-    speed:1000,
-		direction: 'vertical',
-    zoom: true,
-		keyboard: 
-		{
-			enabled: true,
-			onlyInViewport: false,
-		},
-		mousewheel: 
-		{
-			invert: true,
-		},
-    autoplay: 
-    {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    loop: true,
+const swiper = new Swiper('.swiper-container', {
+  speed: 1000,
+  direction: 'vertical',
+  zoom: true,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+  mousewheel: {
+    invert: true,
+  },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  loop: true,
 
-    slidesPerView: 1,
-    spaceBetween: 0,
-    centeredSlides: true,
-	}); 
-// const swiper = new Swiper('.swiper-container', {
-//   slidesPerView: 1,
-//   spaceBetween: 0,
-//   centeredSlides: true,
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
-//   navigation: {
-//     nextEl: '.right-slider',
-//     prevEl: '.left-slider',
-//     },
-//   loop: true,
-//     autoplay: {
-//       delay: 3000,
-//       disableOnInteraction: true,
-//   },
-
-// });
+  slidesPerView: 1,
+  spaceBetween: 0,
+  centeredSlides: true,
+});
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  centeredSlides: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.right-slider',
+    prevEl: '.left-slider',
+  },
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
+});
 const rcList = document.querySelector('.rc-list');
 
 const getRandomOffset = () => {
@@ -59,14 +54,17 @@ const getRandomFive = async () => {
       limit: 1,
       offset: getRandomOffset(),
     });
-    if (result[0].thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
+    if (
+      result[0].thumbnail.path ===
+      'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'
+    ) {
       i -= 1;
-      continue
+      continue;
     }
     results.push(result[0]);
   }
-  console.log(results)
-   randomMarkup(results);
+  console.log(results);
+  randomMarkup(results);
 };
 
 function randomMarkup(array) {
@@ -91,8 +89,7 @@ function randomMarkup(array) {
     .join('');
   rcList.innerHTML = markup;
 }
- // console.log(markup);
-
+// console.log(markup);
 
 // function renderMarkup(markup) {
 //   rcList.insertAdjacentHTML(markup)
@@ -126,4 +123,4 @@ function randomMarkup(array) {
 
 //   }
 
-getRandomFive();
+// getRandomFive();
