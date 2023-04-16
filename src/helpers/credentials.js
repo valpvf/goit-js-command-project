@@ -23,6 +23,10 @@ const keys = [
       publickey: '10d9adf698c7e03e826886b469f64fda',
       privatekey: 'bebc14fb8e0de0eb1ddaa7489aa94e51c83d5ba9',
   },
+  {
+    publickey: '2bfe5cf47c7cf21dd68f8ab2867b6081',
+    privatekey: '2adbeb35b1c16579945054958cad4a05b2a2e914',
+  },
 ];
 
 export const key = keys[Math.round(Math.random() * (keys.length - 1))];

@@ -1,8 +1,5 @@
 @import url(./costants.css);
 
-
-
-
 .rc-section {
   padding: 40px 0;
   background-color: var(--background);
@@ -149,6 +146,41 @@
  
 
 }
+
+
+
+
+
+.slide{
+  position: absolute;
+  left: -28px;
+  top: 30px;
+  width: 496px; 
+  height: 704px;
+  opacity: 0;
+  z-index: 1;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.showing{
+  opacity: 1;
+  z-index: 2;
+}
+
+
+.rc-descr-active .rc-descr-title,
+.rc-descr-active .rc-descr-text {
+  color: var(--random_characters);
+}
+
+
+
+
+
 
 
 
