@@ -38,6 +38,13 @@
     color: var(--text);
 }
 
+.footer-link:hover,
+.footer-link:focus {
+    color: #8184b6;
+    transition: 0.1s ease-in-out;
+    transform: scale(1.01);
+}
+
 /* .footer-social {} */
 
 .footer-soc-list {
@@ -50,6 +57,13 @@
     height: 32px;
     border: 1px solid var(--border);
     border-radius: 6px;
+}
+
+.footer-soc-item:hover,
+.footer-soc-item:focus {
+    background-color: var(--btn3);
+    transition: 0.1s ease-in-out;
+    transform: scale(1.01);
 }
 
 .footer-soc-link {
