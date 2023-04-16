@@ -7,6 +7,7 @@ const hulkImg = document.querySelector('.hulk-slider-img');
 const pantherCard = document.querySelector('.blackpanther-card-img');
 const spiderCard = document.querySelector('.spiderman-card-img');
 const hulkCard = document.querySelector('.hulk-card-img');
+const desc = document.querySelector('.characters-desc');
 firstBtn.addEventListener('click', firstBtnClickHandler);
 function firstBtnClickHandler() {
   firstBtn.style.backgroundColor = '#34387F';
@@ -18,6 +19,8 @@ function firstBtnClickHandler() {
   pantherCard.style.display = 'block';
   spiderCard.style.display = 'none';
   hulkCard.style.display = 'none';
+  desc.innerHTML = `T’Challa is the king of the secretive and highly advanced African nation 
+  of Wakanda - as well as the powerful warrior known as the Black Panther.`;
 }
 middleBtn.addEventListener('click', middleBtnClickHandler);
 function middleBtnClickHandler() {
@@ -30,17 +33,23 @@ function middleBtnClickHandler() {
   spiderCard.style.display = 'block';
   pantherCard.style.display = 'none';
   hulkCard.style.display = 'none';
+  spiderCard.style.boxShadow = '-5px 80px 60px 10px #600404';
+  desc.innerHTML = `With amazing spider-like abilities, teenage science whiz Peter Parker
+            fights crime and dreams of becoming an Avenger as Spider-Man.`;
 }
 
 lastBtn.addEventListener('click', lastBtnClickHandler);
 function lastBtnClickHandler() {
-  firstBtn.style.backgroundColor = '171717';
-  middleBtn.style.backgroundColor = '#171717';
   lastBtn.style.backgroundColor = '#5B7F3C';
+  firstBtn.style.backgroundColor = '#171717';
+  middleBtn.style.backgroundColor = '#171717';
   pantherImg.style.display = 'none';
   spiderImg.style.display = 'none';
   hulkImg.style.display = 'block';
   hulkCard.style.display = 'block';
   pantherCard.style.display = 'none';
   spiderCard.style.display = 'none';
+  hulkCard.style.boxShadow = '-5px 20px 60px 10px #5B7F3C';
+  desc.innerHTML = `Exposed to heavy doses of gamma radiation, scientist Bruce Banner 
+    transforms into the mean, green rage machine called the Hulk.`;
 }
