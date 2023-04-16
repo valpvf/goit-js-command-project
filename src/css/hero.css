@@ -198,8 +198,8 @@ body {
   .hero-arrow {
     /* display: block; */
     position: relative;
-    top: -141px;
-    right: -285.5px;
+    top: -138px;
+    right: -289.5px;
     fill: #34387f;
     width: 33px;
     height: 32px;
@@ -271,12 +271,11 @@ body {
     left: 45px;
   }
   .hero-arrow {
-    /* display: block; */
     position: relative;
-    top: 0;
-    right: 5px;
-    fill: #ffffff;
+    top: 363px;
+    right: -337px;
+    fill: #34387f;
     width: 33px;
-    height: 32px;
+    height: 33px;
   }
 }
