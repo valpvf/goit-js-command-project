@@ -36,6 +36,7 @@
   justify-content: center;
   position: sticky;
   top: 0px;
+  z-index: 1000;
 }
 
 .header-el {
