@@ -1,2 +1,150 @@
 @import url(./reset.css);
 @import url(./costants.css);
+body {
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+.error-hero {
+  height: 100vh;
+}
+.error-section {
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  background-color: rgba(115, 5, 5, 1);
+  background-image: radial-gradient(
+    ellipse farthest-corner at 50% 50%,
+    rgba(115, 5, 5, 1) 30%,
+    rgba(12, 11, 11, 1) 100%
+  );
+  background-size: contain;
+  min-height: 812px;
+}
+.char-comics-error-section {
+  color: var(--text07);
+}
+.error-logo {
+  margin-top: 20px;
+}
+.error-text-block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-start;
+}
+.char-comics-error-subtitle {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.86;
+  margin-top: 61px;
+  margin-bottom: 16px;
+}
+.error-title {
+  box-sizing: border-box;
+  display: flex;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 0.67;
+}
+.char-comics-error-title {
+  color: var(--text);
+  text-align: center;
+  letter-spacing: 2%;
+  margin-bottom: 25px;
+}
+.error-desc {
+  font-size: 14px;
+  line-height: 0.86;
+}
+.char-comics-error-desc {
+  color: var(--text);
+  font-weight: 400;
+}
+.error-btn {
+  position: absolute;
+  display: block;
+  bottom: -54px;
+}
+.back-home-btn {
+  color: var(--text);
+  width: 110px;
+  height: 36px;
+  border-radius: 1000px;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  border: 1px solid rgba(250, 250, 250, 0.5);
+}
+/* ============ media ================================== */
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .char-comics-error-subtitle {
+    line-height: 1.6;
+    margin-top: 91px;
+    margin-bottom: 16px;
+  }
+  .error-title {
+    font-size: 140px;
+  }
+
+  .char-comics-error-desc {
+    font-size: 16px;
+    line-height: 0.83;
+    margin-top: 40px;
+  }
+  .error-btn {
+    bottom: -60px;
+  }
+  .back-home-btn {
+    width: 131px;
+    height: 42px;
+    font-size: 14px;
+    line-height: 1.86;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .char-comics-error-subtitle {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 223px;
+  }
+  .char-comics-error-title {
+    font-size: 150px;
+    line-height: 0.67;
+  }
+  .char-comics-error-desc {
+    font-size: 16px;
+    line-height: 1.83;
+  }
+  .error-btn {
+    bottom: -160px;
+  }
+  .back-home-btn {
+    width: 131px;
+    height: 42px;
+    font-size: 14px;
+    line-height: 1.86;
+  }
+}

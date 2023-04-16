@@ -1,2 +1,45 @@
 @import url(./costants.css);
 @import url(./reset.css);
+.comics-hero {
+}
+.comics-section {
+}
+.comics-text-block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-start;
+}
+.comics-title {
+  box-sizing: border-box;
+  display: flex;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 0.67;
+}
+.comics-desc {
+  font-size: 16px;
+  line-height: 0.83;
+  text-align: left;
+  letter-spacing: 0.02;
+}
+.comics-btn {
+  position: absolute;
+  display: block;
+  /* margin-right: 20px; */
+  bottom: 20px;
+  right: 1px;
+}
+@media screen and (min-width: 768px) {
+  .comics-title {
+    font-size: 150px;
+  }
+  .comics-desc {
+    width: 469px;
+    align-items: end;
+  }
+  .comics-btn {
+    bottom: 32px;
+    right: 1px;
+  }
+}
