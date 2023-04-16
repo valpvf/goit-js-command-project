@@ -6,6 +6,7 @@ body {
 .hero-section {
   font-family: 'Poppins';
   color: var(--text);
+  margin-bottom: 200px;
 }
 .hero-subtitle {
   font-family: 'Poppins';
