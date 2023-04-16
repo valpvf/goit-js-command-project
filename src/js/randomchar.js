@@ -25,7 +25,7 @@ const getRandomFive = async () => {
     } else if (!result[0].thumbnail.path.includes('https')){
       let res = result[0].thumbnail.path.replace('http', 'https')
     }
-    results.push(result[0]);
+    results.push(res);
   }
   rcImgList.innerHTML = randomImgMarkup(results);
   rcDescrList.innerHTML = randomDeskrMarkup(results);
