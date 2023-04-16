@@ -8,6 +8,8 @@ const pantherCard = document.querySelector('.blackpanther-card-img');
 const spiderCard = document.querySelector('.spiderman-card-img');
 const hulkCard = document.querySelector('.hulk-card-img');
 const desc = document.querySelector('.characters-desc');
+const charactersBtn = document.querySelector('.hero-btn-characters');
+const hover = 'hero-btn-characters:hover{ background-color: #00ff00 }';
 firstBtn.addEventListener('click', firstBtnClickHandler);
 function firstBtnClickHandler() {
   firstBtn.style.backgroundColor = '#34387F';
@@ -21,6 +23,7 @@ function firstBtnClickHandler() {
   hulkCard.style.display = 'none';
   desc.innerHTML = `T’Challa is the king of the secretive and highly advanced African nation 
   of Wakanda - as well as the powerful warrior known as the Black Panther.`;
+  charactersBtn.style.backgroundColor = '#34387F';
 }
 middleBtn.addEventListener('click', middleBtnClickHandler);
 function middleBtnClickHandler() {
@@ -36,6 +39,7 @@ function middleBtnClickHandler() {
   spiderCard.style.boxShadow = '-5px 80px 60px 10px #600404';
   desc.innerHTML = `With amazing spider-like abilities, teenage science whiz Peter Parker
             fights crime and dreams of becoming an Avenger as Spider-Man.`;
+  charactersBtn.style.backgroundColor = '#600404';
 }
 
 lastBtn.addEventListener('click', lastBtnClickHandler);
@@ -52,4 +56,5 @@ function lastBtnClickHandler() {
   hulkCard.style.boxShadow = '-5px 20px 60px 10px #5B7F3C';
   desc.innerHTML = `Exposed to heavy doses of gamma radiation, scientist Bruce Banner 
     transforms into the mean, green rage machine called the Hulk.`;
+  charactersBtn.style.backgroundColor = '#5B7F3C';
 }
