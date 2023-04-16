@@ -16,6 +16,7 @@
 
 .footer-wrap {
     display: flex;
+    align-content: baseline;
     gap: calc(95vw - (98px + 79px + 20px));
 }
 
@@ -32,7 +33,7 @@
 
 .footer-link {
     font-family: 'Poppins';
-    font-size: 14px;
+    font-size: 3.73vw;
     line-height: 1.29;
     color: var(--text);
 }
@@ -70,7 +71,7 @@
 
 .bottom-txt {
     font-family: 'Poppins';
-    font-size: 10px;
+    font-size: 2.66vw;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: rgba(250, 250, 250, 0.4);
@@ -81,6 +82,14 @@
 @media screen and (min-width: 375px) {
     .footer-wrap {
         gap: 158px;
+    }
+
+    .footer-link {
+        font-size: 14px;
+    }
+
+    .bottom-txt {
+        font-size: 10px;
     }
 }
 
