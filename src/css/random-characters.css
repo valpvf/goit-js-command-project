@@ -131,6 +131,7 @@
   .rc-img {
     width: 496px;
     height: 704px;
+    object-fit: cover;
     
   }
 
@@ -156,7 +157,7 @@
 .slide{
   position: absolute;
   left: -28px;
-  top: 10px;
+  top: 30px;
   width: 496px; 
   height: 704px;
   opacity: 0;

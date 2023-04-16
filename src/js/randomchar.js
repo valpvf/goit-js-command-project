@@ -41,10 +41,10 @@ function randomImgMarkup(array) {
     .map(({ id, thumbnail }) => {
       return `  <li class='rc-item slide' data-id="${id}">
       <picture>
-      <source media="(min-width: 1440px)" srcset="${thumbnail.path}/portrait_uncanny.${thumbnail.extension}" />
-      <source media="(min-width: 375px)" srcset="${thumbnail.path}/standard_fantastic.${thumbnail.extension}"/>
+      <source media="(min-width: 1440px)" srcset="${thumbnail.path}.${thumbnail.extension}" />
+      <source media="(min-width: 375px)" srcset="${thumbnail.path}.${thumbnail.extension}"/>
       <img class="rc-img" data-set="${id}"
-        src='${thumbnail.path}/portrait_uncanny.${thumbnail.extension}'
+        src='${thumbnail.path}.${thumbnail.extension}'
         alt=''
       /></picture>`;
     })
