@@ -50,6 +50,7 @@ body {
 .hero-btn-characters:hover {
   background-color: #272a65;
   transition: 0.1s ease-in-out;
+  transform: scale(1.01);
 }
 .hero-btn-comics {
   background-color: transparent;
@@ -66,6 +67,8 @@ body {
 }
 .hero-btn-comics:hover {
   background-color: rgb(114, 65, 139);
+  transition: 0.1s ease-in-out;
+  transform: scale(1.01);
 }
 /* NEEDS TO BE CHANGED AFTER JS SLIDER*/
 .spiderman-slider-img,
