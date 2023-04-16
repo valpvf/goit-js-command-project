@@ -1,6 +1,7 @@
-import { api } from '../helpers/api.js';
+
 const rcImgList = document.querySelector('.rc-list');
 const rcDescrList = document.querySelector('.rc-descr-list');
+
 
 let currentSlide = 0;
 let slides = null;
@@ -18,6 +19,7 @@ const getRandomFive = async () => {
     });
     if (
       result[0].thumbnail.path ===
+
       'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available' || !result[0].description
     ) {
       i -= 1;
@@ -35,6 +37,7 @@ const getRandomFive = async () => {
   slidesText[0].className = 'rc-descr-item rc-descr-active';
   console.log(slides[0].className);
   let slideInterval = setInterval(nextSlide, 3500);
+
 };
 
 function randomImgMarkup(array) {
@@ -51,28 +54,4 @@ function randomImgMarkup(array) {
     })
     .join('');
   return markup;
-}
-
-function randomDeskrMarkup(array) {
-  const markup = array
-    .map(({ name, description, id }) => {
-      return `
-    <li class='rc-descr-item' data-id="${id}">
-      <h3 class='rc-descr-title'>${name}</h3>
-      <p class='rc-descr-text'>${description}</p>
-    </li>`;
-    })
-    .join('');
-  return markup;
-}
-
-getRandomFive();
-
-function nextSlide() {
-  console.log(slides[currentSlide]);
-  slides[currentSlide].className = 'slide rc-item';
-  slidesText[currentSlide].className = 'rc-descr-item';
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].className = 'slide rc-item showing';
-  slidesText[currentSlide].className = 'rc-descr-item rc-descr-active';
 }

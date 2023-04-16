@@ -38,8 +38,8 @@
 .modal-main-img{
     width: 295px;
     height: 387px;
-    margin-top: 40px;
-    margin-left: 20px;
+    margin-top: 26px;
+    margin-left: 12px;
     margin-right: auto;
     border-radius: 8px;
     background-color: #FFFFFF;
@@ -59,7 +59,7 @@
 .modal-slide-list{
    display: flex;
    margin-top: 8px;
-   margin-left: 20px;
+   margin-left: 12px;
    gap: 8px;
 }
 
@@ -68,7 +68,7 @@
     border-radius: 8px;
     margin-top: 16px;
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 12px;
     padding-bottom: 32px;
     padding-top: 32px;
     padding-left: 16px;
@@ -175,12 +175,10 @@
 
 
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 481px) and (max-width: 767px) {
     .modal-box {
-        min-width: 95%;
         width: 600px;
-        padding-left: 8px;
-        padding-right: 8px;
+    
     }
    
     .modal-main-img {
@@ -208,8 +206,8 @@
     
     .comics {
         width: 536px;
-        margin-right: 32px;
-        margin-left: 24px;
+        margin-right: auto;
+        margin-left: auto;
         margin-bottom: 64px;
         padding-right: 16px;
     }
@@ -254,9 +252,8 @@
 }
 
 
-@media screen  and (max-width: 1440px) {
+@media screen  and (min-width: 768px) and (max-width: 1440px) {
     .modal-box {
-        min-width: 95%;
         width: 1000px;
          
     }
@@ -265,8 +262,7 @@
         width: 332px;
         height: 445px;
         margin-top: 50px;
-        margin-left: 60px;
-       
+        margin-left: 24px;
     }
     
     .modal-hero {
@@ -281,13 +277,13 @@
     }
 
     .modal-slide-list {
-      padding-left: 12px;
+      margin-left: 24px;
         gap: 8px;
     }
 
     .comics {
         width: 588px;
-        margin-left: 24px;
+        
         margin-bottom: 64px;
        
     }
