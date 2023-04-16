@@ -22,10 +22,11 @@ const getRandomFive = async () => {
     ) {
       i -= 1;
       continue;
+    } else if (!result[0].thumbnail.path.includes('https')){
+      let res = result[0].thumbnail.path.replace('http', 'https')
     }
     results.push(result[0]);
   }
-  console.log(results);
   rcImgList.innerHTML = randomImgMarkup(results);
   rcDescrList.innerHTML = randomDeskrMarkup(results);
   slides = document.querySelectorAll('.rc-list .slide');
