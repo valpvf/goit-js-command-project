@@ -1,26 +1,12 @@
 @import url(./costants.css);
 
 
-.swiper-slide {
-opacity: 0;
-visibility: hidden;
-}
 
-.swiper-slide-active {
-  opacity: 1;
-  visibility: visible;
-}
 
 .rc-section {
   padding: 40px 0;
   background-color: var(--background);
 }
-
-/* .rc-container {
-  padding: 0 20px;
-  margin-left: auto;
-  margin-right: auto;
-} */
 
 .rc-list {
   margin-left: auto;
@@ -54,12 +40,7 @@ visibility: hidden;
   border-bottom: 1px solid var(--text05);
 }
 
-.rc-descr-item:hover .rc-descr-title,
-.rc-descr-item:hover .rc-descr-text,
-.rc-descr-item:focus .rc-descr-title,
-.rc-descr-item:focus .rc-descr-text {
-  color: var(--random_characters);
-}
+
 
 .rc-descr-title {
   color: var(--text);
@@ -89,7 +70,7 @@ visibility: hidden;
 
 @media screen and (min-width: 768px) {
   .rc-container {
-    width: 704px;
+    width: 734px;
   }
 
   .rc-section {
@@ -103,10 +84,7 @@ visibility: hidden;
 
     margin-bottom: 64px;
   }
-  .swiper-slide {
-    width: 704px;
-    height: 704px;
-  }
+  
   .rc-img {
     width: 704px;
     height: 704px;
@@ -127,10 +105,13 @@ visibility: hidden;
 
 @media screen and (min-width: 1440px) {
   .rc-container {
-    width: 1376px;
+    width: 1406px;
   }
   .rc-list {
+    position: relative;
     margin: 0;
+    
+    
   }
   .rc-item {
     display: flex;
@@ -138,14 +119,68 @@ visibility: hidden;
   }
 
   .rc-descr-list {
-    width: 846px
-  }
-  .swiper-slide {
-       width: 496px;
+    width: 846px;
     height: 704px;
   }
-  .swiper-container {
+ 
+  .slider-container {
+    display: flex; 
+    align-items: center;
+  }
+
+  .rc-img {
     width: 496px;
     height: 704px;
+    object-fit: cover;
+    
   }
+
+  .slider-blank-box {
+    width: 496px; 
+    height: 704px;
+    z-index: -1;
+  }
+
+  .rc-descr-text {
+    overflow: hidden;
+  max-height: 2.26rem;
+  }
+
+ 
+
 }
+
+
+
+
+
+.slide{
+  position: absolute;
+  left: -28px;
+  top: 30px;
+  width: 496px; 
+  height: 704px;
+  opacity: 0;
+  z-index: 1;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.showing{
+  opacity: 1;
+  z-index: 2;
+}
+
+
+.rc-descr-active .rc-descr-title,
+.rc-descr-active .rc-descr-text {
+  color: var(--random_characters);
+}
+
+
+
+
+
