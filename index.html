@@ -25,10 +25,9 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/goit-js-command-project/assets/index-71a9843a.js"></script>
+    <script type="module" crossorigin src="/goit-js-command-project/assets/index-d97a3872.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-command-project/assets/api-6da0aff2.js">
-    <link rel="stylesheet" href="/goit-js-command-project/assets/api-ef736afb.css">
-    <link rel="stylesheet" href="/goit-js-command-project/assets/index-b099ecf4.css">
+    <link rel="stylesheet" href="/goit-js-command-project/assets/api-d6c6530b.css">
   </head>
   <body>
     <a href="/partials/error/404.html">404</a>
@@ -194,18 +193,27 @@
     <section class="rc-section">
   <div class="container rc-container">
     <h2 class="rc-title">Random Characters</h2>
-        <div class="swiper-container">
-          <ul class="rc-list swiper-wrapper">
-          </ul>
-        </div>
+    <ul id="slides" class="rc-list"></ul>
+    <div class="slider-container">
+      <div class="slider-blank-box"></div>
+      <ul class="rc-descr-list"></ul>
+    </div>
     <div class="rc-btn-container">
       <button class="rc-btn">All Characters</button>
     </div>
   </div>
-  
+
+  <!-- <script type="module" src="./js/randomchar.js"></script> -->
 </section>
 
-                
+<!-- <ul class='rc-descr-list'>
+  <li class='rc-descr-item'>
+    <h3 data-set="${id}" class='rc-descr-title'>${name}</h3>
+    <p  data-set="${id}"class='rc-descr-text'>${description}</p>
+  </li>
+</ul>
+</li> -->
+
         <section class="lastcomics-section">
         <div class="lastcomics-wrapper container">
                 <div class="additional-wrapper">
