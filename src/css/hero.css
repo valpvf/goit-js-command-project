@@ -5,6 +5,7 @@ body {
 }
 .hero {
   margin-bottom: 80px;
+  height: 100vw;
 }
 .hero-section {
   font-family: 'Poppins';
