@@ -50,15 +50,20 @@ function createSlider() {
         },
         breakpoints: {
             375: {
-            slidesPerView: 1.25,
+                slidesPerView: 1.25,
             },
             768: {
-            slidesPerView: 1.5,
+                slidesPerView: 1.5,
             },
             1200: {
+                slidesPerView: 2.5,
+            },
+            1440:
+            {
                 slidesPerView: 3,
                 init: false,
-            }
+                }
+
         }
     });
     nextBtnEl.addEventListener('click', () => {

@@ -5,6 +5,12 @@
 }
 
 
+.lastcomics-wrapper {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+
 .lastcomics-title {
     font-weight: 500;
     font-size: 28px;
@@ -14,7 +20,6 @@
     margin-bottom: 44px;
     color: #FAFAFA;
 }
-
 
 .arrow-icon {
     display: none;
@@ -26,20 +31,14 @@
     column-gap: 14px;
 }
 
-
-
-
 .comics-container {
     width: 323px;
 }
-
-
 .lastcomics-image {
     display: block;
     margin-bottom: 14px;
     border-radius: 8px;
 }
-
 
 .lastcomics-comics-title {
     font-weight: 500;
@@ -49,7 +48,6 @@
     letter-spacing: -0.02em;
     color: #FAFAFA;
 }
-
 
 .lastcomics-descr {
     font-weight: 400;
@@ -66,7 +64,6 @@
     margin-top: 20px;
 }
 
-
 .swiper-button-next,
 .swiper-button-prev {
     width: 32px;
@@ -75,31 +72,39 @@
     border-color: FAFAFA;
 }
 
-
 .swiper-button-next:hover,
 .swiper-button-next:focus {
     background-color: #34387F;
 }
+
 
 .swiper-button-prev:hover,
 .swiper-button-prev:focus {
     background-color: #34387F;
 }
 
-
 @media screen and (min-width: 768px) {
+
+    .lastcomics-wrapper {
+        width: 734px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .lastcomics-title {
         font-size: 44px;
         line-height: 1;
     }
 
+
     .comics-container {
         width: 448px;
     }
 
+
     .lastcomics-image {
         width: 448px;
-        height: 519px;
+        height: 600px;
         margin-bottom: 8px;
     }
 
@@ -109,25 +114,37 @@
     }
 }
 
+@media screen and (min-width: 1200px) {
 
-@media screen and (min-width: 1440px) {
-
+    .lastcomics-wrapper {
+        width: 1150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .lastcomics-image {
         width: 448px;
-        height: 519px;
+        height: 600px;
     }
 
     .arrow-icon {
         display: block;
     }
-
     .additional-wrapper {
         display: flex;
         justify-content: space-between;
     }
-
     .swiper-wrapper {
         width: 1376px;
         height: 693px;
+    }
+
+
+}
+
+@media screen and (min-width: 1440px) {
+
+
+    .lastcomics-wrapper {
+        width: 1406px;
     }
 }
