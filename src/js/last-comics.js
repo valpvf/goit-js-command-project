@@ -29,7 +29,7 @@ function renderLastComics(comicsArr) {
       const writer = creators.items.find(creator => creator.role === 'writer');
         const writerName = writer ? writer.name : '';
     return `
-      <div class="comics-container swiper-slide" data-id="${id}">
+      <div class="comics-container swiper-slide" data-id="${id}>
         <a href="#" class="lastcomics-link-comics" rel="nofollow noreferrer noopener">
           <img src="${path}.${extension}" alt="${title}" class="lastcomics-image">
           <h3 class="lastcomics-comics-title">${title}</h3>
