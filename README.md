@@ -19,7 +19,7 @@
 
 ## Page layout
 
-[Посмлання на макет](<https://www.figma.com/file/hs9PWlnujzPY35kq2vJYQS/Marvelous-Adventures-(Copy)-(Copy)>)
+[Посилання на макет](<https://www.figma.com/file/hs9PWlnujzPY35kq2vJYQS/Marvelous-Adventures-(Copy)-(Copy)>)
 
 ==========================================================================
 
