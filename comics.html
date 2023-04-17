@@ -20,8 +20,11 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/goit-js-command-project/assets/api-fd7929e6.js"></script>
-    <link rel="stylesheet" href="/goit-js-command-project/assets/styles-78692901.css">
+    <script type="module" crossorigin src="/goit-js-command-project/assets/comics-49e71fa0.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-command-project/assets/api-e0a018cc.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-command-project/assets/tui-pagination-95543c64.js">
+    <link rel="stylesheet" href="/goit-js-command-project/assets/tui-pagination-26d9f34c.css">
+    <link rel="stylesheet" href="/goit-js-command-project/assets/styles-352c9a0b.css">
   </head>
   <body>
     <header><header class="header">
@@ -66,6 +69,69 @@
     </div>
   </section>
 </section>
+
+    </section>
+    <section>
+      <div class="container comics-form-section">
+  <form class="comics-search-form">
+    <div class="comics-form-wrapper comics-form-btn-wrap">
+      <p class="comics-form-label">Title Starts With</p>
+      <input
+        class="comics-form-input"
+        type="text"
+        name="searchComics"
+        autocomplete="off"
+        placeholder="Enter comics"
+        required
+      />
+      <button type="submit" class="comics-form-btn"></button>
+    </div>
+    <div class="comics-form-wrapper">
+      <p class="comics-form-label">Format</p>
+      <select
+        class="comics-form-input comics-order-select"
+        data-action=""
+        name="selectFormat"
+      >
+        <option>Comic</option>
+        <option>Magazine</option>
+        <option>-Trade paperback</option>
+        <option>-Hardcover</option>
+        <option>-Digest</option>
+        <option>-Graphic novel</option>
+        <option>-Digital comic</option>
+        <option>-Infinite comic</option>
+      </select>
+    </div>
+
+    <!-- <div class="comics-form-wrapper-add"> -->
+    <div class="comics-form-wrapper">
+      <p class="comics-form-label">Order by</p>
+      <select
+        class="comics-form-input comics-order-select"
+        data-action=""
+        name="selectOrder"
+      >
+        <option>Title</option>
+        <option>On Sale Date</option>
+      </select>
+    </div>
+
+    <div class="comics-form-wrapper">
+      <p class="comics-form-label">Start Year</p>
+      <input
+        class="comics-form-input comics-data-select"
+        name="selectDate"
+        placeholder="Select year..."
+        autocomplete="off"
+      />
+    </div>
+    <!-- </div> -->
+  </form>
+
+  <div class="comics-card-container"></div>
+  <div id="tui-pagination-container" class="tui-pagination is-hidden"></div>
+</div>
 
     </section>
     <section>
