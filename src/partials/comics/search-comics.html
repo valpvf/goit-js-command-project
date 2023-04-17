@@ -1,0 +1,60 @@
+<div class="container comics-form-section">
+  <form class="comics-search-form">
+    <div class="comics-form-wrapper comics-form-btn-wrap">
+      <p class="comics-form-label">Title Starts With</p>
+      <input
+        class="comics-form-input"
+        type="text"
+        name="searchComics"
+        autocomplete="off"
+        placeholder="Enter comics"
+        required
+      />
+      <button type="submit" class="comics-form-btn"></button>
+    </div>
+    <div class="comics-form-wrapper">
+      <p class="comics-form-label">Format</p>
+      <select
+        class="comics-form-input comics-order-select"
+        data-action=""
+        name="selectFormat"
+      >
+        <option>Comic</option>
+        <option>Magazine</option>
+        <option>-Trade paperback</option>
+        <option>-Hardcover</option>
+        <option>-Digest</option>
+        <option>-Graphic novel</option>
+        <option>-Digital comic</option>
+        <option>-Infinite comic</option>
+      </select>
+    </div>
+
+    <!-- <div class="comics-form-wrapper-add"> -->
+    <div class="comics-form-wrapper">
+      <p class="comics-form-label">Order by</p>
+      <select
+        class="comics-form-input comics-order-select"
+        data-action=""
+        name="selectOrder"
+      >
+        <option>Title</option>
+        <option>On Sale Date</option>
+      </select>
+    </div>
+
+    <div class="comics-form-wrapper">
+      <p class="comics-form-label">Start Year</p>
+      <input
+        class="comics-form-input comics-data-select"
+        name="selectDate"
+        placeholder="Select year..."
+        autocomplete="off"
+      />
+    </div>
+    <!-- </div> -->
+  </form>
+
+  <div class="comics-card-container"></div>
+  <div id="tui-pagination-container" class="tui-pagination is-hidden"></div>
+</div>
