@@ -7,6 +7,7 @@ const rcContainer = document.querySelector('.rc-container');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.comics');
 
+
 function onCloseBtnElClick() {
   modalTwoClose.classList.add('is-concealed');
 }
@@ -17,6 +18,14 @@ rcContainer.addEventListener('click', onContainerClick);
 async function getCharacter(id) {
   const character = await api.getCharactersById({ characterId: id });
   return character;
+
+// async function getCharacter(id) {
+//  const character = await api.getCharactersById({ characterId: id });
+//  console.log(character);
+
+//  const markup = createMarkup(character);
+//  modalTwoClose.innerHTML = markup;
+
 }
 
 function onContainerClick(event) {
@@ -85,6 +94,7 @@ function createMarkupImages(character) {
           </li>
         </ul>`;
   return markup;
+
 }
 
 function createMarkupText(character) {

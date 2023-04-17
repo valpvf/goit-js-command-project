@@ -143,8 +143,9 @@
     display: flex;
     align-items: center;
     font-weight: 500;
-    line-height: 18px;
-    font-size: 1.29;
+    font-size: 14px;
+    line-height: 1.29;
+    
     letter-spacing: -0.02em;
     color: var(--text);
     margin-top: 16px;
@@ -326,7 +327,6 @@
     .comics-list-item {
         margin-top: 16px;
         margin-bottom: 0px;
-        margin-right: 16px;
     }
 
    }
