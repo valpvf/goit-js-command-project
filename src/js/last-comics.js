@@ -50,15 +50,20 @@ function createSlider() {
         },
         breakpoints: {
             375: {
-            slidesPerView: 1.25,
+                slidesPerView: 1.25,
             },
             768: {
-            slidesPerView: 1.5,
+                slidesPerView: 1.5,
             },
             1200: {
+                slidesPerView: 2.5,
+            },
+            1440:
+            {
                 slidesPerView: 3,
                 init: false,
-            }
+                }
+
         }
     });
     nextBtnEl.addEventListener('click', () => {
@@ -66,8 +71,30 @@ function createSlider() {
     })
     prevBtnEl.addEventListener('click', () => {
         swiper.slidePrev();
-    })
+        
+    });
+    sliderBtnStyle()
+    
     return swiper
+}
 
-
+function sliderBtnStyle() {
+    nextBtnEl.addEventListener('mousedown', () => {
+         nextBtnEl.classList.add('clicked');
+     })
+    
+    nextBtnEl.addEventListener('mouseup', () => {
+    setTimeout(() => {
+        nextBtnEl.classList.remove('clicked');
+    }, 300);
+    });
+    prevBtnEl.addEventListener('mousedown', () => {
+         prevBtnEl.classList.add('clicked');
+     })
+    
+    prevBtnEl.addEventListener('mouseup', () => {
+    setTimeout(() => {
+        prevBtnEl.classList.remove('clicked');
+    }, 300);
+    });
 }
