@@ -24,6 +24,10 @@ const keys = [
     privatekey: 'bebc14fb8e0de0eb1ddaa7489aa94e51c83d5ba9',
   },
   {
+    publickey: 'f9437ef5f8096b58a2a964f8fad9d2c4',
+    privatekey: '927ea36362f0f7d499872f2aeb3575e8c79efc03',
+  },
+  {
     publickey: '2bfe5cf47c7cf21dd68f8ab2867b6081',
     privatekey: '2adbeb35b1c16579945054958cad4a05b2a2e914',
   },

@@ -78,4 +78,29 @@ export const api = {
       console.log(error);
     }
   },
+  getAllCharacters: async ({
+    nameStartsWith = '',
+    offset = 0,
+    limit = 16,
+    comics = 0,
+    orderBy = '',
+    modifiedSince = '',
+  }) => {
+    try {
+      const res = await axiosInst.get('/characters', {
+        params: {
+          ...(nameStartsWith && { nameStartsWith }),
+          ...(offset && { offset }),
+          ...(limit && { limit }),
+          ...(comics && { comics }),
+          ...(orderBy && { orderBy }),
+          ...(modifiedSince && { modifiedSince }),
+        },
+      });
+      const data = res.data.data;
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
