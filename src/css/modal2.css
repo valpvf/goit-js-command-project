@@ -5,12 +5,30 @@
     font-size: 10px;
 
 }
-
-.photo-slide {
-    display: flex;
-    margin-top: 8px;
-    gap: 8px;
+.modal-box {
+    margin: 0 auto;
+    width: 335px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
+.modal-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    border-color: transparent;
+    background-color: var(--background);
+}
+.icon {
+    fill: var(--text);
+}
+.star-photo{
+    max-width: 332px;
+    height: 445px;
+    border-radius: 8px;
+}
+
 
 .photo-slide-image {
     width: 80px;
@@ -27,27 +45,35 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 16px;
+    flex-direction: column;
+    row-gap: 4px;
 }
 
 .head-inf {
     display: flex;
-    margin-bottom: 16px;
-}
 
+}
+.riska{
+    color: var(--text05) ;
+}
 .title {
-    font-family: 'Poppins';
+font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 100%;
-    color: var(--text);
+    font-size: 18px;
+    line-height: 1,33;
+
+    align-items: center;
+    letter-spacing: -0.02em;
+
+    color: #FAFAFA;
 }
 
 .c-author {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.12;
 
     color: var(--text05);
@@ -68,7 +94,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.12;
     color: var(--text);
     margin-bottom: 32px;
@@ -84,18 +110,20 @@
 }
 
 .character-img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 8px;
 }
 
 .desc-list {
     display: flex;
-    gap: 32px;
+    gap: 24px;
     margin-bottom: 32px;
 }
 
 .list-item {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 
@@ -103,7 +131,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.17;
     text-transform: uppercase;
 
@@ -114,7 +142,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.12;
 
 
@@ -122,18 +150,19 @@
 }
 
 .author {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
 }
 
 .author-inf {
     display: flex;
     gap: 14px;
     margin-bottom: 32px;
+    align-items: center;
 }
 
 .author-img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 8px;
 }
 
@@ -141,7 +170,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.17;
     margin-bottom: 8px;
 
@@ -152,57 +181,236 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.12;
 
     color: var(--text);
 }
 
 .aut-desc {
-    display: block;
-    margin-top: 18px;
-    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+
+
 }
 
 .characters {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
 }
 
 .characters-list {
     display: flex;
-    gap: 15px;
-    margin-bottom: 32px;
+   row-gap: 16px;
+    flex-wrap: wrap-reverse;
+
+
 }
 
 .char-item {
     display: flex;
     gap: 8px;
+    align-items: center;
+    width: 180px;
+
 }
 
 .character-name {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.12;
-
+align-items: center;
     color: var(--text);
 }
+.modal-container {
+padding-top: 40px;
+    padding-bottom: 64px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+                .images {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                .modal {
+                    display: flex;
+                    gap: 16px;
+                flex-direction: column;
+                
+                }
 
+
+.star-photo {
+    max-width: 295px;
+    height: 387px;
+    border-radius: 8px;
+}
+.photo-slide {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
 @media screen and (min-width: 375px) {
+    .desc-list {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+    .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+        }
+    .character-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+    .character-name {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+            align-items: center;
+            color: var(--text);
+        }
+    .characters {
+            margin-bottom: 32px;
+        }
+    .author-name {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+    
+            color: var(--text);
+        }
+    .author-prof {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.17;
+            margin-bottom: 8px;
+    
+            color: var(--text05);
+        }
+    .author {
+            margin-bottom: 32px;
+        }
+    .list-inf {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+    
+    
+            color: var(--text);
+        }
+    .list-punkt {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.17;
+            text-transform: uppercase;
+    
+            color: var(--text05);
+        }
+    .text-discription {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+            color: var(--text);
+            margin-bottom: 32px;
+        }
+    .c-author {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+    
+            color: var(--text05);
+        }
+    .desc-head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            flex-direction: row;
+            row-gap: 0px;
+        }
+    .title {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 100%;
+            color: var(--text);
+        }
     .modal-container {
-        padding-top: 40px;
-    }
+            padding-top: 64px;
+            padding-bottom: 64px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        .images {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+                .modal {
+                    display: flex;
+                    gap: 16px;
+                flex-direction: column;
+                
+                }
+.photo-slide {
+    display: flex;
+flex-direction: column;
+    gap: 8px;
+}
+.modal-box {
+    width: 600px;
+
+}
+.star-photo {
+    max-width: 332px;
+    height: 445px;
+    border-radius: 8px;
+}
 }
 
 @media screen and (min-width: 768px) {
     .modal-container {
         padding-top: 64px;
+        padding-bottom: 64px;
+        padding-left: 32px;
+        padding-right: 32px;
     }
-}
-
-@media screen and (min-width: 1440px) {
-    .modal-container {
-        padding-top: 64px;
+    .images{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
+        .modal {
+            display: flex;
+            gap: 16px;
+            flex-direction: row;
+        }
+                .photo-slide {
+                    display: flex;
+        flex-direction: row;
+                    gap: 8px;
+                }.modal-box {
+                    width: 1000px;
+                
+                }
 }
