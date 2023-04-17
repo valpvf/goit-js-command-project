@@ -83,4 +83,4 @@ function getRandomFive1 () {
   getRandomFive()
 }
 
-btn.addEventListener('click', getRandomFive1)
+btn.addEventListener('click', getRandomFive1);
