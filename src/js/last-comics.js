@@ -71,8 +71,30 @@ function createSlider() {
     })
     prevBtnEl.addEventListener('click', () => {
         swiper.slidePrev();
-    })
+        
+    });
+    sliderBtnStyle()
+    
     return swiper
+}
 
-
+function sliderBtnStyle() {
+    nextBtnEl.addEventListener('mousedown', () => {
+         nextBtnEl.classList.add('clicked');
+     })
+    
+    nextBtnEl.addEventListener('mouseup', () => {
+    setTimeout(() => {
+        nextBtnEl.classList.remove('clicked');
+    }, 300);
+    });
+    prevBtnEl.addEventListener('mousedown', () => {
+         prevBtnEl.classList.add('clicked');
+     })
+    
+    prevBtnEl.addEventListener('mouseup', () => {
+    setTimeout(() => {
+        prevBtnEl.classList.remove('clicked');
+    }, 300);
+    });
 }

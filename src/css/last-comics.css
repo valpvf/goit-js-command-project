@@ -64,14 +64,23 @@
     margin-top: 20px;
 }
 
-.icon-btn {
+.swiper-button-prev,
+.swiper-button-next {
     width: 32px;
     height: 32px;
+    border-radius: 50%;
+    border-color: rgba(250, 250, 250, 0.3);
+    background-color: transparent;
+    font-size: 20px;
+    color: rgba(250, 250, 250, 0.3);
 }
 
-.icon-item {
-    border-radius: 50%;
+.clicked{
+    background-color: #34387F;
+    color:#FAFAFA;
 }
+
+
 
 @media screen and (min-width: 768px) {
 
@@ -132,7 +141,10 @@
 }
 
 @media screen and (min-width: 1440px) {
-
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }    
 
     .lastcomics-wrapper {
         width: 1406px;
