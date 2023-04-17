@@ -18,15 +18,15 @@ const getRandomFive = async () => {
       limit: 1,
       offset: getRandomOffset(),
     });
-    // if (
-    //   result[0].thumbnail.path ===
-    //   'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available' || !result[0].description
-    // ) {
-    //   i -= 1;
-    //   continue;
-    // } else if (!result[0].thumbnail.path.includes('https')){
-    //   result[0].thumbnail.path = result[0].thumbnail.path.replace('http', 'https')
-    // }
+    if (
+      result[0].thumbnail.path ===
+      'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available' || !result[0].description
+    ) {
+      i -= 1;
+      continue;
+    } else if (!result[0].thumbnail.path.includes('https')){
+      result[0].thumbnail.path = result[0].thumbnail.path.replace('http', 'https')
+    }
     results.push(result[0]);
   }
   rcImgList.innerHTML = randomImgMarkup(results);

@@ -24,12 +24,10 @@ async function onContainerClick(event) {
   modalTwoClose.classList.remove('is-concealed');
   const id = event.target.dataset.id;
   const characterObject = await getCharacter(id);
-    // .then(res => {
   const comicsIds = characterObject[0].comics.items
     .map(el => el.resourceURI)
     .map(el => el.split('/'))
     .map(el => el[el.length - 1]);
-  console.log(comicsIds);
 
   const seriesIds = characterObject[0].series.items
     .map(el => el.resourceURI)
@@ -42,7 +40,6 @@ async function onContainerClick(event) {
     characterObject[0][`comic${i}`] = await api.getComicById({ comicId });
     characterObject[0][`series${i}`] = await api.getSeriesById({ seriesId });
   }
-  console.log(characterObject[0]);
   const markups = [createMarkupImages(characterObject[0]), createMarkupText(characterObject[0])];
 
   modalHeroEl.innerHTML = markups[0];
