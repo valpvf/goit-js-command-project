@@ -1,6 +1,15 @@
 import { api } from '../helpers/api';
 
 const characterCardEl = document.querySelector('.modal-main-img');
+const closeBtnEl = document.querySelector('.modal-close-btn');
+const modalTwoClose = document.querySelector('.backdrop');
+
+function onCloseBtnElClick(add, remove) {
+  modalTwoClose.classList.add('.isHidden');
+  modalTwoClose.input.classList.remove('.isHidden');
+}
+
+closeBtnEl.addEventListener('click', onCloseBtnElClick);
 
 async function getCharacter(id) {
   const character = await api.getCharactersById({ characterId: id });
