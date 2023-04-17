@@ -64,23 +64,13 @@
     margin-top: 20px;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.icon-btn {
     width: 32px;
     height: 32px;
+}
+
+.icon-item {
     border-radius: 50%;
-    border-color: FAFAFA;
-}
-
-.swiper-button-next:hover,
-.swiper-button-next:focus {
-    background-color: #34387F;
-}
-
-
-.swiper-button-prev:hover,
-.swiper-button-prev:focus {
-    background-color: #34387F;
 }
 
 @media screen and (min-width: 768px) {

@@ -31,6 +31,10 @@
 <symbol id="icon-icon-arrow" viewBox="0 0 32 32">
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.4706" d="M27.453 7.096l-23.963 23.963-2.549-2.549 23.963-23.963h-23.963v-3.605h30.118v30.118h-3.605v-23.963z"></path>
 </symbol>
+<symbol id="icon-arrow-left" viewBox="0 0 32 32">
+<path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.7273" d="M0.364 16c0 8.636 7.001 15.636 15.636 15.636s15.636-7.001 15.636-15.636c0-8.636-7.001-15.636-15.636-15.636s-15.636 7.001-15.636 15.636z"></path>
+<path fill="#fafafa" style="fill: var(--color1, #fafafa)" opacity="0.3" d="M9.559 15.763l4.245-4.029c0.138-0.131 0.362-0.131 0.5 0s0.138 0.344 0 0.475l-3.641 3.455h11.528c0.195 0 0.354 0.15 0.354 0.336s-0.158 0.336-0.354 0.336h-11.528l3.641 3.455c0.138 0.131 0.138 0.344 0 0.475-0.069 0.066-0.16 0.098-0.25 0.098s-0.181-0.033-0.25-0.098l-4.245-4.029c-0.138-0.131-0.138-0.344 0-0.475l0.001 0.001z"></path>
+</symbol>
 </defs>
 </svg>
 
