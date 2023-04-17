@@ -78,6 +78,24 @@ export const api = {
       console.log(error);
     }
   },
+  getComicById: async ({ comicId }) => {
+    try {
+      const res = await axiosInst.get(`/comics/${comicId}`);
+      const data = res.data.data.results;
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getSeriesById: async ({ seriesId }) => {
+    try {
+      const res = await axiosInst.get(`/series/${seriesId}`);
+      const data = res.data.data.results;
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
   getAllCharacters: async ({
     nameStartsWith = '',
     offset = 0,
