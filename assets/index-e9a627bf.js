@@ -1,4 +1,4 @@
-import{a as Y}from"./api-5f917d5d.js";let J="";const Le=document.querySelector(".header-form"),we=document.querySelector(".header"),re=document.querySelector(".header-find");document.querySelector(".header-output");document.querySelector(".header-icon");document.querySelector(".header-btn");function He(t){const e=t.map(s=>{const{id:i,thumbnail:n,name:r,description:l}=s;return`
+import{a as Y}from"./api-99b3c8da.js";let J="";const Le=document.querySelector(".header-form"),we=document.querySelector(".header"),re=document.querySelector(".header-find");document.querySelector(".header-output");document.querySelector(".header-icon");document.querySelector(".header-btn");function He(t){const e=t.map(s=>{const{id:i,thumbnail:n,name:r,description:l}=s;return`
       <a class="gallery__link" href="#">
         <div class="gallery-item"">
         <img data-set="${i}"
