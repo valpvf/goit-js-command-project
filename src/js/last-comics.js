@@ -17,7 +17,7 @@ async function getLastWeekComics() {
 
 
     const markup = renderLastComics(comics.results);
-    createLastComicsLine(markup);
+    createLastComics(markup);
     createSlider();
     //createLastComicsLine(renderLastComics(comics.results));
     console.log(comics.results[0].creators.items[0].name)
@@ -34,6 +34,10 @@ function renderLastComics(comicsArr) {
        <h3 class="lastcomics-comics-title">${title}</h3>
     </a></div>
      `).join('');
+}
+
+function createLastComics(markup) {
+    sliderEl.insertAdjacentHTML('beforeend', markup);
 }
 
 function createSlider() {
