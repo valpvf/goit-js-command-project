@@ -1,13 +1,11 @@
 @import url(./costants.css);
 @import url(./reset.css);
-.char-hero {
-  margin: 0 auto;
-
+.char-section {
+  margin-top: -69px;
   background-image: url(../img/characters-mob-res.jpeg);
-  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top -60px;
+  /* background-position: top -60px; */
 }
 .char-text-block {
   min-width: 335px;
@@ -40,7 +38,8 @@
   right: 0;
 }
 @media screen and (min-width: 768px) {
-  .char-hero {
+  .char-section {
+    margin-top: -82px;
     background-image: url(../img/characters-tab-res.jpeg);
   }
   .char-title {
@@ -56,7 +55,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .char-hero {
+  .char-section {
     background-image: url(../img/characters-desk-res.jpeg);
   }
   .char-btn {
