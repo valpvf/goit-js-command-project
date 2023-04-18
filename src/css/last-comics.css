@@ -82,6 +82,9 @@
     color:#FAFAFA;
 }
 
+.arrow-icon {
+    display: none;
+}
 
 @media screen and (min-width: 768px) {
 
@@ -124,10 +127,6 @@
         width: 44px;
         height: 44px;
     }
-
-    .arrow-icon {
-        fill: #34387F;
-    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -156,5 +155,8 @@
         width: 1406px;
     }
 
-    
+    .arrow-icon {
+        display: block;
+    }
+
 }

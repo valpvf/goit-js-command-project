@@ -1,0 +1,107 @@
+@import url(./costants.css);
+
+#loader {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--background);
+}
+
+.skeleton-slide {
+  width: 335px;
+  min-height: 335px;
+  margin-bottom: 32px;
+  border-radius: 10px;
+}
+
+
+
+.skeleton-list {
+  display: block;
+  position: relative;
+  width: 335px;
+  min-height: 810px;
+  padding: 32px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 10px;
+  border-bottom: 1px solid var(--text05);
+}
+
+   
+  
+   
+   .skeleton-list,
+   .skeleton-slide {
+       animation-duration: 2.8s;
+       animation-fill-mode: forwards;
+       animation-iteration-count: infinite;
+       animation-name: placeHolderShimmer;
+       animation-timing-function: linear;
+       background: darkgray;
+       box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+       background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
+       background-size: 936px 104px;
+       height: 100px;
+       position: relative;
+   }
+
+
+   @keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .skeleton::after {
+        animation: none;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    
+.skeleton-slide {
+    width: 704px;
+    min-height: 704px;
+    margin-bottom: 32px;
+  }
+  
+
+  
+  .skeleton-list {
+    width: 704px;
+    min-height: 686px;
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
+    #loader {
+        display: flex;
+        gap: 32px;
+    }
+    
+    .skeleton-slide {
+        width: 496px;
+        min-height: 704px;
+        margin-bottom: 32px;
+      }
+      
+     
+      
+      .skeleton-list {
+        width: 848px;
+        min-height: 704px;
+        gap: 32px;
+        padding: 0;
+        
+      }
+    }

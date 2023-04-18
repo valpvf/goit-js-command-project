@@ -61,7 +61,7 @@ console.log(itemsPerPage);
 const paginationOptions = {
   totalItems: 0,
   itemsPerPage: itemsPerPage,
-  visiblePages: 5,
+  visiblePages: 2,
   page: 1,
 };
 const pagination = new Pagination(refs.paginationEl, paginationOptions);
@@ -109,7 +109,7 @@ async function onFirstLoad() {
 
     // НАЛАШТОВУЮ ПАГІНАЦІЮ
 
-    if (res.total <= itemsPerPage) {
+    if (res.total < itemsPerPage) {
       return;
     }
 
@@ -135,10 +135,12 @@ async function onFirstLoad() {
         renderMarkup(res.results);
         // console.log(res.total);
       } catch (error) {
+        location.replace("../404.html");
         console.log('Error!!!!!!!!!!!');
       }
     });
   } catch (error) {
+    location.replace("../404.html");
     console.log('Error!!!!!!!!!!!');
   }
 }
@@ -194,6 +196,7 @@ async function onComicsElSubmit(e) {
         }
       } catch (error) {
         Loading.remove();
+        location.replace("../404.html");
         console.log('Error!!!!!!');
       }
     }
@@ -225,11 +228,13 @@ async function onComicsElSubmit(e) {
         refs.paginationEl.classList.remove('is-hidden');
         Loading.remove();
       } catch (err) {
+        location.replace("../404.html");
         console.log('Error!!!!!!!!!!!');
       }
     }
   } catch (err) {
     Loading.remove();
+    location.replace("../404.html");
     console.log('Error!!!!!!!!!!!');
   }
 }
@@ -259,6 +264,7 @@ async function onNameInput(e) {
     renderMarkup(res.results);
     refs.paginationEl.classList.remove('is-hidden');
   } catch (err) {
+    location.replace("../404.html");
     console.log('Error!!!!!!!!!!!');
   }
 }
@@ -280,6 +286,7 @@ async function onSelectChange(e) {
     renderMarkup(res.results);
     console.log(res.results);
   } catch (err) {
+    location.replace("../404.html");
     console.log('Error!!!!!!!!!!!');
   }
 }
@@ -306,6 +313,7 @@ async function onDateSelect(instance, date) {
     renderMarkup(res.results);
     console.log(res.results);
   } catch (err) {
+    location.replace("../404.html");
     console.log('Error!!!!!!!!!!!');
   }
 }
@@ -321,15 +329,17 @@ function createMarkup(data) {
       <a class="char-image-wrap" data-id="${card.id}" href="#">
         <img
           class="char-card-image"
+          data-id="${card.id}"
           src= "${card.thumbnail.path}/portrait_uncanny.${card.thumbnail.extension}"
           alt=""
           loading="lazy"
         />
-        <div class="char-card-descr">
-          <p class="char-card-descr-name">${card.name}</p>
+        <div class="char-card-descr" data-id="${card.id}">
+          <p class="char-card-descr-name" data-id="${card.id}">${card.name}</p>
         </div>
       </a>
     </div>`;
     })
     .join('');
 }
+// function onContainerClick(params) {}

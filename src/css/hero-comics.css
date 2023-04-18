@@ -1,11 +1,24 @@
 @import url(./costants.css);
 @import url(./reset.css);
-
+.comics-section {
+  margin-top: -69px;
+  background-image: url(../img/comics-mob-res.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: top -60px; */
+  /* background: linear-gradient(to bottom, transparent, #0c0b0b 100%),
+    linear-gradient(to right, transparent, #0c0b0b 100%),
+    linear-gradient(to top, transparent, #0c0b0b 100%),
+    linear-gradient(to left, transparent, #0c0b0b 100%); */
+}
 .comics-text-block {
+  min-width: 335px;
   display: flex;
   flex-direction: column;
   position: relative;
   justify-content: flex-start;
+  text-align: start;
+  flex: 50%;
 }
 .comics-title {
   box-sizing: border-box;
@@ -23,11 +36,15 @@
 .comics-btn {
   position: absolute;
   display: block;
-  /* margin-right: 20px; */
-  bottom: 20px;
-  right: 1px;
+  bottom: 26px;
+  right: 0;
 }
 @media screen and (min-width: 768px) {
+  .comics-section {
+    margin-top: -82px;
+    background-position: right 486px;
+    background-image: url(../img/comics-desk-res.jpeg);
+  }
   .comics-title {
     font-size: 150px;
   }
@@ -37,6 +54,14 @@
   }
   .comics-btn {
     bottom: 32px;
-    right: 1px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .comics-section {
+    background-image: url(../img/comics-desk-res.jpeg);
+    background-position: right 189px;
+  }
+  .comics-btn {
+    bottom: 64px;
   }
 }

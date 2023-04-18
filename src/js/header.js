@@ -14,6 +14,7 @@ const refs = {
   paginationEl: document.querySelector('.tui-pagination'),
 };
 
+// let offset = 0;
 let itemsPerPage = null;
 let windowWidth = window.getComputedStyle(refs.mainContainer).width;
 console.log(windowWidth);
@@ -23,15 +24,15 @@ switch (windowWidth) {
   case '365px':
     itemsPerPage = 5;
     break;
-  case '768px':
-    itemsPerPage = 6;
+  case '100%':
+    itemsPerPage = 5;
     break;
   case '1440px':
     itemsPerPage = 16;
     break;
 
   default:
-    itemsPerPage = 3;
+    itemsPerPage = 8;
     break;
 }
 
@@ -41,7 +42,7 @@ console.log(itemsPerPage);
 const paginationOptions = {
   totalItems: 0,
   itemsPerPage: itemsPerPage,
-  visiblePages: 5,
+  visiblePages: 2,
   page: 1,
 };
 const pagination = new Pagination(refs.paginationEl, paginationOptions);
@@ -62,11 +63,12 @@ const characterOut = document.querySelector('.header-output');
 const headerIcon = document.querySelector('.header-icon');
 const headerBtn = document.querySelector('.header-btn');
 
-const addInput = async event => {
+async function addInput (event) {
   event.preventDefault();
   const { target: formEl } = event;
   query = formEl.elements.searchQuery.value;
-  headerInput.reset();
+  // headerInput.reset();
+  console.log(query);
   refs.paginationEl.classList.remove('is-hidden');
   
   if (query.trim() == '') {
@@ -74,53 +76,61 @@ const addInput = async event => {
     console.log('Please specify your search query.');
     return;
   }
-    const result = await  api.getAllCharacters({nameStartsWith: query})
-
-if (result.results.length == 0) {
-  refs.paginationEl.classList.add('is-hidden');
-  headerFindResult.innerHTML = '';
-  headerFindResult.innerHTML = '<span class="char-error-main"></span>';
-  console.log(
-    'Search result is zero. Change your query',
-  );
-  
-  return;
-}
-
-  headerFindResult.innerHTML = '';
-
-  createGallery(result.results);
-
-pagination.reset(result.total);
-
-    pagination.on('beforeMove', async evt => {
-      const { page } = evt;
-
-      let offset = itemsPerPage * (page - 1);
-   
-      // try {
-      //   const res = await api.getAllCharacters({
-      //     // comics: final,
-      //     limit: itemsPerPage,
-      //     offset: 0,
-      //   });
-
-      try {
-        const res = await api.getAllCharacters({
-          // comics: final,
-          limit: itemsPerPage,
-          offset: offset,
-          nameStartsWith: query,
-        });
-        // pagination.reset(res.total);
-        headerFindResult.innerHTML = '';
-        // Loading.remove();
-        createGallery(result.results);
-        // console.log(res.total);
-      } catch (error) {
-        console.log('Error!!!!!!!!!!!');
+    // const result = await  api.getAllCharacters({nameStartsWith: query})
+    console.log(itemsPerPage);
+    try {
+      const result = await api.getAllCharacters({
+        // comics: final,
+        limit: itemsPerPage,
+        offset: 0,
+        nameStartsWith: query,
+      });
+      // pagination.reset(res.total);
+      console.log(itemsPerPage);
+      console.log(result.results.length);
+      if (result.results.length == 0) {
+      refs.paginationEl.classList.add('is-hidden');
+      headerFindResult.innerHTML = '<span class="char-error-main"></span>';
+      console.log(
+      'Search result is zero. Change your query',
+      );
+        return;
       }
-    });
+      console.log('itemsPerPage====================');
+      headerFindResult.innerHTML = '';
+      // Loading.remove();
+      createGallery(result.results);
+      pagination.reset(result.total);
+      console.log('itemsPerPage====================');
+      pagination.on('beforeMove', async evt => {
+        const { page } = evt;
+      console.log(page);
+
+        let offset = itemsPerPage * (page - 1);
+        console.log(offset);
+        try {
+          const res = await api.getAllCharacters({
+            // comics: final,
+            limit: itemsPerPage,
+            offset: offset,
+            nameStartsWith: query,
+          });
+          // pagination.reset(res.total);
+          headerFindResult.innerHTML = '';
+          // Loading.remove();
+          createGallery(result.results);
+          // console.log(res.total);
+        } catch (error) {
+          console.log('Error!!!!!!!!!!!');
+        }
+      });
+
+      // console.log(res.total);
+    } catch (error) {
+      console.log('Error!!!!!!!!!!!');
+    }
+
+    
 }
 
 refs.paginationEl.classList.add('is-hidden');

@@ -26,6 +26,8 @@ async function getCharacter(id) {
 async function onContainerClick(event) {
   modalTwoClose.classList.remove('is-concealed');
   const id = event.target.dataset.id;
+  console.log(event.target);
+  console.log(event.currentTarget);
   const characterObject = await getCharacter(id);
   const comicsIds = characterObject[0].comics.items
     .map(el => el.resourceURI)

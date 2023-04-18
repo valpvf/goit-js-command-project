@@ -1,11 +1,17 @@
 @import url(./costants.css);
+@import url(./loader-placeholder.css);
+
+.display-none {
+  display: none;
+}
 
 .slide {
   position: absolute;
   left: 0px;
-  top: 30px;
+  top: 0px;
   width: 335px;
-  height: 367px;
+  height: 335px;
+  margin-bottom: 32px;
   opacity: 0;
   z-index: 1;
 
@@ -56,7 +62,7 @@
   font-size: 28px;
   line-height: 1.14;
   letter-spacing: -0.02em;
-  margin-bottom: 15px;
+  margin-bottom: 44px;
   color: var(--text);
 }
 
@@ -82,6 +88,8 @@
 
 .rc-btn-container {
   text-align: end;
+  margin-top: 20px;
+  padding: 20px 0;
 }
 
 .rc-btn {
@@ -115,7 +123,7 @@
   .rc-title {
     font-weight: 500;
     font-size: 44px;
-    line-height: 44px;
+    line-height: 1;
 
     margin-bottom: 50px;
   }
@@ -157,8 +165,8 @@
   }
 
   .slide {
-    width: 496px;
-    left: -28px;
+    width: 477px;
+    left: -5px;
 
   }
   .rc-item {
@@ -175,10 +183,11 @@
   .slider-container {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .rc-img {
-    width: 496px;
+    width: 467px;
     height: 704px;
     object-fit: cover;
   }
