@@ -155,7 +155,7 @@
   display: block;
   width: 335px;
   height: 445px;
-  object-fit: cover;
+  /* object-fit: cover; */
 
   border-radius: 10px;
 }
@@ -165,9 +165,11 @@
   }
 }
 .char-card-descr {
+  width: 100%;
   margin-top: 16px;
 }
 .char-card-descr-name {
+  width: 330px;
   color: var(--text);
   font-weight: 500;
   font-size: 18px;

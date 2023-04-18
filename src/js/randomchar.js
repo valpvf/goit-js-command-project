@@ -1,7 +1,8 @@
 import { api } from '../helpers/api.js';
+
 const rcImgList = document.querySelector('.rc-list');
 const rcDescrList = document.querySelector('.rc-descr-list');
-const btn = document.querySelector('.rc-btn-container')
+const btn = document.querySelector('.rc-btn-container');
 
 let currentSlide = 0;
 let slides = null;
@@ -34,7 +35,7 @@ const getRandomFive = async () => {
   slidesText = document.querySelectorAll('.rc-descr-item');
   slides[0].className = 'slide rc-item showing';
   slidesText[0].className = 'rc-descr-item rc-descr-active';
-  console.log(slides[0].className);
+  // console.log(slides[0].className);
   let slideInterval = setInterval(nextSlide, 3500);
 };
 
@@ -45,7 +46,7 @@ function randomImgMarkup(array) {
       <picture>
       <source media="(min-width: 1440px)" srcset="${thumbnail.path}.${thumbnail.extension}" />
       <source media="(min-width: 375px)" srcset="${thumbnail.path}.${thumbnail.extension}"/>
-      <img class="rc-img" data-set="${id}"
+      <img class="rc-img" data-id="${id}"
         src='${thumbnail.path}.${thumbnail.extension}'
         alt=''
       /></picture>`;
@@ -59,8 +60,8 @@ function randomDeskrMarkup(array) {
     .map(({ name, description, id }) => {
       return `
     <li class='rc-descr-item' data-id="${id}">
-      <h3 class='rc-descr-title'>${name}</h3>
-      <p class='rc-descr-text'>${description}</p>
+      <h3 class='rc-descr-title' data-id="${id}">${name}</h3>
+      <p class='rc-descr-text' data-id="${id}">${description}</p>
     </li>`;
     })
     .join('');
@@ -70,7 +71,7 @@ function randomDeskrMarkup(array) {
 //getRandomFive();
 
 function nextSlide() {
-  console.log(slides[currentSlide]);
+  // console.log(slides[currentSlide]);
   slides[currentSlide].className = 'slide rc-item';
   slidesText[currentSlide].className = 'rc-descr-item';
   currentSlide = (currentSlide + 1) % slides.length;
@@ -79,8 +80,11 @@ function nextSlide() {
 }
 
 
-function getRandomFive1 () {
-  getRandomFive()
-}
+// function getRandomFive1 () {
+//   getRandomFive()
+// }
 
-btn.addEventListener('click', getRandomFive1)
+getRandomFive()
+
+// btn.addEventListener('click', getRandomFive1);
+

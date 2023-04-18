@@ -114,6 +114,10 @@ body {
   height: 4px;
 }
 
+.slider-btn:hover {
+  transform: scale(1.05);
+}
+
 .first-slider-btn {
   background-color: var(--btn3);
 }
@@ -123,11 +127,19 @@ body {
   margin-bottom: 20px;
 }
 
+.slider-img:hover {
+  transform: scale(1.02);
+}
+
 .img-card {
   margin-left: 105px;
   margin-bottom: 14px;
   box-shadow: -5px 80px 60px 10px #3840da4d;
   background: #171717;
+}
+
+.img-card:hover {
+  transform: scale(1.02);
 }
 
 .hero-arrow {

@@ -1,0 +1,52 @@
+/* <div id="tui-pagination-container" class="tui-pagination">
+<span class="tui-page-btn tui-is-disabled tui-first">
+<span class="tui-ico-first">first</span>
+</span>
+<span class="tui-page-btn tui-is-disabled tui-prev">
+<span class="tui-ico-prev">prev</span>
+</span><strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+<a href="#" class="tui-page-btn">2</a>
+<a href="#" class="tui-page-btn">3</a>
+<a href="#" class="tui-page-btn">4</a>
+<a href="#" class="tui-page-btn">5</a>
+<a href="#" class="tui-page-btn tui-next-is-ellip tui-last-child"><span class="tui-ico-ellip">...</span></a>
+<a href="#" class="tui-page-btn tui-next">
+<span class="tui-ico-next">next</span></a>
+<a href="#" class="tui-page-btn tui-last">
+<span class="tui-ico-last">last</span></a></div> */
+
+.tui-pagination {
+    color: var(--text);
+}
+.tui-page-btn {
+}
+.tui-is-disabled {}
+.tui-first { display: none}
+.tui-ico-first { }
+.tui-page-btn  { 
+    
+    width: 28px; 
+    height: 28px;
+    margin: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: var(--text);
+    border-width: none;
+    border: 1px solid red;
+
+}
+.tui-is-disabled  { }
+.tui-prev { margin-right: 0px}
+.tui-ico-prev { }
+.tui-page-btn  {font-size: 14px;}
+.tui-is-selected  { }
+.tui-first-child { }
+.tui-page-btn { }
+.tui-next-is-ellip  { }
+.tui-last-child { }
+.tui-ico-ellip { }
+.tui-page-btn  { }
+.tui-next { margin-left: 0px;}
+.tui-page-btn  { }
+.tui-last { }
+.tui-ico-last { }

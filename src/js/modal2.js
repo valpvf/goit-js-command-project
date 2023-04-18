@@ -1,163 +1,142 @@
 import { api } from '../helpers/api';
 
-const characterCardEl = document.querySelector('.modal-main-img');
+const characterCardEl = document.querySelector('.backdrop-two');
 const closeBtnEl = document.querySelector('.modal-close-btn');
-const modalTwoClose = document.querySelector('.backdrop');
+const modalTwoClose = document.querySelector('.backdrop-two');
+const rcContainer = document.querySelector('.rc-container');
+const modalHeroEl = document.querySelector('.spray');
+const comicsEl = document.querySelector('.comics');
 
-function onCloseBtnElClick(add, remove) {
-  modalTwoClose.classList.add('.isHidden');
-  modalTwoClose.input.classList.remove('.isHidden');
+
+function onCloseBtnElClick() {
+  modalTwoClose.classList.add('is-concealed');
 }
 
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
+rcContainer.addEventListener('click', onContainerClick);
 
 async function getCharacter(id) {
   const character = await api.getCharactersById({ characterId: id });
-  // console.log(character);
-
   return character;
 }
 
-// console.log('hello');
+async function onContainerClick(event) {
+  modalTwoClose.classList.remove('is-concealed');
+  const id = event.target.dataset.id;
+  const characterObject = await getCharacter(id);
+  const comicsIds = characterObject[0].comics.items
+    .map(el => el.resourceURI)
+    .map(el => el.split('/'))
+    .map(el => el[el.length - 1]);
 
-getCharacter(1011071);
+  const seriesIds = characterObject[0].series.items
+    .map(el => el.resourceURI)
+    .map(el => el.split('/'))
+    .map(el => el[el.length - 1]);
+      
+  for (let i = 0; i < 3; i += 1) {
+    const comicId = comicsIds[i];
+    const seriesId = seriesIds[i];
+    characterObject[0][`comic${i}`] = await api.getComicById({ comicId });
+    characterObject[0][`series${i}`] = await api.getSeriesById({ seriesId });
+  }
+  const markups = [createMarkupImages(characterObject[0]), createMarkupText(characterObject[0])];
 
-// function renderMarkup(data) {
-//   characterCardEl.insertAdjacentHTML('beforeend', markup);
-// }
+  modalHeroEl.innerHTML = markups[0];
+  comicsEl.innerHTML = markups[1];
+}
 
-function createMarkup(character) {
-  const markup = array
-    .map(({ thumbnail: { path, extension }, name, description, modified }) => {
-      return `
-    <div class="char-card">
-      <a class="char-image-wrap" dataset="${card.id}" href="#">
-        <img
-          class="char-card-image"
-          src= "${card.thumbnail.path}.${card.thumbnail.extension}"
-          alt=""
-          loading="lazy"
-        />
-        <div class="char-card-descr">
-          <p class="char-card-descr-name">${card.name}</p>
-        </div>
-      </a>
-    </div>`;
-    })
-    .join('');
+function createMarkupImages(character) {
+  const { id, thumbnail, name, description, modified, comics, series0, series1, series2 } = character;
+  const markup = `
+      <img
+        class="modal-main-img"
+        src="${thumbnail.path}.${thumbnail.extension}"
+        alt="star"
+        class="star-photo"
+      />
+      <div class="modal-slide">
+        <ul class="modal-slide-list">
+          <li>
+            <img
+              class="modal-slide-img"
+              src="${series0[0].thumbnail.path}.${series0[0].thumbnail.extension}"
+              alt="crawl"
+              width="80"
+              hieght="80"
+              data-id="${series0[0].id}"
+            />
+          </li>
+          <li>
+            <img
+              class="modal-slide-img"
+              src="${series1[0].thumbnail.path}.${series1[0].thumbnail.extension}"
+              alt="talk"
+              width="80"
+              hieght="80"
+              data-id="${series1[0].id}"
+            />
+          </li>
+          <li>
+            <img
+              class="modal-slide-img"
+              src="${series2[0].thumbnail.path}.${series2[0].thumbnail.extension}"
+              alt="on-knee"
+              width="80"
+              hieght="80"
+              data-id="${series2[0].id}"
+            />
+          </li>
+        </ul>`;
   return markup;
+
 }
 
-// console.log(character);
-
-// function renderCharacter(characterArr) {
-//   return characterArr
-//     .map(
-//       ({ thumbnail: { path, extension }, name, description, modified } = {}) =>
-//         `
-//       <div class="backdrop" data-modal="">
-//   <div class="modal">
-//     <div class="modal-hero">
-//       <button class="modal-close-btn" data-modal-close="">
-//         <svg class="modal-close-icon" width="20" height="20">
-//           <use class="icon" href="./img/icons.svg#close-icon"></use>
-//         </svg>
-//       </button>
-//       <img
-//         class="modal-main-img"
-//         src="${path}.${extension}"
-//         alt="star"
-//         class="star-photo"
-//       />
-//       <div class="modal-slide">
-//         <ul class="modal-slide-list">
-//           <li>
-//             <img
-//               class="modal-slide-img"
-//               src="./img/modal/crawl.jpg"
-//               alt="crewl"
-//               width="80"
-//               hieght="80"
-//             />
-//           </li>
-//           <li>
-//             <img
-//               class="modal-slide-img"
-//               src="./img/modal/talk.jpg"
-//               alt="talk"
-//               width="80"
-//               hieght="80"
-//             />
-//           </li>
-//           <li>
-//             <img
-//               class="modal-slide-img"
-//               src="./img/modal/on-knee.jpg"
-//               alt="on-knee"
-//               width="80"
-//               hieght="80"
-//             />
-//           </li>
-//         </ul>
-//       </div>
-//     </div>
-//     <section class="comics">
-//       <div class="comics-title-date">
-//         <h1 class="comics-title">${name}</h1>
-//         <p class="comics-date">${modified}</p>
-//       </div>
-//       <p class="comics-description">${description}
-//       </p>
-//       <h2 class="comics-list-title">List of comics</h2>
-//       <ul class="comics-list">
-//         <li class="comics-list-item">
-//           <img
-//             class="comics-list-el"
-//             src="./img/modal/item-one.jpg"
-//             alt="one"
-//           />
-//           <h3 class="comics-list-movie">${name}</h3>
-//           <p class="comics-movie-hero">Kelly Thompson</p>
-//         </li>
-//         <li class="comics-list-item">
-//           <img
-//             class="comics-list-el"
-//             src="./img/modal/item-two.jpg"
-//             alt="two"
-//           />
-//           <h3 class="comics-list-movie">${name}</h3>
-//           <p class="comics-movie-hero">Kelly Thompson</p>
-//         </li>
-//         <li class="comics-list-item">
-//           <img
-//             class="comics-list-el"
-//             src="./img/modal/item-three.jpg"
-//             alt="three"
-//           />
-//           <h3 class="comics-list-movie">${name}</h3>
-//           <p class="comics-movie-hero">Kelly Thompson</p>
-//         </li>
-//       </ul>
-//     </section>
-//   </div>
-// </div>
-//     `
-//     )
-//     .join('');
-// }
-
-// function createCharacterCard(markup) {
-//   characterCardEl.insertAdjacentHTML('afterbegin', markup);
-// }
-{
-  /* <div class="char-card">
-  <a class="char-image-wrap" data-set="hero-id" href="#">
-    <img class="char-card-image" src="" alt="" loading="lazy" />
-    <div class="char-card-descr">
-      <p class="char-card-descr-name">Black Widow</p>
-    </div>
-  </a>
-</div>; */
+function createMarkupText(character) {
+  const { id, thumbnail, name, description, modified, comics, comic0, comic1, comic2 } = character;
+  const options = { month: 'long', day: 'numeric', year: 'numeric', };
+  const unformattedDate = +Date.parse(modified);
+  const dateString = new Date(unformattedDate);
+  const date = dateString.toLocaleDateString("en-US", options);
+  
+  const markup = `
+      <div class="comics-title-date">
+        <h1 class="comics-movie-title">${name}</h1>
+        <p class="comics-date">${date}</p>
+      </div>
+      <p class="comics-description">${description}</p>
+      <h2 class="comics-list-title">List of comics</h2>
+      <ul class="comics-list">
+        <li class="comics-list-item">
+          <img
+            class="comics-list-el"
+            src="${comic0[0].thumbnail.path}.${comic0[0].thumbnail.extension}"
+            alt="one"
+            data-id="${comic0[0].id}"
+          />
+          <h3 class="comics-list-movie">${comic0[0].title}</h3>
+          <p class="comics-movie-hero">${comic0[0].creators.items[0].name}</p>
+        </li>
+        <li class="comics-list-item">
+          <img
+            class="comics-list-el"
+            src="${comic1[0].thumbnail.path}.${comic1[0].thumbnail.extension}"
+            alt="two"
+            data-id="${comic1[0].id}"
+          />
+          <h3 class="comics-list-movie">${comic1[0].title}</h3>
+          <p class="comics-movie-hero">${comic1[0].creators.items[0].name}</p>
+        </li>
+        <li class="comics-list-item">
+          <img
+            class="comics-list-el"
+            src="${comic2[0].thumbnail.path}.${comic2[0].thumbnail.extension}"
+            alt="three"
+            data-id="${comic2[0].id}"
+          />
+          <h3 class="comics-list-movie">${comic2[0].title}</h3>
+          <p class="comics-movie-hero">${comic2[0].creators.items[0].name}</p>
+        </li>
+      </ul>`;
+  return markup
 }
-
-// Звідси ти забираєш data-set="hero-id"

@@ -4,21 +4,23 @@
   | default @import url()
   |============================
 */
+
 @import url('./reset.css');
 @import url('./costants.css');
 /* @import url('./vite-promo.css'); */
-/* @import url('./header.css'); */
+@import url('./header.css');
 @import url('./hero.css');
 @import url('./random-characters.css');
 @import url('./footer.css');
 @import url('./modal.css');
 @import url('./last-comics.css');
 @import url('./character.css');
+@import url('./comics.css');
 @import url('./modal2.css');
 @import url('./hero-characters.css');
 @import url('./hero-comics.css');
 @import url('./404.css');
-@import url('./header.css');
+@import url('./pagination.css');
 
 :root {
   /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */

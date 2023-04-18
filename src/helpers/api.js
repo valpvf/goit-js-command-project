@@ -54,6 +54,7 @@ export const api = {
   getComics: async ({
     format = '',
     title = '',
+    titleStartsWith = '',
     startYear = 0,
     limit = 16,
     offset = 0,
@@ -63,6 +64,7 @@ export const api = {
     try {
       const res = await axiosInst.get('/comics', {
         params: {
+          ...(titleStartsWith && { titleStartsWith }),
           ...(format && { format }),
           ...(title && { title }),
           ...(offset && { offset }),
@@ -70,6 +72,49 @@ export const api = {
           ...(startYear && { startYear }),
           ...(orderBy && { orderBy }),
           ...(dateDescriptor && { dateDescriptor }),
+        },
+      });
+      const data = res.data.data;
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getComicById: async ({ comicId }) => {
+    try {
+      const res = await axiosInst.get(`/comics/${comicId}`);
+      const data = res.data.data.results;
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getSeriesById: async ({ seriesId }) => {
+    try {
+      const res = await axiosInst.get(`/series/${seriesId}`);
+      const data = res.data.data.results;
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getAllCharacters: async ({
+    nameStartsWith = '',
+    offset = 0,
+    limit = 16,
+    comics = 0,
+    orderBy = '',
+    modifiedSince = '',
+  }) => {
+    try {
+      const res = await axiosInst.get('/characters', {
+        params: {
+          ...(nameStartsWith && { nameStartsWith }),
+          ...(offset && { offset }),
+          ...(limit && { limit }),
+          ...(comics && { comics }),
+          ...(orderBy && { orderBy }),
+          ...(modifiedSince && { modifiedSince }),
         },
       });
       const data = res.data.data;
