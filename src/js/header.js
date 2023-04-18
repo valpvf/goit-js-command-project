@@ -67,7 +67,7 @@ async function addInput (event) {
   event.preventDefault();
   const { target: formEl } = event;
   query = formEl.elements.searchQuery.value;
-  // headerInput.reset();
+  headerInput.reset();
   console.log(query);
   refs.paginationEl.classList.remove('is-hidden');
   
@@ -99,17 +99,18 @@ async function addInput (event) {
       console.log('itemsPerPage====================');
       headerFindResult.innerHTML = '';
       // Loading.remove();
+
       createGallery(result.results);
       pagination.reset(result.total);
       console.log('itemsPerPage====================');
       pagination.on('beforeMove', async evt => {
-        const { page } = evt;
+      const { page } = evt;
       console.log(page);
 
         let offset = itemsPerPage * (page - 1);
         console.log(offset);
         try {
-          const res = await api.getAllCharacters({
+          const result = await api.getAllCharacters({
             // comics: final,
             limit: itemsPerPage,
             offset: offset,
