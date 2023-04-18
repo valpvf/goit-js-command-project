@@ -61,7 +61,7 @@ console.log(itemsPerPage);
 const paginationOptions = {
   totalItems: 0,
   itemsPerPage: itemsPerPage,
-  visiblePages: 5,
+  visiblePages: 3,
   page: 1,
 };
 const pagination = new Pagination(refs.paginationEl, paginationOptions);
