@@ -1,4 +1,51 @@
 import { api } from '../helpers/api';
+import datepicker from 'js-datepicker';
+import debounce from 'lodash.debounce';
+import 'js-datepicker/dist/datepicker.min.css';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
+
+const refs = {
+  paginationEl: document.querySelector('.tui-pagination'),
+  mainContainer: document.querySelector('.container'),
+  cardContainer: document.querySelector('.char-card-container'),
+  paginationEl: document.querySelector('.tui-pagination'),
+};
+
+let itemsPerPage = null;
+let windowWidth = window.getComputedStyle(refs.mainContainer).width;
+console.log(windowWidth);
+
+// ВИЗНАЧАЄМО ШИРИНУ ВЬЮПОРТУ
+switch (windowWidth) {
+  case '365px':
+    itemsPerPage = 5;
+    break;
+  case '768px':
+    itemsPerPage = 6;
+    break;
+  case '1440px':
+    itemsPerPage = 16;
+    break;
+
+  default:
+    itemsPerPage = 3;
+    break;
+}
+
+console.log(itemsPerPage);
+// НАЛАШТОВУЮ ПАГІНАЦІЮ
+
+const paginationOptions = {
+  totalItems: 0,
+  itemsPerPage: itemsPerPage,
+  visiblePages: 5,
+  page: 1,
+};
+const pagination = new Pagination(refs.paginationEl, paginationOptions);
+
 
 let query = '';
 let lightbox = null;
@@ -6,95 +53,79 @@ let lightbox = null;
 const perPage = 40;
 let result = [];
 
-// console.log(
-//   api.getCharacters({
-//     nameStartsWith: 'Hulk',
-//     limit: 3,
-//   })
-// );
+
 const headerInput = document.querySelector('.header-form');
 const headerColor = document.querySelector('.header');
 const headerFindResult =document.querySelector('.header-find');
 
-// const headerInput = document.querySelector('.header-input');
-// const liCharacter = document.querySelector('.character-list');
 const characterOut = document.querySelector('.header-output');
 const headerIcon = document.querySelector('.header-icon');
 const headerBtn = document.querySelector('.header-btn');
 
-// console.log(headerInput);
-// console.log(liCharacter);
-// console.log(characterOut);
-// console.log(headerIcon);
-// console.log(headerFindResult);
-
-
-function createGallery(array) {
-  const markup = array.map(el => {
-    const { id, thumbnail, name, description
-    } = el;
-    return `
-      <a class="gallery__link" href="#">
-        <div class="gallery-item"">
-        <img data-set="${id}"
-        src='${thumbnail.path}.${thumbnail.extension}'
-        alt=''
-        class='header-find-img'
-      />
-          <div class="info">
-          <h3 data-set="${id}" class='header-find-text'>${name}</h3>
-          
-          </div>
-        </div>
-      </a>
-    `;
-  })
-  .join('');
-  //  <p  data-set="${id}"class='rc-descr-text'>${description}</p>
-  headerFindResult.insertAdjacentHTML('beforeend', markup);}
-{/* <div data-set="${id}" class="header-find-text">${name}</div> */}
-    
-
-
 const addInput = async event => {
   event.preventDefault();
   const { target: formEl } = event;
-  
-  // console.log(formEl.elements.searchQuery.value);
   query = formEl.elements.searchQuery.value;
- 
-  // console.log(query);
-
   headerInput.reset();
+  refs.paginationEl.classList.remove('is-hidden');
   
   if (query.trim() == '') {
+    refs.paginationEl.classList.add('is-hidden');
     console.log('Please specify your search query.');
     return;
   }
-    // try {
-    const result = await  api.getCharacters({nameStartsWith: query})
-    // console.log(result);
+    const result = await  api.getAllCharacters({nameStartsWith: query})
 
-if (result.lengt == 0) {
+if (result.results.length == 0) {
+  refs.paginationEl.classList.add('is-hidden');
+  headerFindResult.innerHTML = '';
+  headerFindResult.innerHTML = '<span class="char-error-main"></span>';
   console.log(
     'Search result is zero. Change your query',
   );
-  headerFindResult.innerHTML = '';
+  
   return;
 }
-else {
+
   headerFindResult.innerHTML = '';
-  createGallery(result);
 
+  createGallery(result.results);
+
+pagination.reset(result.total);
+
+    pagination.on('beforeMove', async evt => {
+      const { page } = evt;
+
+      let offset = itemsPerPage * (page - 1);
+   
+      // try {
+      //   const res = await api.getAllCharacters({
+      //     // comics: final,
+      //     limit: itemsPerPage,
+      //     offset: 0,
+      //   });
+
+      try {
+        const res = await api.getAllCharacters({
+          // comics: final,
+          limit: itemsPerPage,
+          offset: offset,
+          nameStartsWith: query,
+        });
+        // pagination.reset(res.total);
+        headerFindResult.innerHTML = '';
+        // Loading.remove();
+        createGallery(result.results);
+        // console.log(res.total);
+      } catch (error) {
+        console.log('Error!!!!!!!!!!!');
+      }
+    });
 }
-    // } catch (err) {
-    //   console.log('Something went wrong. Please try again later.');
-    // return;
-    // }
-    }
 
-    headerInput.addEventListener('submit', addInput);
+refs.paginationEl.classList.add('is-hidden');
 
+headerInput.addEventListener('submit', addInput);
 
 window.addEventListener('scroll', () => {
   let scrollY = window.scrollY;
@@ -106,3 +137,28 @@ window.addEventListener('scroll', () => {
 } )
 
 
+function createGallery(data) {
+  headerFindResult.insertAdjacentHTML('beforeend', createMarkup(data));
+}
+
+function createMarkup(array) {
+  
+  return array.map(el => { 
+      return`
+      <a class="gallery__link" href="#">
+        <div class="gallery-item"">
+        <img data-set="${el.id}"
+        src='${el.thumbnail.path}.${el.thumbnail.extension}'
+        alt=''
+        class='header-find-img'
+      />
+          <div class="info">
+          <h3 data-set="${el.id}" class='header-find-text'>${el.name}</h3>
+          
+          </div>
+        </div>
+      </a>
+    `;
+  })
+  .join('');
+  }
