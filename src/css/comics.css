@@ -1,5 +1,10 @@
 @import url(./costants.css);
 @import url(./reset.css);
+
+.tui-page-btn {
+  background-color: red;
+}
+
 /* @import url(/node_modules/js-datepicker/dist/datepicker.min.css); */
 .comics-form-section {
   background-color: var(--background);
@@ -50,7 +55,7 @@
 
 .comics-form-btn-wrap {
   width: 100%;
-  position: relative;
+  /* position: relative; */
 }
 
 @media screen and (min-width: 1440px) {
@@ -58,7 +63,7 @@
     width: 150%;
   }
 }
-.comics-form-btn {
+/* .comics-form-btn {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -71,7 +76,7 @@
   background-position: 95% 50%;
 
   background-color: transparent;
-}
+} */
 
 .comics-form-label {
   color: var(--text03);
@@ -82,6 +87,7 @@
 }
 
 .comics-form-input {
+  cursor: pointer;
   background-color: transparent;
   color: #fafafa;
   box-sizing: border-box;
@@ -93,6 +99,8 @@
 
   border: 2px solid var(--btn3);
   border-radius: 100px;
+  background: url('../img/chevron-down.svg') no-repeat;
+  background-position: 95% 50%;
 }
 
 .comics-form-input::placeholder {
@@ -101,8 +109,11 @@
 .comics-form-input:hover {
   background-color: var(--btn3);
 }
+.comics-form-title {
+  background: url('../img/search_001.svg') no-repeat;
+  background-position: 95% 50%;
+}
 .comics-order-select {
-  cursor: pointer;
   padding-right: 24px;
   appearance: none;
   overflow: hidden;
@@ -113,7 +124,6 @@
   background-color: var(--background);
 }
 .comics-data-select {
-  cursor: pointer;
   background: url('../img/chevron-down.svg') no-repeat;
   background-position: 95% 50%;
 }

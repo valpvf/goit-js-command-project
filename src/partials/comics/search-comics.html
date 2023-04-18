@@ -3,14 +3,13 @@
     <div class="comics-form-wrapper comics-form-btn-wrap">
       <p class="comics-form-label">Title Starts With</p>
       <input
-        class="comics-form-input"
+        class="comics-form-input comics-form-title"
         type="text"
         name="searchComics"
         autocomplete="off"
         placeholder="Enter comics"
-        required
       />
-      <button type="submit" class="comics-form-btn"></button>
+      <!-- <button type="submit" class="comics-form-btn"></button> -->
     </div>
     <div class="comics-form-wrapper">
       <p class="comics-form-label">Format</p>
@@ -19,13 +18,15 @@
         data-action=""
         name="selectFormat"
       >
+        <option>All</option>
+        <option>-----------</option>
         <option>Comic</option>
         <option>Magazine</option>
         <option>Trade paperback</option>
         <option>Cardcover</option>
         <option>Digest</option>
         <option>Graphic novel</option>
-        <option>digital comic</option>
+        <option>Digital comic</option>
         <option>Infinite comic</option>
       </select>
     </div>
@@ -38,19 +39,28 @@
         data-action=""
         name="selectOrder"
       >
-        <option>title</option>
-        <option>onsaleDate</option>
+        <option>Title</option>
+        <option>On Sale Date</option>
       </select>
     </div>
 
     <div class="comics-form-wrapper">
       <p class="comics-form-label">Start Year</p>
-      <input
+      <select
+        class="comics-form-input comics-order-select"
+        name="selectDate"
+        placeholder="Select year..."
+        autocomplete="off"
+      >
+        <option>All Years</option>
+        <option>-----------</option>
+      </select>
+      <!-- <input
         class="comics-form-input comics-data-select"
         name="selectDate"
         placeholder="Select year..."
         autocomplete="off"
-      />
+      /> -->
     </div>
     <!-- </div> -->
   </form>
