@@ -16,8 +16,11 @@ const refs = {
   cardContainer: document.querySelector('.comics-card-container'),
   paginationEl: document.querySelector('.tui-pagination'),
   mainContainer: document.querySelector('.container'),
+  headerInput: document.querySelector('.header-input'),
+  headerForm: document.querySelector('.header-form'),
 };
 
+console.log(refs.headerInput);
 const searchComicsEl = refs.comicsFormEl.elements.searchComics;
 const selectFormatEl = refs.comicsFormEl.elements.selectFormat;
 const selectOrderEl = refs.comicsFormEl.elements.selectOrder;
@@ -69,6 +72,8 @@ for (let i = 1939; i <= 2023; i++) {
 searchDateEl.insertAdjacentHTML('beforeend', yearsToSelect);
 
 // refs.comicsFormEl.addEventListener('submit', onComicsElSubmit);
+refs.headerForm.addEventListener('submit', onHeaderNameInput);
+refs.headerInput.addEventListener('input', debounce(onHeaderNameInput, 300));
 searchComicsEl.addEventListener('input', debounce(onNameInput, 300));
 selectFormatEl.addEventListener('change', onFormatChange);
 selectOrderEl.addEventListener('change', onOrderChange);
@@ -120,16 +125,22 @@ async function onFirstLoad() {
 }
 
 //СУБМІТ НАЗВ КОМІКСІВ
+function onHeaderNameInput(e) {
+  e.preventDefault;
+  searchComicsEl.value = e.target.value;
+  onNameInput(e);
+}
 
 async function onNameInput(e) {
   e.preventDefault;
+  refs.headerInput.value = e.target.value;
   refs.paginationEl.classList.add('is-hidden');
 
-  console.log(selectFormatEl.value);
   formatVal = null;
   orderVal = null;
   dateVal = null;
   nameVal = e.target.value;
+
   // console.log(page);
   try {
     const res = await api.getComics({
