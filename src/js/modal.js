@@ -5,6 +5,7 @@ const modalOneClose = document.querySelector('.backdrop-one');
 const modalHeroEl = document.querySelector('.images');
 const comicsEl = document.querySelector('.description');
 const lastcomicssection = document.querySelector('.swiper-wrapper');
+
 function onCloseBtnElClick() {
   modalOneClose.classList.add('is-conceale');
 }
@@ -14,74 +15,60 @@ lastcomicssection.addEventListener('click', onContainerClick);
 async function getComics(id) {
     const comics1 = await api.getComicById({ comicsId: id });
     return comics1;
+
 }
 async function onContainerClick(event) {
   modalOneClose.classList.remove('is-conceale');
   const id = event.target.dataset.id;
-  const comicsObject = await getComics(id);
-  const charIds = comicsObject[0].characters.items
-    .map(el => el.resourceURI)
-    .map(el => el.split('/'))
-    .map(el => el[el.length - 1]);
 
-  const seriesIds = comicsObject[0].series.items
-    .map(el => el.resourceURI)
-    .map(el => el.split('/'))
-    .map(el => el[el.length - 1]);
-        const authorIds = comicsObject[0].creators.items
-    .map(el => el.resourceURI)
-    .map(el => el.split('/'))
-    .map(el => el[el.length - 1]);
-  for (let i = 0; i < 3; i += 1) {
-    const charId = charIds[i];
-    const seriesId = seriesIds[i];
-      const authorId = authorIds[i];
-    comicsObject[0][`charac${i}`] = await api.getComicById({ charId });
-    comicsObject[0][`series${i}`] = await api.getSeriesById({ seriesId });
-    comicsObject[0][`authors${i}`] = await api.getSeriesById({ authorId });
-  }
-  const markups = [createMarkupImages(comicsObject[0]), createMarkupText(comicsObject[0])];
+  const comicsObject = getComics(id)
+    .then(res => {
+      const comicsIds = res[0].comics.items
+        .map(el => el.resourceURI)
+        .map(el => el.split('/'))
+        .map(el => el[el.length - 1]);
+      console.log(comicsIds);
 
-  modalHeroEl.innerHTML = markups[0];
-  comicsEl.innerHTML = markups[1];
+      const seriesIds = res[0].series.items
+        .map(el => el.resourceURI)
+        .map(el => el.split('/'))
+        .map(el => el[el.length - 1]);
+
+      const markups = [createMarkupImages(res[0]), createMarkupText(res[0])];
+      return markups;
+    })
+    .then(markup => {
+      modalHeroEl.innerHTML = markup[0];
+      comicsEl.innerHTML = markup[1];
+    });
 }
 
-  
-  
+function createMarkupImages(conicsd) {
+  const { id, thumbnail, name, description, modified, comics, creators } =
+    conicsd;
 
-function createMarkupImages(comics) {
-  const { id, thumbnail, name, description, modified, creators, series0, series1, series2  } = comics;
   const markup = `
       <img
         class="modal-main-img"
         src="${thumbnail.path}.${thumbnail.extension}"
         alt="star"
         class="star-photo"
-      />
-      <ul class="photo-slide">
-        <li>
-            <img class="photo-slide-image" src="${series0[0].thumbnail.path}.${series0[0].thumbnail.extension}" alt="crawl" data-id="${series0[0].id}" />
-        </li>
-        <li>
-            <img class="photo-slide-image" src="${series1[0].thumbnail.path}.${series1[0].thumbnail.extension}" alt="crawl" data-id="${series1[0].id}" />
-        </li>
-        <li>
-            <img class="photo-slide-image" src="${series2[0].thumbnail.path}.${series2[0].thumbnail.extension}" alt="crawl" data-id="${series2[0].id}" />
-        </li>
-    </ul>`
+      />`
     ;
   return markup;
-
 }
 
 function createMarkupText(conicsd) {
-  const { id, thumbnail, name, description, modified, comics, creators, format, startYear, pageCount, price, authors0, charac0,charac1,charac2,charac3,charac4,charac5} = conicsd;
-  const options = { month: 'long', day: 'numeric', year: 'numeric', };
+
+  const { id, thumbnail, name, description, modified, comics, creators } =
+    conicsd;
+  const options = { month: 'long', day: 'numeric', year: 'numeric' };
+
   const unformattedDate = +Date.parse(modified);
   const dateString = new Date(unformattedDate);
-  const date = dateString.toLocaleDateString("en-US", options);
-  
-    const markup = `
+  const date = dateString.toLocaleDateString('en-US', options);
+
+  const markup = `
       <div class="desc-head">
         <h1 class="title">${name}</h1>
         <div class="head-inf">
@@ -153,5 +140,5 @@ function createMarkupText(conicsd) {
 
 
     </ul>`;
-  return markup
+  return markup;
 }
