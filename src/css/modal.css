@@ -1,21 +1,34 @@
 @import url(./costants.css);
 @import url(./reset.css);
 
-.backdrop {
-    position: relative;
-    background-color: var(--background);
-    padding-top: 14px;
-    padding-bottom: 40px;
+
+
+.backdrop-two {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+
+    background-color: rgba(90, 90, 90, 0.788);
 }
 
-.modal-box{
+.modal-box-two{
+    position: relative;
+    top: 0;
+    left: 0;
     margin: 0 auto;
     width: 335px;
-    padding-left: 8px;
+
     padding-right: 8px;
 }
 
-
+/* .is-concealed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+} */
 
 .modal-close-btn{
     position: absolute;
@@ -39,12 +52,6 @@
     margin-right: auto;
     border-radius: 8px;
     background-color: var(--text);
-}
-
-.modal-slide{
-  display: flex;
-  justify-content: space-between;
-
 }
 
 .modal-slide-img{
@@ -164,12 +171,17 @@
 
 
 
-@media screen and (min-width: 768px) {
-    .modal-box {
+@media screen and (min-width: 600px) {
+    .modal-box-two {
         width: 600px;
     
     }
    
+    .spray{
+        display: flex;
+    }
+
+
     .modal-main-img {
         width: 332px;
         height: 445px;
@@ -178,10 +190,10 @@
         margin-right: 8px;
     }
 
-    .modal-hero{
+    /* .modal-hero{
         display: flex;
         justify-content: flex-start;
-       }
+       } */
 
     .modal-slide-list {
       flex-direction: column;
@@ -243,7 +255,7 @@
 
 
 @media screen  and (min-width: 1440px) {
-    .modal-box {
+    .modal-box-two {
         width: 1000px;
          
     }
@@ -261,7 +273,13 @@
        
     }
 
-    .modal{
+    .spray {
+        
+        flex-direction: column;
+
+    }
+
+    .modal-two{
         display: flex;
         justify-content: space-between;
     }
