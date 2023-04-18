@@ -2,21 +2,32 @@
 @import url(./reset.css);
 .comics-hero {
   margin: 0 auto;
-  background-image: url(../img/comics-mob-res.jpeg);
+  min-height: 461px;
   position: relative;
+  background-clip: content-box;
+  background: radial-gradient(
+      circle,
+      rgba(12, 11, 11, 0) 20%,
+      rgba(12, 11, 11, 1) 100%
+    ),
+    url(../img/comics-mob-res.jpeg);
   background-repeat: no-repeat;
+}
+.comcs-section {
+  background-origin: border-box;
+
+  background-color: rgba(12, 11, 11, 1);
+  /* background-image: url(../img/comics-mob-res.jpeg); */
+
   background-size: cover;
   background-position: top -60px;
-  /* background: linear-gradient(to bottom, transparent, #0c0b0b 100%),
-    linear-gradient(to right, transparent, #0c0b0b 100%),
-    linear-gradient(to top, transparent, #0c0b0b 100%),
-    linear-gradient(to left, transparent, #0c0b0b 100%); */
+  /* (#0c0b0b 4.61%, rgba(12, 11, 11, 0) 50.16%),
+    (#0c0b0b 0%, rgba(12, 11, 11, 0) 72.35%); */
 }
 .comics-text-block {
   min-width: 335px;
   display: flex;
   flex-direction: column;
-  position: relative;
   justify-content: flex-start;
   text-align: start;
   flex: 50%;
@@ -33,6 +44,7 @@
   line-height: 0.83;
   text-align: left;
   letter-spacing: 0.02;
+  flex: 50%;
 }
 .comics-btn {
   position: absolute;
@@ -42,8 +54,16 @@
 }
 @media screen and (min-width: 768px) {
   .comics-hero {
-    background-image: url(../img/comics-tab-res.jpeg);
+    min-height: 700px;
+    background-image: radial-gradient(
+        circle,
+        rgba(12, 11, 11, 0) 20%,
+        rgba(12, 11, 11, 1) 100%
+      ),
+      url(../img/comics-tab-res.jpeg);
+    background-position: left 169px top 86px;
   }
+
   .comics-title {
     font-size: 150px;
   }
@@ -57,8 +77,15 @@
 }
 @media screen and (min-width: 1440px) {
   .comics-hero {
-    background-image: url(../img/comics-desk-res.jpeg);
+    background-image: radial-gradient(
+        circle,
+        rgba(12, 11, 11, 0) 20%,
+        rgba(12, 11, 11, 1) 100%
+      ),
+      url(../img/comics-desk-res.jpeg);
+    background-position: left 348px top 2px;
   }
+
   .comics-btn {
     bottom: 64px;
   }
