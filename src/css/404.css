@@ -6,9 +6,9 @@
   font-family: 'Poppins', sans-serif;
 } */
 .error-hero {
+  width: 100vw;
   height: 100vh;
-}
-.error-section {
+
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
@@ -18,16 +18,30 @@
     rgba(115, 5, 5, 1) 30%,
     rgba(12, 11, 11, 1) 100%
   );
-  background-size: contain;
-  min-height: 812px;
+  background-size: 100%;
+}
+.error-section {
+  width: 100vw;
+  height: 100vh;
+  padding-left: 20px;
+  padding-top: 20px;
+  background-image: url('../img/error-big-res.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left -80px top 314px;
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 325dpi),
+  (min-resolution: 2dppx) {
+  .error-section {
+    background-image: url('../img/error-big-res.png');
+  }
 }
 .char-comics-error-section {
   color: var(--text07);
 }
-.error-logo {
-  margin-top: 20px;
-}
 .error-text-block {
+  width: 89vw;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -81,11 +95,23 @@
 /* ============ media ================================== */
 
 @media screen and (min-width: 375px) {
+  .error-text-block {
+    max-width: 89vw;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .error-section {
+    padding-left: 32px;
+    padding-top: 24px;
+    background-size: 900px 979px;
+    background-position: left -23px top 463px;
+  }
+  .error-text-block {
+    width: 92vw;
+  }
   .char-comics-error-subtitle {
-    line-height: 1.6;
+    line-height: 0.67;
     margin-top: 91px;
     margin-bottom: 16px;
   }
@@ -110,6 +136,13 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .error-section {
+    background-position: left 635px top 0px;
+  }
+  .error-text-block {
+    width: 58vw;
+    height: auto;
+  }
   .char-comics-error-subtitle {
     text-transform: uppercase;
     font-weight: 400;
