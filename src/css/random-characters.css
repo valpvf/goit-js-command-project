@@ -1,6 +1,10 @@
 @import url(./costants.css);
 @import url(./loader-placeholder.css);
 
+.display-none {
+  display: none;
+}
+
 .slide {
   position: absolute;
   left: 0px;

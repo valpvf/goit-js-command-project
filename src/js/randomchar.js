@@ -5,6 +5,7 @@ import { loader, renderLoader, hideLoader } from '../helpers/loader-placeholder.
 const rcImgList = document.querySelector('.rc-list');
 const rcDescrList = document.querySelector('.rc-descr-list');
 const btn = document.querySelector('.rc-btn-container');
+const rcBox = document.querySelector('.rc-box');
 
 let currentSlide = 0;
 let slides = null;
@@ -15,6 +16,7 @@ const getRandomOffset = () => {
 
 const getRandomFive = async () => {
   renderLoader();
+  rcBox.classList.add('display-none');
   let results = [];
   for (let i = 0; i < 5; i += 1) {
     const result = await api.getCharacters({
@@ -33,6 +35,7 @@ const getRandomFive = async () => {
     results.push(result[0]);
   }
   hideLoader();
+  rcBox.classList.remove('display-none')
   rcImgList.innerHTML = randomImgMarkup(results);
   rcDescrList.innerHTML = randomDeskrMarkup(results);
   slides = document.querySelectorAll('.rc-list .slide');

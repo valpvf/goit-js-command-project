@@ -27,10 +27,10 @@ const keys = [
     publickey: 'f9437ef5f8096b58a2a964f8fad9d2c4',
     privatekey: '927ea36362f0f7d499872f2aeb3575e8c79efc03',
   },
-  {
-    publickey: '2bfe5cf47c7cf21dd68f8ab2867b6081',
-    privatekey: '2adbeb35b1c16579945054958cad4a05b2a2e914',
-  },
+  // {
+  //   publickey: '2bfe5cf47c7cf21dd68f8ab2867b6081',
+  //   privatekey: '2adbeb35b1c16579945054958cad4a05b2a2e914',
+  // },
   {
     publickey: '8d0b3a7388f5897b96460142d09632e5',
     privatekey: '76942b2e499cc9bbd95edf77bf1b41d36b109cdb',
