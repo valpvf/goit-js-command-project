@@ -33,7 +33,7 @@
     pointer-events: none;
 }
 
-.modal-close-btn{
+.modal-two-close-btn{
     position: absolute;
     top: -24px;
     right: 14px;
@@ -183,7 +183,7 @@
     
     }
    
-    .modal-close-btn {
+    .modal-two-close-btn {
         top: 24px;
         right: 14px;
         width: 20px;
