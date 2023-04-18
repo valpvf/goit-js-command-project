@@ -13,31 +13,9 @@ import{P as Ye,a as B}from"./tui-pagination-79f0dc82.js";/* empty css           
         </div>
       </a>
     `).join("")}const q=document.getElementById("loader");function Qe(){q.innerHTML="",q.insertAdjacentHTML("afterbegin",Ze()),q.classList.remove("js-hidden")}function Je(){q.innerHTML="",q.classList.add("js-hidden")}function Ze(){return`
-  <div class="slider-container">
-    <div class="slider-blank-box skeleton-card"></div>
-    <ul class="rc-descr-list">
-      <li class="rc-descr-item skeleton-card">
-        <h3 class="rc-descr-title"></h3>
-        <p class="rc-descr-text"></p>
-      </li>
-      <li class="rc-descr-item skeleton-card">
-        <h3 class="rc-descr-title"></h3>
-        <p class="rc-descr-text"></p>
-      </li>
-      <li class="rc-descr-item skeleton-card">
-        <h3 class="rc-descr-title"></h3>
-        <p class="rc-descr-text"></p>
-      </li>
-      <li class="rc-descr-item skeleton-card">
-        <h3 class="rc-descr-title"></h3>
-        <p class="rc-descr-text"></p>
-      </li>
-      <li class="rc-descr-item skeleton-card">
-        <h3 class="rc-descr-title"></h3>
-        <p class="rc-descr-text"></p>
-      </li>
-    </ul>
-  </div>`}const et=document.querySelector(".rc-list"),tt=document.querySelector(".rc-descr-list");document.querySelector(".rc-btn-container");let V=0,j=null,U=null;const st=()=>Math.round(Math.random()*1561),it=async()=>{Qe();let t=[];for(let e=0;e<5;e+=1){const s=await B.getCharacters({limit:1,offset:st()});if(s[0].thumbnail.path==="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"||!s[0].description){e-=1;continue}else s[0].thumbnail.path.includes("https")||(s[0].thumbnail.path=s[0].thumbnail.path.replace("http","https"));t.push(s[0])}Je(),et.innerHTML=rt(t),tt.innerHTML=nt(t),j=document.querySelectorAll(".rc-list .slide"),U=document.querySelectorAll(".rc-descr-item"),j[0].className="slide rc-item showing",U[0].className="rc-descr-item rc-descr-active",setInterval(at,3500)};function rt(t){return t.map(({id:s,thumbnail:i})=>`  <li class='rc-item slide' data-id="${s}">
+  <div class="skeleton-slide skeleton">
+  </div>
+  <div class="skeleton-list"></div>`}const et=document.querySelector(".rc-list"),tt=document.querySelector(".rc-descr-list");document.querySelector(".rc-btn-container");let V=0,j=null,U=null;const st=()=>Math.round(Math.random()*1561),it=async()=>{Qe();let t=[];for(let e=0;e<5;e+=1){const s=await B.getCharacters({limit:1,offset:st()});if(s[0].thumbnail.path==="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"||!s[0].description){e-=1;continue}else s[0].thumbnail.path.includes("https")||(s[0].thumbnail.path=s[0].thumbnail.path.replace("http","https"));t.push(s[0])}Je(),et.innerHTML=rt(t),tt.innerHTML=nt(t),j=document.querySelectorAll(".rc-list .slide"),U=document.querySelectorAll(".rc-descr-item"),j[0].className="slide rc-item showing",U[0].className="rc-descr-item rc-descr-active",setInterval(at,3500)};function rt(t){return t.map(({id:s,thumbnail:i})=>`  <li class='rc-item slide' data-id="${s}">
       <picture>
       <source media="(min-width: 1440px)" srcset="${i.path}.${i.extension}" />
       <source media="(min-width: 375px)" srcset="${i.path}.${i.extension}"/>
