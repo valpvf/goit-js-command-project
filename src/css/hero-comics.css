@@ -1,12 +1,11 @@
 @import url(./costants.css);
 @import url(./reset.css);
-.comics-hero {
-  margin: 0 auto;
+.comics-section {
+  margin-top: -69px;
   background-image: url(../img/comics-mob-res.jpeg);
-  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top -60px;
+  /* background-position: top -60px; */
   /* background: linear-gradient(to bottom, transparent, #0c0b0b 100%),
     linear-gradient(to right, transparent, #0c0b0b 100%),
     linear-gradient(to top, transparent, #0c0b0b 100%),
@@ -41,8 +40,10 @@
   right: 0;
 }
 @media screen and (min-width: 768px) {
-  .comics-hero {
-    background-image: url(../img/comics-tab-res.jpeg);
+  .comics-section {
+    margin-top: -82px;
+    background-position: right 486px;
+    background-image: url(../img/comics-desk-res.jpeg);
   }
   .comics-title {
     font-size: 150px;
@@ -56,8 +57,9 @@
   }
 }
 @media screen and (min-width: 1440px) {
-  .comics-hero {
+  .comics-section {
     background-image: url(../img/comics-desk-res.jpeg);
+    background-position: right 189px;
   }
   .comics-btn {
     bottom: 64px;
