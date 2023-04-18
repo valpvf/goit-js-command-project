@@ -66,7 +66,7 @@ async function addInput(event) {
   query = formEl.elements.searchQuery.value;
   headerInput.reset();
   console.log(query);
-  refs.paginationEl.classList.remove('is-hidden');
+  // refs.paginationEl.classList.remove('is-hidden');
 
   if (query.trim() == '') {
     refs.paginationEl.classList.add('is-hidden');
@@ -87,8 +87,8 @@ async function addInput(event) {
     console.log(result.results.length);
     if (result.results.length == 0) {
       refs.paginationEl.classList.add('is-hidden');
-      headerFindResult.innerHTML = '<span class="char-error-main"></span>';
-
+      // headerFindResult.innerHTML = '<span class="char-error-main"></span>';
+      headerFindResult.innerHTML = '<span class="char-error"></span>';
       console.log(
       'Search result is zero. Change your query',
       );
@@ -100,6 +100,7 @@ async function addInput(event) {
 
       createGallery(result.results);
       pagination.reset(result.total);
+      refs.paginationEl.classList.remove('is-hidden');
       console.log('itemsPerPage====================');
       pagination.on('beforeMove', async evt => {
       const { page } = evt;
