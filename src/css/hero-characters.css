@@ -24,14 +24,14 @@
   font-weight: 500;
   font-size: 60px;
   line-height: 0.67;
-  letter-spacing: 2vw;
+  letter-spacing: 0.02;
 }
 .char-desc {
   font-size: 16px;
   line-height: 0.83;
   margin-bottom: 121px;
   text-align: left;
-  letter-spacing: 2vw;
+  letter-spacing: 0.02;
 }
 .char-btn {
   position: absolute;
