@@ -6,12 +6,6 @@
 
 }
 
-.is-concealed {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
 .backdrop-two {
     position: fixed;
     top: 0;
@@ -23,7 +17,7 @@
     background-color: rgba(90, 90, 90, 0.788);
 }
 
-.modal-box-two {
+.modal-box {
     position: relative;
     top: 0;
     left: 0;
@@ -399,7 +393,7 @@ padding-top: 40px;
 flex-direction: column;
     gap: 8px;
 }
-.modal-box-two {
+.modal-box {
     width: 600px;
 
 }
@@ -432,7 +426,7 @@ flex-direction: column;
         flex-direction: row;
                     gap: 8px;
                 }
-    .modal-box-two {
+    .modal-box {
         width: 1000px;        
     }
 }

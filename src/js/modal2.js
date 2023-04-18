@@ -7,7 +7,6 @@ const rcContainer = document.querySelector('.rc-container');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.comics');
 
-
 function onCloseBtnElClick() {
   modalTwoClose.classList.add('is-concealed');
 }
@@ -33,21 +32,34 @@ async function onContainerClick(event) {
     .map(el => el.resourceURI)
     .map(el => el.split('/'))
     .map(el => el[el.length - 1]);
-      
+
   for (let i = 0; i < 3; i += 1) {
     const comicId = comicsIds[i];
     const seriesId = seriesIds[i];
     characterObject[0][`comic${i}`] = await api.getComicById({ comicId });
     characterObject[0][`series${i}`] = await api.getSeriesById({ seriesId });
   }
-  const markups = [createMarkupImages(characterObject[0]), createMarkupText(characterObject[0])];
+  const markups = [
+    createMarkupImages(characterObject[0]),
+    createMarkupText(characterObject[0]),
+  ];
 
   modalHeroEl.innerHTML = markups[0];
   comicsEl.innerHTML = markups[1];
 }
 
 function createMarkupImages(character) {
-  const { id, thumbnail, name, description, modified, comics, series0, series1, series2 } = character;
+  const {
+    id,
+    thumbnail,
+    name,
+    description,
+    modified,
+    comics,
+    series0,
+    series1,
+    series2,
+  } = character;
   const markup = `
       <img
         class="modal-main-img"
@@ -89,16 +101,25 @@ function createMarkupImages(character) {
           </li>
         </ul>`;
   return markup;
-
 }
 
 function createMarkupText(character) {
-  const { id, thumbnail, name, description, modified, comics, comic0, comic1, comic2 } = character;
-  const options = { month: 'long', day: 'numeric', year: 'numeric', };
+  const {
+    id,
+    thumbnail,
+    name,
+    description,
+    modified,
+    comics,
+    comic0,
+    comic1,
+    comic2,
+  } = character;
+  const options = { month: 'long', day: 'numeric', year: 'numeric' };
   const unformattedDate = +Date.parse(modified);
   const dateString = new Date(unformattedDate);
-  const date = dateString.toLocaleDateString("en-US", options);
-  
+  const date = dateString.toLocaleDateString('en-US', options);
+
   const markup = `
       <div class="comics-title-date">
         <h1 class="comics-movie-title">${name}</h1>
@@ -138,5 +159,5 @@ function createMarkupText(character) {
           <p class="comics-movie-hero">${comic2[0].creators.items[0].name}</p>
         </li>
       </ul>`;
-  return markup
+  return markup;
 }
