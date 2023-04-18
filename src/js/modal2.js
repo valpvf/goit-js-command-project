@@ -13,6 +13,9 @@ const comicsEl = document.querySelector('.comics');
 
 function onCloseBtnElClick() {
   modalTwoClose.classList.add('is-concealed');
+
+  modalHeroEl.innerHTML = '';
+  comicsEl.innerHTML = '';
 }
 
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
