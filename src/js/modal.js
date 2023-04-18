@@ -50,7 +50,7 @@ async function onContainerClick(event) {
   
 
 function createMarkupImages(comics) {
-  const { id, thumbnail, name, description, modified, comics, creators, series0, series1, series2  } = comics;
+  const { id, thumbnail, name, description, modified, creators, series0, series1, series2  } = comics;
   const markup = `
       <img
         class="modal-main-img"
