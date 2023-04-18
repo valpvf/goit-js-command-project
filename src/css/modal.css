@@ -7,7 +7,11 @@
     padding-top: 14px;
     padding-bottom: 40px;
 }
-
+.is-concealed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
 .modal-box{
     margin: 0 auto;
     width: 335px;
