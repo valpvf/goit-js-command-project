@@ -24,6 +24,8 @@ const selectFormatEl = refs.comicsFormEl.elements.selectFormat;
 const selectOrderEl = refs.comicsFormEl.elements.selectFormat;
 const searchDateEl = refs.comicsFormEl.elements.selectDate;
 
+console.log(selectFormatEl);
+
 let nameVal = null;
 let formatVal = null;
 let orderVal = null;
@@ -60,7 +62,7 @@ console.log(itemsPerPage);
 const paginationOptions = {
   totalItems: 0,
   itemsPerPage: itemsPerPage,
-  visiblePages: 5,
+  visiblePages: 3,
   page: 1,
 };
 const pagination = new Pagination(refs.paginationEl, paginationOptions);
@@ -97,23 +99,23 @@ searchDateEl.addEventListener('change', onDateSelect);
 onFirstLoad();
 async function onFirstLoad() {
   console.log(itemsPerPage);
-
+  Loading.standard('Loading...');
   try {
     const res = await api.getComics({
       limit: itemsPerPage,
       offset: 0,
     });
     console.log(res.results[0].creators.items[0].name);
-    // Loading.remove();
+    Loading.remove();
     renderMarkup(res.results);
     refs.paginationEl.classList.remove('is-hidden');
     // console.log(res.total);
 
     // НАЛАШТОВУЮ ПАГІНАЦІЮ
 
-    if (res.total <= itemsPerPage) {
-      return;
-    }
+    // if (res.total <= itemsPerPage) {
+    //   return;
+    // }
 
     pagination.reset(res.total);
 
@@ -152,12 +154,13 @@ async function onNameInput(e) {
   nameVal = e.target.value;
   // console.log(page);
   try {
-    const res = await api.getAllCharacters({
-      nameStartsWith: nameVal,
-      orderBy: orderVal,
-      comics: final,
-      modifiedSince: dateVal,
+    const res = await api.getComics({
       limit: itemsPerPage,
+      // offset: offset,
+      titleStartsWith: nameVal,
+      format: formatVal,
+      orderBy: orderVal,
+      startYear: dateVal,
     });
 
     if (res.results.length === 0) {
@@ -176,17 +179,38 @@ async function onNameInput(e) {
   }
 }
 
-async function onSelectChange(e) {
+// async function onSelectChange(e) {
+//   e.preventDefault;
+//   orderVal = e.target.value;
+//   try {
+//     const res = await api.getComics({
+//       limit: itemsPerPage,
+//       // offset: offset,
+//       titleStartsWith: nameVal,
+//       format: formatVal,
+//       orderBy: orderVal,
+//       startYear: dateVal,
+//     });
+//     pagination.reset(res.total);
+//     refs.cardContainer.innerHTML = '';
+//     renderMarkup(res.results);
+//     console.log(res.results);
+//   } catch (err) {
+//     console.log('Error!!!!!!!!!!!');
+//   }
+// }
+async function onFormatChange(e) {
+  console.log(e.target);
   e.preventDefault;
-  orderVal = e.target.value;
+  formatVal = e.target.value;
   try {
-    const res = await api.getAllCharacters({
-      orderBy: orderVal,
-      // limit: 100,
+    const res = await api.getComics({
       limit: itemsPerPage,
-      nameStartsWith: nameVal,
-      comics: final,
-      modifiedSince: dateVal,
+      // offset: offset,
+      titleStartsWith: nameVal,
+      format: formatVal,
+      orderBy: orderVal,
+      startYear: dateVal,
     });
     pagination.reset(res.total);
     refs.cardContainer.innerHTML = '';
@@ -196,18 +220,37 @@ async function onSelectChange(e) {
     console.log('Error!!!!!!!!!!!');
   }
 }
-function onFormatChange() {}
-function onOrderChange() {}
-async function onDateSelect(instance, date) {
-  dateVal = date;
+async function onOrderChange(e) {
+  e.preventDefault;
+  orderVal = e.target.value;
   try {
-    const res = await api.getAllCharacters({
-      orderBy: orderVal,
-
-      nameStartsWith: nameVal,
+    const res = await api.getComics({
       limit: itemsPerPage,
-      comics: final,
-      modifiedSince: dateVal,
+      // offset: offset,
+      titleStartsWith: nameVal,
+      format: formatVal,
+      orderBy: orderVal,
+      startYear: dateVal,
+    });
+    pagination.reset(res.total);
+    refs.cardContainer.innerHTML = '';
+    renderMarkup(res.results);
+    console.log(res.results);
+  } catch (err) {
+    console.log('Error!!!!!!!!!!!');
+  }
+}
+async function onDateSelect(instance, date) {
+  dateVal = date.getFullYear();
+  console.log(dateVal);
+  try {
+    const res = await api.getComics({
+      limit: itemsPerPage,
+      // offset: offset,
+      titleStartsWith: nameVal,
+      format: formatVal,
+      orderBy: orderVal,
+      startYear: dateVal,
     });
     if (res.results.length === 0) {
       // Loading.remove();
@@ -229,10 +272,29 @@ function renderMarkup(data) {
 
 function createMarkup(data) {
   console.log(data);
+  // let authorName = '';
   return data
     .map(card => {
-      console.log(card.id);
-      return `
+      if (card.creators.available === 0) {
+        // authorName = '-';
+        return `
+    <div class="comics-card">
+      <a class="comics-image-wrap" data-id="${card.id}" href="#">
+        <img
+          class="comics-card-image"
+          src= "${card.thumbnail.path}/portrait_uncanny.${card.thumbnail.extension}"
+          alt=""
+          loading="lazy"
+        />
+        <div class="comics-card-descr">
+          <p class="comics-card-descr-name">${card.title}</p>
+          <p class="comics-card-descr-author">-</p>
+        </div>
+      </a>
+    </div>`;
+      } else {
+        // authorName = `${card.creators.items[0].name}`;
+        return `
     <div class="comics-card">
       <a class="comics-image-wrap" data-id="${card.id}" href="#">
         <img
@@ -244,6 +306,29 @@ function createMarkup(data) {
         <div class="comics-card-descr">
           <p class="comics-card-descr-name">${card.title}</p>
           <p class="comics-card-descr-author">${card.creators.items[0].name}</p>
+        </div>
+      </a>
+    </div>`;
+      }
+
+      console.log(card.id);
+      console.log(card.title);
+      console.log(`${card.creators.items[0].name}`);
+      console.log(
+        `${card.thumbnail.path}/portrait_uncanny.${card.thumbnail.extension}`
+      );
+      return `
+    <div class="comics-card">
+      <a class="comics-image-wrap" data-id="${card.id}" href="#">
+        <img
+          class="comics-card-image"
+          src= "${card.thumbnail.path}/portrait_uncanny.${card.thumbnail.extension}"
+          alt=""
+          loading="lazy"
+        />
+        <div class="comics-card-descr">
+          <p class="comics-card-descr-name">${card.title}</p>
+          <p class="comics-card-descr-author">${authorName}</p>
         </div>
       </a>
     </div>`;
