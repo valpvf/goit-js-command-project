@@ -21,7 +21,7 @@ const refs = {
 
 const searchComicsEl = refs.comicsFormEl.elements.searchComics;
 const selectFormatEl = refs.comicsFormEl.elements.selectFormat;
-const selectOrderEl = refs.comicsFormEl.elements.selectFormat;
+const selectOrderEl = refs.comicsFormEl.elements.selectOrder;
 const searchDateEl = refs.comicsFormEl.elements.selectDate;
 
 console.log(selectFormatEl);
@@ -62,7 +62,7 @@ console.log(itemsPerPage);
 const paginationOptions = {
   totalItems: 0,
   itemsPerPage: itemsPerPage,
-  visiblePages: 3,
+  visiblePages: 2,
   page: 1,
 };
 const pagination = new Pagination(refs.paginationEl, paginationOptions);
@@ -203,10 +203,10 @@ async function onFormatChange(e) {
   console.log(e.target);
   e.preventDefault;
   formatVal = e.target.value;
+  console.log(formatVal);
   try {
     const res = await api.getComics({
       limit: itemsPerPage,
-      // offset: offset,
       titleStartsWith: nameVal,
       format: formatVal,
       orderBy: orderVal,
@@ -223,10 +223,18 @@ async function onFormatChange(e) {
 async function onOrderChange(e) {
   e.preventDefault;
   orderVal = e.target.value;
+  // console.log(orderVal);
+  // if ((e.target.value = 'Title')) {
+  //   console.log(e.target);
+  //   orderVal = 'title';
+  // } else {
+  //   orderVal = 'onsaleDate';
+  //   console.log(e.target);
+  // }
+
   try {
     const res = await api.getComics({
       limit: itemsPerPage,
-      // offset: offset,
       titleStartsWith: nameVal,
       format: formatVal,
       orderBy: orderVal,
@@ -246,7 +254,6 @@ async function onDateSelect(instance, date) {
   try {
     const res = await api.getComics({
       limit: itemsPerPage,
-      // offset: offset,
       titleStartsWith: nameVal,
       format: formatVal,
       orderBy: orderVal,
