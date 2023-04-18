@@ -39,6 +39,7 @@ export const api = {
       const data = res.data.data.results;
       return data;
     } catch (error) {
+      location.replace("../404.html");
       console.log(error);
     }
   },
@@ -48,6 +49,7 @@ export const api = {
       const data = res.data.data.results;
       return data;
     } catch (error) {
+      location.replace("../404.html");
       console.log(error);
     }
   },
@@ -77,6 +79,7 @@ export const api = {
       const data = res.data.data;
       return data;
     } catch (error) {
+      location.replace("../404.html");
       console.log(error);
     }
   },
@@ -86,6 +89,7 @@ export const api = {
       const data = res.data.data.results;
       return data;
     } catch (error) {
+      location.replace("../404.html");
       console.log(error);
     }
   },
@@ -95,6 +99,7 @@ export const api = {
       const data = res.data.data.results;
       return data;
     } catch (error) {
+      location.replace("../404.html");
       console.log(error);
     }
   },
@@ -120,6 +125,7 @@ export const api = {
       const data = res.data.data;
       return data;
     } catch (error) {
+      location.replace("../404.html");
       console.log(error);
     }
   },
