@@ -109,7 +109,7 @@ async function onFirstLoad() {
 
     // НАЛАШТОВУЮ ПАГІНАЦІЮ
 
-    if (res.total <= itemsPerPage) {
+    if (res.total < itemsPerPage) {
       return;
     }
 
