@@ -6,7 +6,7 @@ const modalHeroEl = document.querySelector('.images');
 const comicsEl = document.querySelector('.description');
 const lastcomicssection = document.querySelector('.swiper-wrapper');
 function onCloseBtnElClick() {
-  modalOneClose.classList.add('is-concealed');
+  modalOneClose.classList.add('is-conceale');
 }
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
 lastcomicssection.addEventListener('click', onContainerClick);
@@ -16,7 +16,7 @@ async function getComics(id) {
     return comics1;
 }
 async function onContainerClick(event) {
-  modalOneClose.classList.remove('is-concealed');
+  modalOneClose.classList.remove('is-conceale');
   const id = event.target.dataset.id;
   const comicsObject = await getComics(id);
   const charIds = comicsObject[0].characters.items
