@@ -9,19 +9,24 @@ const sliderEl = document.querySelector('.swiper-wrapper');
 
 
 async function getLastWeekComics() {
-    const comics = await api.getComics({
+    try {
+     const comics = await api.getComics({
         limit: 3,
         dateDescriptor: 'lastWeek',
     });
 
     const markup = renderLastComics(comics.results);
     createLastComics(markup);
-    createSlider();
+    createSlider();   
+    } catch (error) {
+        location.replace("../404.html");
+    }
     //createLastComicsLine(renderLastComics(comics.results));
     //console.log(comics)
     //const results = comics.results;
     //return results
 }
+
 getLastWeekComics()
 
 function renderLastComics(comicsArr) {
@@ -85,21 +90,21 @@ function createSlider() {
 
 function sliderBtnStyle() {
     nextBtnEl.addEventListener('mousedown', () => {
-         nextBtnEl.classList.add('clicked');
+         nextBtnEl.classList.add('clicked-right');
      })
     
     nextBtnEl.addEventListener('mouseup', () => {
     setTimeout(() => {
-        nextBtnEl.classList.remove('clicked');
+        nextBtnEl.classList.remove('clicked-right');
     }, 200);
     });
     prevBtnEl.addEventListener('mousedown', () => {
-         prevBtnEl.classList.add('clicked');
+         prevBtnEl.classList.add('clicked-left');
      })
     
     prevBtnEl.addEventListener('mouseup', () => {
     setTimeout(() => {
-        prevBtnEl.classList.remove('clicked');
+        prevBtnEl.classList.remove('clicked-left');
     }, 200);
     });
 }

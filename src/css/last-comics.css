@@ -64,6 +64,7 @@
     justify-content: center;
     column-gap: 14px;
     margin-top: 20px;
+    position: relative;
 }
 
 .swiper-button-prev,
@@ -73,18 +74,38 @@
     border-radius: 50%;
     border-color: rgba(250, 250, 250, 0.3);
     background-color: transparent;
-    font-size: 20px;
-    color: rgba(250, 250, 250, 0.3);
 }
 
-.clicked{
+.left-slider {
+    background-image: url(../img/last-comics-button-left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.right-slider {
+    background-image: url(../img/last-comics-arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.clicked-right{
     background-color: #34387F;
-    color:#FAFAFA;
+    background-image: url(../img/last-comics-clicked-rigth.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.clicked-left {
+    background-color: #34387F;
+    background-image: url(../img/last-comics-clicked-left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .arrow-icon {
     display: none;
 }
+
 
 @media screen and (min-width: 768px) {
 
@@ -127,6 +148,7 @@
         width: 44px;
         height: 44px;
     }
+
 }
 
 @media screen and (min-width: 1440px) {
@@ -158,5 +180,4 @@
     .arrow-icon {
         display: block;
     }
-
 }
