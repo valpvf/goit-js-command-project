@@ -2,7 +2,7 @@ import { api } from '../helpers/api';
 const characterCardEl = document.querySelector('.backdrop-two');
 const closeBtnEl = document.querySelector('.modal-close-btn');
 const modalTwoClose = document.querySelector('.backdrop-two');
-const modalHeroEl = document.querySelector('.spray');
+const modalHeroEl = document.querySelector('.images');
 const comicsEl = document.querySelector('.description');
 const lastcomicssection = document.querySelector('.swiper-wrapper');
 function onCloseBtnElClick() {
@@ -50,7 +50,19 @@ function createMarkupImages(conicsd) {
         src="${thumbnail.path}.${thumbnail.extension}"
         alt="star"
         class="star-photo"
-      />`;
+      />
+      <ul class="photo-slide">
+        <li>
+            <img class="photo-slide-image" src="${series0[0].thumbnail.path}.${series0[0].thumbnail.extension}" alt="crawl" data-id="${series0[0].id}" />
+        </li>
+        <li>
+            <img class="photo-slide-image" src="./img/modal2/image7.png" alt="talk" />
+        </li>
+        <li>
+            <img class="photo-slide-image" src="./img/modal2/image8.png" alt="on-knee" />
+        </li>
+    </ul>`
+    ;
   return markup;
 
 }
