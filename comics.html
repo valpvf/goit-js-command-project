@@ -20,10 +20,10 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/goit-js-command-project/assets/comics-33ba0bf2.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-command-project/assets/tui-pagination-9efba524.js">
+    <script type="module" crossorigin src="/goit-js-command-project/assets/comics-f8f0beb7.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-command-project/assets/tui-pagination-f0a6cfe9.js">
     <link rel="stylesheet" href="/goit-js-command-project/assets/tui-pagination-26d9f34c.css">
-    <link rel="stylesheet" href="/goit-js-command-project/assets/styles-ba9d4399.css">
+    <link rel="stylesheet" href="/goit-js-command-project/assets/styles-ddbba5bb.css">
   </head>
   <body>
     <header><header class="header">
@@ -77,14 +77,13 @@
     <div class="comics-form-wrapper comics-form-btn-wrap">
       <p class="comics-form-label">Title Starts With</p>
       <input
-        class="comics-form-input"
+        class="comics-form-input comics-form-title"
         type="text"
         name="searchComics"
         autocomplete="off"
         placeholder="Enter comics"
-        required
       />
-      <button type="submit" class="comics-form-btn"></button>
+      <!-- <button type="submit" class="comics-form-btn"></button> -->
     </div>
     <div class="comics-form-wrapper">
       <p class="comics-form-label">Format</p>
@@ -93,13 +92,15 @@
         data-action=""
         name="selectFormat"
       >
+        <option>All</option>
+        <option>-----------</option>
         <option>Comic</option>
         <option>Magazine</option>
         <option>Trade paperback</option>
         <option>Cardcover</option>
         <option>Digest</option>
         <option>Graphic novel</option>
-        <option>digital comic</option>
+        <option>Digital comic</option>
         <option>Infinite comic</option>
       </select>
     </div>
@@ -112,19 +113,28 @@
         data-action=""
         name="selectOrder"
       >
-        <option>title</option>
-        <option>onsaleDate</option>
+        <option>Title</option>
+        <option>On Sale Date</option>
       </select>
     </div>
 
     <div class="comics-form-wrapper">
       <p class="comics-form-label">Start Year</p>
-      <input
+      <select
+        class="comics-form-input comics-order-select"
+        name="selectDate"
+        placeholder="Select year..."
+        autocomplete="off"
+      >
+        <option>All Years</option>
+        <option>-----------</option>
+      </select>
+      <!-- <input
         class="comics-form-input comics-data-select"
         name="selectDate"
         placeholder="Select year..."
         autocomplete="off"
-      />
+      /> -->
     </div>
     <!-- </div> -->
   </form>
@@ -135,8 +145,6 @@
 
     </section>
     <section>
-      <a href="./index.html">Go to home</a>
-      <h1>Welcome to page 2</h1>
       <footer class="footer">
   <div class="container footer-container">
     <div class="footer-wrap">
