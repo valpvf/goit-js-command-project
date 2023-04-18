@@ -1,11 +1,22 @@
 @import url(./costants.css);
 @import url(./reset.css);
+.char-hero {
+  margin: 0 auto;
 
+  background-image: url(../img/characters-mob-res.jpeg);
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top -60px;
+}
 .char-text-block {
+  min-width: 335px;
   display: flex;
   flex-direction: column;
   position: relative;
   justify-content: flex-start;
+  text-align: start;
+  flex: 50%;
 }
 .char-title {
   box-sizing: border-box;
@@ -13,27 +24,42 @@
   font-weight: 500;
   font-size: 60px;
   line-height: 0.67;
+  letter-spacing: 2vw;
 }
 .char-desc {
   font-size: 16px;
   line-height: 0.83;
   margin-bottom: 121px;
   text-align: left;
-  letter-spacing: 0.02;
+  letter-spacing: 2vw;
 }
 .char-btn {
   position: absolute;
   display: block;
-  margin-right: 1px;
-  bottom: 20px;
-  right: 1px;
+  bottom: 26px;
+  right: 0;
 }
 @media screen and (min-width: 768px) {
+  .char-hero {
+    background-image: url(../img/characters-tab-res.jpeg);
+  }
   .char-title {
     font-size: 128px;
   }
   .char-desc {
     width: 469px;
     text-align: center;
+  }
+  .char-btn {
+    bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .char-hero {
+    background-image: url(../img/characters-desk-res.jpeg);
+  }
+  .char-btn {
+    bottom: 64px;
   }
 }
