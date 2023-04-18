@@ -5,6 +5,7 @@ const modalTwoClose = document.querySelector('.backdrop-two');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.description');
 const lastcomicssection = document.querySelector('.swiper-wrapper');
+
 function onCloseBtnElClick() {
   modalTwoClose.classList.add('is-concealed');
 }
@@ -12,8 +13,8 @@ closeBtnEl.addEventListener('click', onCloseBtnElClick);
 lastcomicssection.addEventListener('click', onContainerClick);
 
 async function getComics(id) {
-    const comics1 = await api.getComicsById({ comicsId: id });
-    return comics1;
+  const comics1 = await api.getComicsById({ comicsId: id });
+  return comics1;
 }
 function onContainerClick(event) {
   modalTwoClose.classList.remove('is-concealed');
@@ -31,7 +32,6 @@ function onContainerClick(event) {
         .map(el => el.split('/'))
         .map(el => el[el.length - 1]);
 
-
       const markups = [createMarkupImages(res[0]), createMarkupText(res[0])];
       return markups;
     })
@@ -41,9 +41,9 @@ function onContainerClick(event) {
     });
 }
 
-
 function createMarkupImages(conicsd) {
-  const { id, thumbnail, name, description, modified, comics, creators } = conicsd;
+  const { id, thumbnail, name, description, modified, comics, creators } =
+    conicsd;
   const markup = `
       <img
         class="modal-main-img"
@@ -52,17 +52,17 @@ function createMarkupImages(conicsd) {
         class="star-photo"
       />`;
   return markup;
-
 }
 
 function createMarkupText(conicsd) {
-  const { id, thumbnail, name, description, modified, comics, creators } = conicsd;
-  const options = { month: 'long', day: 'numeric', year: 'numeric', };
+  const { id, thumbnail, name, description, modified, comics, creators } =
+    conicsd;
+  const options = { month: 'long', day: 'numeric', year: 'numeric' };
   const unformattedDate = +Date.parse(modified);
   const dateString = new Date(unformattedDate);
-  const date = dateString.toLocaleDateString("en-US", options);
-  
-    const markup = `
+  const date = dateString.toLocaleDateString('en-US', options);
+
+  const markup = `
       <div class="desc-head">
         <h1 class="title">${name}</h1>
         <div class="head-inf">
@@ -109,5 +109,5 @@ function createMarkupText(conicsd) {
 
 
     </ul>`;
-  return markup
+  return markup;
 }
