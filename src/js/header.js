@@ -64,7 +64,7 @@ async function addInput(event) {
   event.preventDefault();
   const { target: formEl } = event;
   query = formEl.elements.searchQuery.value;
-  // headerInput.reset();
+  headerInput.reset();
   console.log(query);
   refs.paginationEl.classList.remove('is-hidden');
 
@@ -88,37 +88,41 @@ async function addInput(event) {
     if (result.results.length == 0) {
       refs.paginationEl.classList.add('is-hidden');
       headerFindResult.innerHTML = '<span class="char-error-main"></span>';
-      console.log('Search result is zero. Change your query');
-      return;
-    }
-    console.log('itemsPerPage====================');
-    headerFindResult.innerHTML = '';
-    // Loading.remove();
-    createGallery(result.results);
-    pagination.reset(result.total);
-    console.log('itemsPerPage====================');
-    pagination.on('beforeMove', async evt => {
+
+      console.log(
+      'Search result is zero. Change your query',
+      );
+        return;
+      }
+      console.log('itemsPerPage====================');
+      headerFindResult.innerHTML = '';
+      // Loading.remove();
+
+      createGallery(result.results);
+      pagination.reset(result.total);
+      console.log('itemsPerPage====================');
+      pagination.on('beforeMove', async evt => {
       const { page } = evt;
       console.log(page);
 
-      let offset = itemsPerPage * (page - 1);
-      console.log(offset);
-      try {
-        const res = await api.getAllCharacters({
-          // comics: final,
-          limit: itemsPerPage,
-          offset: offset,
-          nameStartsWith: query,
-        });
-        // pagination.reset(res.total);
-        headerFindResult.innerHTML = '';
-        // Loading.remove();
-        createGallery(result.results);
-        // console.log(res.total);
-      } catch (error) {
-        console.log('Error!!!!!!!!!!!');
-      }
-    });
+        let offset = itemsPerPage * (page - 1);
+        console.log(offset);
+        try {
+          const result = await api.getAllCharacters({
+            // comics: final,
+            limit: itemsPerPage,
+            offset: offset,
+            nameStartsWith: query,
+          });
+          // pagination.reset(res.total);
+          headerFindResult.innerHTML = '';
+          // Loading.remove();
+          createGallery(result.results);
+          // console.log(res.total);
+        } catch (error) {
+          console.log('Error!!!!!!!!!!!');
+        }
+      });
 
     // console.log(res.total);
   } catch (error) {

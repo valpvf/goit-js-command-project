@@ -1,4 +1,8 @@
+//import { createLogger } from 'vite';
 import { api } from '../helpers/api';
+import iconsSprite from '../img/icons.svg';
+
+console.log(iconsSprite);
 
 const characterCardEl = document.querySelector('.backdrop-two');
 const closeBtnEl = document.querySelector('.modal-close-btn');
