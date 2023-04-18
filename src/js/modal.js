@@ -38,7 +38,7 @@ async function onContainerClick(event) {
       const authorId = authorIds[i];
     comicsObject[0][`charac${i}`] = await api.getComicById({ charId });
     comicsObject[0][`series${i}`] = await api.getSeriesById({ seriesId });
-    comicsObject[0][`authors${i}`] = await api.getSeriesById({ authorId });
+    comicsObject[0][`authors${i}`] = await api.getCreatorsById({ authorId });
   }
   const markups = [createMarkupImages(comicsObject[0]), createMarkupText(comicsObject[0])];
 

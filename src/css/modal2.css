@@ -1,7 +1,16 @@
 @import url(./costants.css);
 @import url(./reset.css);
 
+.comics-discription {
+    font-size: 10px;
 
+}
+
+.is-conceale {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
 
 .backdrop-one {
     position: fixed;
@@ -14,23 +23,17 @@
     background-color: rgba(90, 90, 90, 0.788);
 }
 
-.modal-box-two{
+.modal-box-two {
     position: relative;
     top: 0;
     left: 0;
     margin: 0 auto;
     width: 335px;
-
-    padding-right: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
-.is-concealed {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.modal-close-btn{
+.modal-close-btn {
     position: absolute;
     top: 8px;
     right: 14px;
@@ -41,313 +44,428 @@
 }
 
 .icon {
-    fill: var(--text);
+    stroke: white;
+    /* fill: var(--text); */
 }
 
-.modal-main-img{
-    width: 295px;
-    height: 387px;
-    margin-top: 26px;
-    margin-left: 12px;
-    margin-right: auto;
-    border-radius: 8px;
-    background-color: var(--text);
-}
-
-.modal-slide-img{
-    background-color: var(--text);
+.star-photo {
+    max-width: 332px;
+    height: 445px;
     border-radius: 8px;
 }
 
-.modal-slide-list{
-   display: flex;
-   margin-top: 8px;
-   margin-left: 12px;
-   gap: 8px;
+
+.photo-slide-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
 }
 
-.comics{
-    background-color: var(--find);
-    border-radius: 8px;
-    margin-top: 16px;
-    margin-right: 20px;
-    margin-left: 12px;
-    padding-bottom: 32px;
+.modal-container {
+    display: flex;
+    gap: 16px;
+}
+
+.desc-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.head-inf {
+    display: flex;
+
+}
+
+.riska {
+    color: var(--text05);
+}
+
+.title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1, 33;
+
+    align-items: center;
+    letter-spacing: -0.02em;
+
+    color: #FAFAFA;
+}
+
+.c-author {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.12;
+
+    color: var(--text05);
+}
+
+.c-date {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.12;
+
+
+    color: var(--text05);
+}
+
+.text-discription {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.12;
+    color: var(--text);
+    margin-bottom: 32px;
+}
+
+.description {
     padding-top: 32px;
+    padding-bottom: 32px;
+    padding-right: 16px;
     padding-left: 16px;
-    width: 295px;
-}
-
-
-.comics-movie-title{
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.33;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.02em;
-    color: var(--text);
-}
-
-
-.comics-date{
-    font-size: 14px;
-    line-height: 1.29;
-    color: var(--text05);
-    margin-top: 4px;
-}
-
-.comics-description{
-    font-size: 14px;
-    line-height: 1.29;
-    display: flex;
-    align-items: center;
-    margin-top: 16px;
-    color: var(--text);
-    width: 263px;
-}
-
-
-/* .comics-discription {
-    font-size: 10px;
-
-} */
-.comics-list-title{
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.33;
-    display: flex;
-    align-items: center;
-    margin-top: 32px;
-    letter-spacing: -0.02em;
-    color: var(--text);
-}
-
-.comics-list-item{
-    display: block;
-    margin-top: 16px;
-    margin-bottom: 32px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.comics-list-item:last-child {
-   margin-bottom: 0px;
-}
-
-.comics-list-el{
-    width: 263px;
-    height: 263px;
-    background-color: var(--text);
+    background: var(--find);
     border-radius: 8px;
-
-    
-
-
 }
 
-.comics-list-movie{
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.29;
-    
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-top: 16px;
+.character-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
 }
 
-.comics-movie-hero{
+.desc-list {
     display: flex;
-    align-items: center;
-    font-size: 12px;
-    line-height: 1.17;
-    margin-top: 4px;
+    gap: 24px;
     margin-bottom: 32px;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.list-punkt {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.17;
+    text-transform: uppercase;
+
     color: var(--text05);
 }
 
+.list-inf {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.12;
 
 
+    color: var(--text);
+}
 
-@media screen and (min-width: 600px) {
-    .modal-box-two {
-        width: 600px;
-    
-    }
-   
-    .spray{
+.author {
+    margin-bottom: 20px;
+}
+
+.author-inf {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.author-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.author-prof {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.17;
+    margin-bottom: 8px;
+
+    color: var(--text05);
+}
+
+.author-name {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.12;
+
+    color: var(--text);
+}
+
+.aut-desc {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.characters {
+    margin-bottom: 20px;
+}
+
+.characters-list {
+    display: flex;
+    row-gap: 16px;
+    flex-wrap: wrap-reverse;
+
+
+}
+
+.char-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 180px;
+
+}
+
+.character-name {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.12;
+    align-items: center;
+    color: var(--text);
+}
+
+.modal-container {
+    padding-top: 40px;
+    padding-bottom: 64px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+}
+
+
+.star-photo {
+    max-width: 295px;
+    height: 387px;
+    border-radius: 8px;
+}
+
+.photo-slide {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+@media screen and (min-width: 375px) {
+    .desc-list {
         display: flex;
+        gap: 32px;
+        margin-bottom: 32px;
     }
 
-
-    .modal-main-img {
-        width: 332px;
-        height: 445px;
-        margin-top: 50px;
-        margin-left: 24px;
-        margin-right: 8px;
+    .author-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
     }
 
-    /* .modal-hero{
-        display: flex;
-        justify-content: flex-start;
-       } */
-
-    .modal-slide-list {
-      flex-direction: column;
-        margin-left: 0px;
-        gap: 8px;
-        margin-top: 50px;
+    .character-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
     }
 
-    .modal-slide-img {
-       margin-bottom: 8px;
-    }
-    
-    .comics {
-        width: 536px;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 64px;
-        padding-right: 16px;
-    }
-
-    .comics-title-date{
-        display: flex;
-        justify-content: space-between;
-        margin-right: 10px;
-    }
-
-    .comics-movie-title {
-        font-size: 24px;
-        line-height: 1.0;
-    }
-
-    .comics-description {
+    .character-name {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
         font-size: 16px;
         line-height: 1.12;
-        width: auto;
+        align-items: center;
+        color: var(--text);
     }
 
-    .comics-list-title {
-        font-size: 24px;
-        line-height: 1.0;
+    .characters {
+        margin-bottom: 32px;
     }
 
-    .comics-list{
+    .author-name {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.12;
+
+        color: var(--text);
+    }
+
+    .author-prof {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        margin-bottom: 8px;
+
+        color: var(--text05);
+    }
+
+    .author {
+        margin-bottom: 32px;
+    }
+
+    .list-inf {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.12;
+
+
+        color: var(--text);
+    }
+
+    .list-punkt {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        text-transform: uppercase;
+
+        color: var(--text05);
+    }
+
+    .text-discription {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.12;
+        color: var(--text);
+        margin-bottom: 32px;
+    }
+
+    .c-author {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.12;
+
+        color: var(--text05);
+    }
+
+    .desc-head {
         display: flex;
-        gap: 19px;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        flex-direction: row;
+        row-gap: 0px;
     }
 
-    .comics-list-el {
-        margin-top: 16px;
-        width: 155px;
-        height: 200px;
+    .title {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 100%;
+        color: var(--text);
     }
 
-    .comics-list-movie {
-        font-size: 14px;
+    .modal-container {
+        padding-top: 64px;
+        padding-bottom: 64px;
+        padding-left: 32px;
+        padding-right: 32px;
     }
 
-}
-
-
-@media screen  and (min-width: 1440px) {
-    .modal-box-two {
-        width: 1000px;
-         
-    }
-   
-    .modal-main-img {
-        width: 332px;
-        height: 445px;
-        margin-top: 50px;
-        margin-left: 24px;
-    }
-    
-    .modal-hero {
-        display: block;
-        margin-right: 16px;
-       
+    .images {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
     }
 
-    .spray {
-        
+    .modal {
+        display: flex;
+        gap: 16px;
         flex-direction: column;
 
     }
 
-    .modal-two{
+    .photo-slide {
         display: flex;
-        justify-content: space-between;
-    }
-
-    .modal-slide-list {
-        flex-direction: row;
-        margin-top: 8px;
-        margin-left: 24px;
+        flex-direction: column;
         gap: 8px;
     }
 
-    .comics {
-        width: 588px;
-        margin-bottom: 64px;
+    .modal-box-two {
+        width: 600px;
+
     }
 
+    .star-photo {
+        max-width: 332px;
+        height: 445px;
+        border-radius: 8px;
+    }
+}
 
-    .comics-list-el {
-        width: 174px;
-        height: 200px;
-        
+@media screen and (min-width: 768px) {
+    .modal-container {
+        padding-top: 64px;
+        padding-bottom: 64px;
+        padding-left: 32px;
+        padding-right: 32px;
     }
 
-    .comics-title-date {
+    .images {
         display: flex;
-        justify-content: space-between;
-        margin-right: 10px;
+        flex-direction: column;
+        gap: 8px;
     }
 
-    .comics-list {
+    .modal {
         display: flex;
-    justify-content: space-between;
+        gap: 16px;
+        flex-direction: row;
     }
 
-    .comics{
-        margin-top: 50px;
-        margin-left: 0;
-    }
-
-    .comics-title-date {
+    .photo-slide {
         display: flex;
-        justify-content: space-between;
-        margin-right: 16px;
-    }
-    
-   .comics-description {
-       font-size: 16px;
-       line-height: 1.12;
-       width: 556px;
-       
-   }
-  
-    .comics-list-title {
-        font-size: 24px;
-        line-height: 1.0;
-        margin-top: 64px;
+        flex-direction: row;
+        gap: 8px;
     }
 
-    .comics-list-movie {
-        font-size: 14px;
+    .modal-box-two {
+        width: 1000px;
     }
-
-    .comics-list-item {
-        margin-top: 16px;
-        margin-bottom: 0px;
-    }
-
-   }
-
-
-
+}
