@@ -61,7 +61,7 @@ console.log(itemsPerPage);
 const paginationOptions = {
   totalItems: 0,
   itemsPerPage: itemsPerPage,
-  visiblePages: 3,
+  visiblePages: 2,
   page: 1,
 };
 const pagination = new Pagination(refs.paginationEl, paginationOptions);
@@ -321,15 +321,17 @@ function createMarkup(data) {
       <a class="char-image-wrap" data-id="${card.id}" href="#">
         <img
           class="char-card-image"
+          data-id="${card.id}"
           src= "${card.thumbnail.path}/portrait_uncanny.${card.thumbnail.extension}"
           alt=""
           loading="lazy"
         />
-        <div class="char-card-descr">
-          <p class="char-card-descr-name">${card.name}</p>
+        <div class="char-card-descr" data-id="${card.id}">
+          <p class="char-card-descr-name" data-id="${card.id}">${card.name}</p>
         </div>
       </a>
     </div>`;
     })
     .join('');
 }
+// function onContainerClick(params) {}
