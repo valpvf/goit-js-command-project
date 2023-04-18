@@ -1,10 +1,9 @@
 @import url(./costants.css);
-
 body {
   background-color: var(--background);
 }
 .hero {
-  margin-bottom: 80px;
+  height: 100vh;
 }
 .hero-section {
   font-family: 'Poppins';

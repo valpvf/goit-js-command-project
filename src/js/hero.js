@@ -58,3 +58,4 @@ function lastBtnClickHandler() {
     transforms into the mean, green rage machine called the Hulk.`;
   charactersBtn.style.backgroundColor = '#5B7F3C';
 }
+// slider
