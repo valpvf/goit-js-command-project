@@ -24,11 +24,11 @@
     padding-right: 8px;
 }
 
-/* .is-concealed {
+.is-concealed {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-} */
+}
 
 .modal-close-btn{
     position: absolute;
