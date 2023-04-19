@@ -7,7 +7,7 @@ const modalTwoClose = document.querySelector('.backdrop-two');
 const rcContainer = document.querySelectorAll('.rc-container');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.comics');
-const skeletonModal = document.querySelector('.skeleton-modal');
+const skeletonModal = document.querySelector('.skeleton-two');
 
 function onCloseBtnElClick() {
   modalHeroEl.innerHTML = '';
