@@ -1,23 +1,28 @@
 import { api } from '../helpers/api';
 
-// const swiperWrapperEl = document.querySelector('.swiper-wrapper');
-// swiperWrapperEl.classList.add('rm-container');
-
 const closeBtnEl = document.querySelector('.modal-close-icon-modal');
 const modalOneClose = document.querySelector('.backdrop-one');
-const rmContainer = document.querySelector('.rm-container');
-const modalHeroEl = document.querySelector('.images');
+const rmContainer = document.querySelectorAll('.rm-container');
+// const modalHeroEl = document.querySelector('.images');
 const modalContainerEl = document.querySelector('.modal-comic-container');
-const comicsEl = document.querySelector('.description');
+
+// const comicsEl = document.querySelector('.description');
+const modalTwo = document.querySelector(
+  '.modal-two.modal-box-two.rc-container'
+);
+
 const skeletonModal = document.querySelector('.skeleton-one');
+
 function onCloseBtnElClick() {
   modalOneClose.classList.add('display-none');
 }
-console.log(rmContainer);
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
-rmContainer.addEventListener('click', onContainerClick);
+rmContainer.forEach(el => el.addEventListener('click', onContainerClick));
+modalTwo.addEventListener('click', onContainerClick);
 
 async function onContainerClick(event) {
+ 
+  modalTwo.classList.add('display-none');
 
   // modalTwoClose.classList.remove('is-concealed');
   // skeletonModal.classList.remove('display-none');
@@ -113,7 +118,6 @@ function createMarkup({
 }) {
   // Get author name
   const writerObj = authors.filter(el => el.role === 'writer');
-  // console.log(!writerObj.length);
   const writer = writerObj.length !== 0 ? writerObj[0].name : '';
 
   // Get parsed date
@@ -124,7 +128,6 @@ function createMarkup({
     ? dateString.toLocaleDateString('en-US', options)
     : '';
   const year = new Date(dates[0].date).getFullYear();
-  console.log(date);
   return `
       <button class="modal-close-icon-modal" data-modal-close="">
       <svg width="20" height="20"></svg>
