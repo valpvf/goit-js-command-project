@@ -13,8 +13,6 @@
   border-radius: 10px;
 }
 
-
-
 .skeleton-list {
   display: block;
   position: relative;
@@ -26,55 +24,76 @@
   flex-direction: column;
   gap: 16px;
   border-radius: 10px;
-  border-bottom: 1px solid var(--text05);
+}
+.skeleton-modal {
+  display: flex;
+  gap: 32px;
+  margin: auto;
 }
 
-   
-  
-   
-   .skeleton-list,
-   .skeleton-slide {
-       animation-duration: 2.8s;
-       animation-fill-mode: forwards;
-       animation-iteration-count: infinite;
-       animation-name: placeHolderShimmer;
-       animation-timing-function: linear;
-       background: darkgray;
-       box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-       background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
-       background-size: 936px 104px;
-       height: 100px;
-       position: relative;
-   }
+.skeleton-modal-img {
+  width: 295px;
+  min-height: 588px;
+  margin-top: 40px;
+  margin-left: 12px;
+  margin-right: auto;
+  border-radius: 8px;
+}
+.skeleton-modal-text {
+  width: 588px;
+  min-height: 588px;
+  margin-top: 40px;
+  margin-left: 12px;
+  margin-right: auto;
+  border-radius: 8px;
+}
 
+.skeleton-list,
+.skeleton-slide,
+.skeleton-modal-img,
+.skeleton-modal-text {
+  animation-duration: 2.8s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: darkgray;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.02) 20%,
+    rgba(255, 255, 255, 0.05) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  background-size: 936px 104px;
+  height: 100px;
+  position: relative;
+}
 
-   @keyframes placeHolderShimmer{
-    0%{
-        background-position: -468px 0
-    }
-    100%{
-        background-position: 468px 0
-    }
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-    .skeleton::after {
-        animation: none;
-    }
-
+  .skeleton::after {
+    animation: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    
-.skeleton-slide {
+  .skeleton-slide {
     width: 704px;
     min-height: 704px;
     margin-bottom: 32px;
   }
-  
 
-  
   .skeleton-list {
     width: 704px;
     min-height: 686px;
@@ -83,25 +102,21 @@
 }
 
 @media screen and (min-width: 1440px) {
+  #loader {
+    display: flex;
+    gap: 32px;
+  }
 
-    #loader {
-        display: flex;
-        gap: 32px;
-    }
-    
-    .skeleton-slide {
-        width: 496px;
-        min-height: 704px;
-        margin-bottom: 32px;
-      }
-      
-     
-      
-      .skeleton-list {
-        width: 848px;
-        min-height: 704px;
-        gap: 32px;
-        padding: 0;
-        
-      }
-    }
+  .skeleton-slide {
+    width: 496px;
+    min-height: 704px;
+    margin-bottom: 32px;
+  }
+
+  .skeleton-list {
+    width: 848px;
+    min-height: 704px;
+    gap: 32px;
+    padding: 0;
+  }
+}

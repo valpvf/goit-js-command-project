@@ -1,17 +1,17 @@
-//import { createLogger } from 'vite';
 import { api } from '../helpers/api';
-import iconsSprite from '../img/icons.svg';
-
-console.log(iconsSprite);
+// import iconsSprite from '../img/icons.svg';
 
 const characterCardEl = document.querySelector('.backdrop-two');
-const closeBtnEl = document.querySelector('.modal-close-btn');
+const closeBtnEl = document.querySelector('.modal-two-close-btn');
 const modalTwoClose = document.querySelector('.backdrop-two');
 const rcContainer = document.querySelector('.rc-container');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.comics');
+const skeletonModal = document.querySelector('.skeleton-modal');
 
 function onCloseBtnElClick() {
+  modalHeroEl.innerHTML = '';
+  comicsEl.innerHTML = '';
   modalTwoClose.classList.add('is-concealed');
 
   modalHeroEl.innerHTML = '';
@@ -28,9 +28,10 @@ async function getCharacter(id) {
 
 async function onContainerClick(event) {
   modalTwoClose.classList.remove('is-concealed');
+  skeletonModal.classList.remove('display-none');
+  modalHeroEl.classList.add('display-none');
+  comicsEl.classList.add('display-none');
   const id = event.target.dataset.id;
-  console.log(event.target);
-  console.log(event.currentTarget);
   const characterObject = await getCharacter(id);
   const comicsIds = characterObject[0].comics.items
     .map(el => el.resourceURI)
@@ -52,7 +53,9 @@ async function onContainerClick(event) {
     createMarkupImages(characterObject[0]),
     createMarkupText(characterObject[0]),
   ];
-
+  skeletonModal.classList.add('display-none');
+  modalHeroEl.classList.remove('display-none');
+  comicsEl.classList.remove('display-none');
   modalHeroEl.innerHTML = markups[0];
   comicsEl.innerHTML = markups[1];
 }
@@ -124,6 +127,17 @@ function createMarkupText(character) {
     comic1,
     comic2,
   } = character;
+
+  if (comic0[0].creators.available === 0) {
+    comic0[0].creators.items.push({ name: '' });
+  }
+  if (comic1[0].creators.available === 0) {
+    comic1[0].creators.items.push({ name: '' });
+  }
+  if (comic2[0].creators.available === 0) {
+    comic2[0].creators.items.push({ name: '' });
+  }
+
   const options = { month: 'long', day: 'numeric', year: 'numeric' };
   const unformattedDate = +Date.parse(modified);
   const dateString = new Date(unformattedDate);

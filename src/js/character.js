@@ -5,6 +5,11 @@ import { api } from '../helpers/api';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+// import {
+//   loader,
+//   renderLoader,
+//   hideLoader,
+// } from '../helpers/loader-placeholder';
 
 Loading.init({
   backgroundColor: 'rgba(0,0,0,0.95)',
@@ -17,10 +22,11 @@ const refs = {
   cardContainer: document.querySelector('.char-card-container'),
   paginationEl: document.querySelector('.tui-pagination'),
   mainContainer: document.querySelector('.container'),
+  headerInput: document.querySelector('.header-input'),
+  headerForm: document.querySelector('.header-form'),
 };
 
 const searchComicsEl = refs.charFormEl.elements.searchComics;
-console.log(searchComicsEl);
 const searchNameEl = refs.charFormEl.elements.searchName;
 const selectEl = refs.charFormEl.elements.select;
 const searchDateEl = refs.charFormEl.elements.searchDate;
@@ -76,7 +82,6 @@ const picker = datepicker(searchDateEl, {
   },
   onSelect: (instance, date) => {
     onDateSelect(instance, date);
-    console.log(date);
   },
 });
 picker.calendarContainer.style.setProperty(
@@ -86,6 +91,9 @@ picker.calendarContainer.style.setProperty(
 picker.calendarContainer.style.setProperty('color', 'var(--text)');
 picker.calendarContainer.style.setProperty('font-family', 'Poppins');
 picker.calendarContainer.style.setProperty('font-weight', '400');
+
+refs.headerForm.addEventListener('submit', onHeaderNameInput);
+refs.headerInput.addEventListener('input', debounce(onHeaderNameInput, 300));
 refs.charFormEl.addEventListener('submit', onComicsElSubmit);
 searchNameEl.addEventListener('input', debounce(onNameInput, 300));
 selectEl.addEventListener('change', onSelectChange);
@@ -94,8 +102,6 @@ selectEl.addEventListener('change', onSelectChange);
 
 onFirstLoad();
 async function onFirstLoad() {
-  console.log(itemsPerPage);
-
   try {
     const res = await api.getAllCharacters({
       limit: itemsPerPage,
@@ -105,7 +111,6 @@ async function onFirstLoad() {
     Loading.remove();
     renderMarkup(res.results);
     refs.paginationEl.classList.remove('is-hidden');
-    // console.log(res.total);
 
     // НАЛАШТОВУЮ ПАГІНАЦІЮ
 
@@ -114,33 +119,28 @@ async function onFirstLoad() {
     }
 
     pagination.reset(res.total);
-
     pagination.on('beforeMove', async evt => {
       const { page } = evt;
       console.log(page);
       let offset = itemsPerPage * (page - 1);
       try {
         const res = await api.getAllCharacters({
-          // comics: final,
-          limit: itemsPerPage,
           offset: offset,
           nameStartsWith: nameVal,
           orderBy: orderVal,
           comics: final,
           modifiedSince: dateVal,
         });
-        // pagination.reset(res.total);
         refs.cardContainer.innerHTML = '';
         Loading.remove();
         renderMarkup(res.results);
-        // console.log(res.total);
       } catch (error) {
-        location.replace("../404.html");
+        location.replace('../404.html');
         console.log('Error!!!!!!!!!!!');
       }
     });
   } catch (error) {
-    location.replace("../404.html");
+    location.replace('../404.html');
     console.log('Error!!!!!!!!!!!');
   }
 }
@@ -151,12 +151,12 @@ async function onComicsElSubmit(e) {
   refs.paginationEl.classList.add('is-hidden');
   Loading.standard('Loading...');
   e.preventDefault();
+  refs.headerInput.value = '';
   searchNameEl.value = null;
   nameVal = null;
   orderVal = null;
   dateVal = null;
   comicsId = [];
-  // refs.cardContainer.innerHTML = '';
   comicsVal = searchComicsEl.value;
 
   try {
@@ -196,7 +196,7 @@ async function onComicsElSubmit(e) {
         }
       } catch (error) {
         Loading.remove();
-        location.replace("../404.html");
+        location.replace('../404.html');
         console.log('Error!!!!!!');
       }
     }
@@ -213,36 +213,37 @@ async function onComicsElSubmit(e) {
           modifiedSince: dateVal,
           limit: itemsPerPage,
         });
-        console.log(res);
+
         if (res.results.length === 0) {
-          // Loading.remove();
           refs.cardContainer.innerHTML = '<span class="char-error"></span>';
           console.log('NOTHIG TO RENDER');
         }
-        // if (res.results.length > itemsPerPage) {
-        //   pagination.reset(res.total);
-        // }
+
         refs.cardContainer.innerHTML = '';
         pagination.reset(res.total);
         renderMarkup(res.results);
         refs.paginationEl.classList.remove('is-hidden');
         Loading.remove();
       } catch (err) {
-        location.replace("../404.html");
-        console.log('Error!!!!!!!!!!!');
+        location.replace('../404.html');
       }
     }
   } catch (err) {
     Loading.remove();
-    location.replace("../404.html");
-    console.log('Error!!!!!!!!!!!');
+    location.replace('../404.html');
   }
+}
+
+function onHeaderNameInput(e) {
+  e.preventDefault;
+  searchNameEl.value = e.target.value;
+  onNameInput(e);
 }
 
 async function onNameInput(e) {
   refs.paginationEl.classList.add('is-hidden');
   nameVal = e.target.value;
-  // console.log(page);
+  refs.headerInput.value = e.target.value;
   try {
     const res = await api.getAllCharacters({
       nameStartsWith: nameVal,
@@ -260,22 +261,20 @@ async function onNameInput(e) {
 
     pagination.reset(res.total);
     refs.cardContainer.innerHTML = '';
-
     renderMarkup(res.results);
     refs.paginationEl.classList.remove('is-hidden');
   } catch (err) {
-    location.replace("../404.html");
-    console.log('Error!!!!!!!!!!!');
+    location.replace('../404.html');
   }
 }
 
 async function onSelectChange(e) {
   e.preventDefault;
-  orderVal = e.target.value;
+
+  orderVal = e.target.value.toLowerCase();
   try {
     const res = await api.getAllCharacters({
       orderBy: orderVal,
-      // limit: 100,
       limit: itemsPerPage,
       nameStartsWith: nameVal,
       comics: final,
@@ -286,7 +285,7 @@ async function onSelectChange(e) {
     renderMarkup(res.results);
     console.log(res.results);
   } catch (err) {
-    location.replace("../404.html");
+    location.replace('../404.html');
     console.log('Error!!!!!!!!!!!');
   }
 }
@@ -303,18 +302,14 @@ async function onDateSelect(instance, date) {
       modifiedSince: dateVal,
     });
     if (res.results.length === 0) {
-      // Loading.remove();
       refs.cardContainer.innerHTML = '<span class="char-error"></span>';
-      console.log('NOTHIG TO RENDER');
       return;
     }
     pagination.reset(res.total);
     refs.cardContainer.innerHTML = '';
     renderMarkup(res.results);
-    console.log(res.results);
   } catch (err) {
-    location.replace("../404.html");
-    console.log('Error!!!!!!!!!!!');
+    location.replace('../404.html');
   }
 }
 function renderMarkup(data) {

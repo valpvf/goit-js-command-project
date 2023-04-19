@@ -1,9 +1,9 @@
 @import url(./costants.css);
 @import url(./reset.css);
 
-.tui-page-btn {
+/* .tui-page-btn {
   background-color: red;
-}
+} */
 
 /* @import url(/node_modules/js-datepicker/dist/datepicker.min.css); */
 .comics-form-section {
@@ -55,7 +55,6 @@
 
 .comics-form-btn-wrap {
   width: 100%;
-  /* position: relative; */
 }
 
 @media screen and (min-width: 1440px) {
@@ -63,20 +62,6 @@
     width: 150%;
   }
 }
-/* .comics-form-btn {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 36px;
-  right: 16px;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  background: url('../img/search_001.svg') no-repeat;
-  background-position: 95% 50%;
-
-  background-color: transparent;
-} */
 
 .comics-form-label {
   color: var(--text03);
@@ -110,6 +95,7 @@
   background-color: var(--btn3);
 }
 .comics-form-title {
+  cursor: text;
   background: url('../img/search_001.svg') no-repeat;
   background-position: 95% 50%;
 }
@@ -144,6 +130,7 @@
   flex-direction: column;
   align-items: center;
   row-gap: 40px;
+  margin-bottom: 50px;
 }
 @media screen and (min-width: 768px) {
   .comics-card-container {
@@ -186,6 +173,7 @@
 }
 .comics-card-descr {
   width: 100%;
+  height: 50px;
   margin-top: 16px;
 }
 .comics-card-descr-name {
