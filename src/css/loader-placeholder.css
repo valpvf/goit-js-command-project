@@ -17,8 +17,8 @@
   display: block;
   position: relative;
   width: 335px;
-  min-height: 810px;
-  padding: 32px 0;
+  min-height: 510px;
+  /* padding: 32px 0; */
 
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@
 
 .skeleton-modal-img {
   width: 295px;
-  min-height: 588px;
+  min-height: 510px;
   margin-top: 40px;
   margin-left: 12px;
   margin-right: auto;
@@ -41,7 +41,7 @@
 }
 .skeleton-modal-text {
   width: 588px;
-  min-height: 588px;
+  min-height: 510px;
   margin-top: 40px;
   margin-left: 12px;
   margin-right: auto;
