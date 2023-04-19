@@ -40,6 +40,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
+      location.replace("../404.html");
     }
   },
   getCharactersById: async ({ characterId }) => {
@@ -49,6 +50,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
+      location.replace("../404.html");
     }
   },
   getComics: async ({
@@ -78,6 +80,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
+      location.replace("../404.html");
     }
   },
   getComicById: async ({ comicId }) => {
@@ -87,6 +90,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
+      location.replace("../404.html");
     }
   },
   getSeriesById: async ({ seriesId }) => {
@@ -96,6 +100,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
+      location.replace("../404.html");
     }
   },
   getAllCharacters: async ({
@@ -121,6 +126,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
+      location.replace("../404.html");
     }
   },
 };
