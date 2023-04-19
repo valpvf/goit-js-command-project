@@ -12,7 +12,7 @@ const skeletonModal = document.querySelector('.skeleton-two');
 function onCloseBtnElClick() {
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
-  modalTwoClose.classList.add('is-concealed');
+  modalTwoClose.classList.add('display-none');
 
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
@@ -27,7 +27,7 @@ async function getCharacter(id) {
 }
 
 async function onContainerClick(event) {
-  modalTwoClose.classList.remove('is-concealed');
+  modalTwoClose.classList.remove('display-none');
   skeletonModal.classList.remove('display-none');
   modalHeroEl.classList.add('display-none');
   comicsEl.classList.add('display-none');

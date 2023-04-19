@@ -317,7 +317,7 @@ function createMarkup(data) {
   return data
     .map(card => {
       return `
-    <div class="char-card">
+    <div class="char-card" data-id="${card.id}">
       <a class="char-image-wrap" data-id="${card.id}" href="#">
         <img
           class="char-card-image"
