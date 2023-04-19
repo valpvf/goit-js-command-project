@@ -124,11 +124,11 @@ const getRandomFive = async () => {
 function randomImgMarkup(array) {
   const markup = array
     .map(({ id, thumbnail }) => {
-      return `  <li class='rc-item slide' data-id="${id}">
+      return `  <li class='rc-item slide' data-charid="${id}">
       <picture>
       <source media="(min-width: 1440px)" srcset="${thumbnail.path}.${thumbnail.extension}" />
       <source media="(min-width: 375px)" srcset="${thumbnail.path}.${thumbnail.extension}"/>
-      <img class="rc-img" data-id="${id}"
+      <img class="rc-img" data-charid="${id}"
         src='${thumbnail.path}.${thumbnail.extension}'
         alt=''
       /></picture>`;
@@ -141,9 +141,9 @@ function randomDeskrMarkup(array) {
   const markup = array
     .map(({ name, description, id }) => {
       return `
-    <li class='rc-descr-item' data-id="${id}">
-      <h3 class='rc-descr-title' data-id="${id}">${name}</h3>
-      <p class='rc-descr-text' data-id="${id}">${description}</p>
+    <li class='rc-descr-item' data-charid="${id}">
+      <h3 class='rc-descr-title' data-charid="${id}">${name}</h3>
+      <p class='rc-descr-text' data-charid="${id}">${description}</p>
     </li>`;
     })
     .join('');

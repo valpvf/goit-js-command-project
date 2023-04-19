@@ -4,20 +4,27 @@ const swiperWrapperEl = document.querySelector('.swiper-wrapper');
 swiperWrapperEl.classList.add('rm-container');
 
 const closeBtnEl = document.querySelector('.modal-close-btn');
-const modalTwoClose = document.querySelector('.backdrop-one');
-const rmContainer = document.querySelector('.rm-container');
+const modalOneClose = document.querySelector('.backdrop-one');
+const modalTwoClose = document.querySelector('.backdrop-two');
+const rmContainer = document.querySelectorAll('.rm-container');
 const modalHeroEl = document.querySelector('.images');
 const modalContainerEl = document.querySelector('.modal-comic-container');
 const comicsEl = document.querySelector('.description');
 function onCloseBtnElClick() {
-  modalTwoClose.classList.add('is-concealed');
+  modalOneClose.classList.add('is-concealed');
 }
 
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
-rmContainer.addEventListener('click', onContainerClick);
+// rmContainer.addEventListener('click', onContainerClick);
+rmContainer.forEach(el => el.addEventListener('click', onContainerClick));
 
 async function onContainerClick(event) {
-  modalTwoClose.classList.remove('is-concealed');
+  if (!event.target.dataset.charid) {
+    return;
+  }
+  console.log(event.target);
+  modalTwoClose.classList.add('is-concealed');
+  modalOneClose.classList.remove('is-concealed');
   const id = event.target.dataset.id;
   const comicObject = await api.getComicById({ comicId: id });
 
@@ -159,7 +166,7 @@ function createMarkup({
           ${authorsMarkup(authors)}
         </div>
         <h2 class="title characters">Characters</h2>
-        <ul class="characters-list">
+        <ul class="characters-list rc-container">
           ${charactersMarkup(characters.items)}
         </ul>
       </section>

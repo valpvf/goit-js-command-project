@@ -318,16 +318,16 @@ function createMarkup(data) {
     .map(card => {
       return `
     <div class="char-card">
-      <a class="char-image-wrap" data-id="${card.id}" href="#">
+      <a class="char-image-wrap" data-charid="${card.id}" href="#">
         <img
           class="char-card-image"
-          data-id="${card.id}"
+          data-charid="${card.id}"
           src= "${card.thumbnail.path}/portrait_uncanny.${card.thumbnail.extension}"
           alt=""
           loading="lazy"
         />
-        <div class="char-card-descr" data-id="${card.id}">
-          <p class="char-card-descr-name" data-id="${card.id}">${card.name}</p>
+        <div class="char-card-descr" data-charid="${card.id}">
+          <p class="char-card-descr-name" data-charid="${card.id}">${card.name}</p>
         </div>
       </a>
     </div>`;

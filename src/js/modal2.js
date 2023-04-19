@@ -3,8 +3,9 @@ import { api } from '../helpers/api';
 
 const characterCardEl = document.querySelector('.backdrop-two');
 const closeBtnEl = document.querySelector('.modal-two-close-btn');
+const modalOneClose = document.querySelector('.backdrop-one');
 const modalTwoClose = document.querySelector('.backdrop-two');
-const rcContainer = document.querySelector('.rc-container');
+const rcContainer = document.querySelectorAll('.rc-container');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.comics');
 const skeletonModal = document.querySelector('.skeleton-modal');
@@ -17,9 +18,13 @@ function onCloseBtnElClick() {
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
 }
+rcContainer.forEach(el => {
+  el.addEventListener('click', onContainerClick);
+  console.log(el);
+});
 
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
-rcContainer.addEventListener('click', onContainerClick);
+// rcContainer.addEventListener('click', onContainerClick);
 
 async function getCharacter(id) {
   const character = await api.getCharactersById({ characterId: id });
@@ -27,6 +32,8 @@ async function getCharacter(id) {
 }
 
 async function onContainerClick(event) {
+  console.log(event.target);
+  modalOneClose.classList.add('is-concealed');
   modalTwoClose.classList.remove('is-concealed');
   skeletonModal.classList.remove('display-none');
   modalHeroEl.classList.add('display-none');
@@ -88,7 +95,7 @@ function createMarkupImages(character) {
               alt="crawl"
               width="80"
               hieght="80"
-              data-id="${series0[0].id}"
+              data-charid="${series0[0].id}"
             />
           </li>
           <li>
@@ -98,7 +105,7 @@ function createMarkupImages(character) {
               alt="talk"
               width="80"
               hieght="80"
-              data-id="${series1[0].id}"
+              data-charid="${series1[0].id}"
             />
           </li>
           <li>
@@ -108,7 +115,7 @@ function createMarkupImages(character) {
               alt="on-knee"
               width="80"
               hieght="80"
-              data-id="${series2[0].id}"
+              data-charid="${series2[0].id}"
             />
           </li>
         </ul>`;
@@ -150,13 +157,13 @@ function createMarkupText(character) {
       </div>
       <p class="comics-description">${description}</p>
       <h2 class="comics-list-title">List of comics</h2>
-      <ul class="comics-list">
+      <ul class="comics-list  ">
         <li class="comics-list-item">
           <img
-            class="comics-list-el"
+            class="comics-list-el "
             src="${comic0[0].thumbnail.path}.${comic0[0].thumbnail.extension}"
             alt="one"
-            data-id="${comic0[0].id}"
+            data-charid="${comic0[0].id}"
           />
           <h3 class="comics-list-movie">${comic0[0].title}</h3>
           <p class="comics-movie-hero">${comic0[0].creators.items[0].name}</p>
@@ -166,7 +173,7 @@ function createMarkupText(character) {
             class="comics-list-el"
             src="${comic1[0].thumbnail.path}.${comic1[0].thumbnail.extension}"
             alt="two"
-            data-id="${comic1[0].id}"
+            data-charid="${comic1[0].id}"
           />
           <h3 class="comics-list-movie">${comic1[0].title}</h3>
           <p class="comics-movie-hero">${comic1[0].creators.items[0].name}</p>
@@ -176,7 +183,7 @@ function createMarkupText(character) {
             class="comics-list-el"
             src="${comic2[0].thumbnail.path}.${comic2[0].thumbnail.extension}"
             alt="three"
-            data-id="${comic2[0].id}"
+            data-charid="${comic2[0].id}"
           />
           <h3 class="comics-list-movie">${comic2[0].title}</h3>
           <p class="comics-movie-hero">${comic2[0].creators.items[0].name}</p>
