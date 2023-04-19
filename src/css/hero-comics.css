@@ -7,22 +7,18 @@
   background-clip: content-box;
   background: radial-gradient(
       circle,
-      rgba(12, 11, 11, 0) 20%,
+      rgba(12, 11, 11, 0) 10%,
       rgba(12, 11, 11, 1) 100%
     ),
-    url(../img/comics-mob-res.jpeg);
+    url(../img/comics-big-res.jpeg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .comcs-section {
   background-origin: border-box;
-
   background-color: rgba(12, 11, 11, 1);
-  /* background-image: url(../img/comics-mob-res.jpeg); */
-
   background-size: cover;
   background-position: top -60px;
-  /* (#0c0b0b 4.61%, rgba(12, 11, 11, 0) 50.16%),
-    (#0c0b0b 0%, rgba(12, 11, 11, 0) 72.35%); */
 }
 .comics-text-block {
   min-width: 335px;
@@ -40,6 +36,8 @@
   line-height: 0.67;
 }
 .comics-desc {
+  width: 335px;
+  height: auto;
   font-size: 16px;
   line-height: 0.83;
   text-align: left;
@@ -49,20 +47,22 @@
 .comics-btn {
   position: absolute;
   display: block;
-  bottom: 26px;
-  right: 0;
+  bottom: 20px;
+  right: 26px;
+  text-align: center;
+  /* text-align: center; */
+  padding: 8px;
 }
 @media screen and (min-width: 768px) {
   .comics-hero {
     min-height: 700px;
     background-image: radial-gradient(
         circle,
-        rgba(12, 11, 11, 0) 20%,
+        rgba(12, 11, 11, 0) 10%,
         rgba(12, 11, 11, 1) 100%
       ),
-      url(../img/comics-tab-res.jpeg);
+      url(../img/comics-big-res.jpeg);
     background-position: left 169px top 86px;
-
   }
 
   .comics-title {
@@ -74,16 +74,17 @@
   }
   .comics-btn {
     bottom: 32px;
+    right: 32px;
   }
 }
 @media screen and (min-width: 1440px) {
   .comics-hero {
     background-image: radial-gradient(
         circle,
-        rgba(12, 11, 11, 0) 20%,
+        rgba(12, 11, 11, 0) 10%,
         rgba(12, 11, 11, 1) 100%
       ),
-      url(../img/comics-desk-res.jpeg);
+      url(../img/comics-big-res.jpeg);
     background-position: left 348px top 2px;
   }
 

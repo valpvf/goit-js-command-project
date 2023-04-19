@@ -34,8 +34,10 @@
 .char-btn {
   position: absolute;
   display: block;
-  bottom: 26px;
+  bottom: 20px;
   right: 0;
+  text-align: center;
+  padding-top: 8px;
 }
 @media screen and (min-width: 768px) {
   .char-section {
