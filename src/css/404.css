@@ -168,3 +168,34 @@
     line-height: 1.86;
   }
 }
+/* ==================== hover ===================== */
+/* .error-btn {
+  text-decoration: none;
+  /* border: 1px solid rgb(146, 148, 248); */
+/* position: relative;
+  overflow: hidden; */
+/* } */
+
+/* .error-btn:hover {
+  box-shadow: 1px 1px 15px 10px rgba(140, 3, 3, 0.561);
+}
+
+.error-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(132, 71, 71, 0.751),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+.error-btn:hover:before {
+  left: 100%;
+} */
