@@ -149,6 +149,7 @@
     height: 263px;
     background-color: var(--text);
     border-radius: 8px;
+   /* object-fit: cover; */
 }
 
 .comics-list-movie{
@@ -261,6 +262,7 @@
         margin-top: 16px;
         width: 155px;
         height: 200px;
+        /* object-fit: cover; */
     }
 
     .comics-list-movie {
@@ -316,6 +318,7 @@
     .comics-list-el {
         width: 174px;
         height: 200px;
+        /* object-fit: cover; */
         
     }
 
