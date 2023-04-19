@@ -37,7 +37,6 @@
     }
 
     .modal-close-icon-modal {
-
     top: 23px;
         right: 23px;
         position: absolute;
@@ -48,7 +47,7 @@
         border: none;
         cursor: pointer;
         outline: none;
-        background: url(/goit-js-command-project/assets/x-9ae1059a.svg) no-repeat;
+        background: url('../img/modal2/x.svg') no-repeat;
         background-position: 50% 50%;
     }
 
