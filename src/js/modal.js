@@ -3,7 +3,7 @@ import { api } from '../helpers/api';
 const swiperWrapperEl = document.querySelector('.swiper-wrapper');
 swiperWrapperEl.classList.add('rm-container');
 
-const closeBtnEl = document.querySelector('.modal-close-btn');
+const closeBtnEl = document.querySelector('.modal-close-icon-modal');
 const modalTwoClose = document.querySelector('.backdrop-one');
 const rmContainer = document.querySelector('.rm-container');
 const modalHeroEl = document.querySelector('.images');
@@ -60,10 +60,12 @@ async function onContainerClick(event) {
 function authorsMarkup(authors) {
   return authors
     .map(el => {
-      return `<img class="author-img" src="${el.pic}" alt="${el.name}">
+      return `<div class="aut-container">
+      <img class="author-img" src="${el.pic}" alt="${el.name}">
           <div class="aut-desc">
             <p class="author-prof">${el.role}</p>
             <h3 class="author-name">${el.name}</h3>
+             </div>
           </div>`;
     })
     .join('');
