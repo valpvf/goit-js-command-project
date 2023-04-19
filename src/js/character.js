@@ -7,7 +7,7 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
 Loading.init({
-  backgroundColor: 'rgba(0,0,0,0.95)',
+  backgroundColor: 'rgba(0,0,0,0.5)',
   svgColor: '#34387F',
   clickToClose: false,
 });
