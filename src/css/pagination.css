@@ -243,3 +243,14 @@
             background-color: var(--btn3) !important;
             border-color: var(--btn3) !important;
         }
+
+        .tui-pagination {
+            margin: 40px !important;
+        }
+
+
+        @media screen and (min-width: 768px) {
+            .tui-pagination {
+                margin-top: 64px !important;
+            }
+            }
