@@ -21,7 +21,7 @@ function firstBtnClickHandler() {
   pantherCard.style.display = 'block';
   spiderCard.style.display = 'none';
   hulkCard.style.display = 'none';
-  desc.innerHTML = `T’Challa is the king of the secretive and highly advanced African nation 
+  desc.innerHTML = `T’Challa is the king of the secretive and highly advanced African nation
   of Wakanda - as well as the powerful warrior known as the Black Panther.`;
   charactersBtn.style.backgroundColor = '#34387F';
 }
@@ -54,7 +54,7 @@ function lastBtnClickHandler() {
   pantherCard.style.display = 'none';
   spiderCard.style.display = 'none';
   hulkCard.style.boxShadow = '-5px 20px 60px 10px #5B7F3C';
-  desc.innerHTML = `Exposed to heavy doses of gamma radiation, scientist Bruce Banner 
+  desc.innerHTML = `Exposed to heavy doses of gamma radiation, scientist Bruce Banner
     transforms into the mean, green rage machine called the Hulk.`;
   charactersBtn.style.backgroundColor = '#5B7F3C';
 }
