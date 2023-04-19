@@ -5,14 +5,9 @@ import { api } from '../helpers/api';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-// import {
-//   loader,
-//   renderLoader,
-//   hideLoader,
-// } from '../helpers/loader-placeholder';
 
 Loading.init({
-  backgroundColor: 'rgba(0,0,0,0.95)',
+  backgroundColor: 'rgba(0,0,0,0.5)',
   svgColor: '#34387F',
   clickToClose: false,
 });
@@ -24,6 +19,7 @@ const refs = {
   mainContainer: document.querySelector('.container'),
   headerInput: document.querySelector('.header-input'),
   headerForm: document.querySelector('.header-form'),
+  heroEl: document.querySelector('.char-hero'),
 };
 
 const searchComicsEl = refs.charFormEl.elements.searchComics;
@@ -238,6 +234,7 @@ function onHeaderNameInput(e) {
   e.preventDefault;
   searchNameEl.value = e.target.value;
   onNameInput(e);
+  addSmoothScroll();
 }
 
 async function onNameInput(e) {
@@ -336,5 +333,13 @@ function createMarkup(data) {
     </div>`;
     })
     .join('');
+}
+
+function addSmoothScroll() {
+  const scrollHeigth = refs.heroEl.getBoundingClientRect().height;
+  window.scrollBy({
+    top: scrollHeigth,
+    behavior: 'smooth',
+  });
 }
 // function onContainerClick(params) {}

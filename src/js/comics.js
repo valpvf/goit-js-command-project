@@ -6,7 +6,7 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
 Loading.init({
-  backgroundColor: 'rgba(0,0,0,0.95)',
+  backgroundColor: 'rgba(0,0,0,0.5)',
   svgColor: '#34387F',
   clickToClose: false,
 });
@@ -18,9 +18,9 @@ const refs = {
   mainContainer: document.querySelector('.container'),
   headerInput: document.querySelector('.header-input'),
   headerForm: document.querySelector('.header-form'),
+  heroEl: document.querySelector('.comics-hero'),
 };
 
-console.log(refs.headerInput);
 const searchComicsEl = refs.comicsFormEl.elements.searchComics;
 const selectFormatEl = refs.comicsFormEl.elements.selectFormat;
 const selectOrderEl = refs.comicsFormEl.elements.selectOrder;
@@ -129,6 +129,7 @@ function onHeaderNameInput(e) {
   e.preventDefault;
   searchComicsEl.value = e.target.value;
   onNameInput(e);
+  addSmoothScroll();
 }
 
 async function onNameInput(e) {
@@ -292,4 +293,11 @@ function createMarkup(data) {
       }
     })
     .join('');
+}
+function addSmoothScroll() {
+  const scrollHeigth = refs.heroEl.getBoundingClientRect().height;
+  window.scrollBy({
+    top: scrollHeigth,
+    behavior: 'smooth',
+  });
 }
