@@ -13,6 +13,9 @@ const modalOne = document.querySelector(
   '.modal-box.modal-comic-container.rm-container'
 );
 
+// const skeletonModal = document.querySelector('.skeleton-two');
+
+
 function onCloseBtnElClick() {
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';

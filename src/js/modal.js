@@ -5,10 +5,14 @@ const modalOneClose = document.querySelector('.backdrop-one');
 const rmContainer = document.querySelectorAll('.rm-container');
 // const modalHeroEl = document.querySelector('.images');
 const modalContainerEl = document.querySelector('.modal-comic-container');
+
 // const comicsEl = document.querySelector('.description');
 const modalTwo = document.querySelector(
   '.modal-two.modal-box-two.rc-container'
 );
+
+const skeletonModal = document.querySelector('.skeleton-one');
+
 function onCloseBtnElClick() {
   modalOneClose.classList.add('display-none');
 }
@@ -17,9 +21,14 @@ rmContainer.forEach(el => el.addEventListener('click', onContainerClick));
 modalTwo.addEventListener('click', onContainerClick);
 
 async function onContainerClick(event) {
-  console.log(1, event.target);
-  modalOneClose.classList.remove('display-none');
+ 
   modalTwo.classList.add('display-none');
+
+  // modalTwoClose.classList.remove('is-concealed');
+  // skeletonModal.classList.remove('display-none');
+
+  modalOneClose.classList.remove('display-none');
+
   const id = event.target.dataset.id;
   const comicObject = await api.getComicById({ comicId: id });
 
@@ -54,7 +63,7 @@ async function onContainerClick(event) {
     ].pic = `${character[0].thumbnail.path}.${character[0].thumbnail.extension}`;
     comicObject[0].characters.items[i].id = id;
   }
-
+  skeletonModal.classList.add('display-none');
   const markup = createMarkup(comicObject[0]);
   modalContainerEl.innerHTML = markup;
 }
@@ -120,6 +129,9 @@ function createMarkup({
     : '';
   const year = new Date(dates[0].date).getFullYear();
   return `
+      <button class="modal-close-icon-modal" data-modal-close="">
+      <svg width="20" height="20"></svg>
+    </button>
   <section class="images">
 
         <img src="${thumbnail.path}.${
