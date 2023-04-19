@@ -1,74 +1,76 @@
 import { api } from '../helpers/api';
 
+
 const closeBtnEl = document.querySelector('.modal-close-btn');
-const modalOneClose = document.querySelector('.backdrop-one');
+const modalTwoClose = document.querySelector('.backdrop-one');
+const rcContainer = document.querySelector('.rm-container');
 const modalHeroEl = document.querySelector('.images');
 const comicsEl = document.querySelector('.description');
-const lastcomicssection = document.querySelector('.swiper-wrapper');
 function onCloseBtnElClick() {
-  modalOneClose.classList.add('is-conceale');
+  modalTwoClose.classList.add('is-concealed');
 }
+
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
-lastcomicssection.addEventListener('click', onContainerClick);
+rcContainer.addEventListener('click', onContainerClick);
 
-async function getComics(id) {
-    const comics1 = await api.getComicById({ comicsId: id });
-    return comics1;
-}
 async function onContainerClick(event) {
-  modalOneClose.classList.remove('is-conceale');
-  const id = event.target.dataset.id;
-  const comicsObject = await getComics(id);
-  const charIds = comicsObject[0].characters.items
-    .map(el => el.resourceURI)
-    .map(el => el.split('/'))
-    .map(el => el[el.length - 1]);
+  modalTwoClose.classList.remove('is-concealed');
+    const id = event.currentTarget.dataset.id;
+  const comicObject = await api.getComicById({comicId:323});
 
-  const seriesIds = comicsObject[0].series.items
-    .map(el => el.resourceURI)
-    .map(el => el.split('/'))
-    .map(el => el[el.length - 1]);
-        const authorIds = comicsObject[0].creators.items
-    .map(el => el.resourceURI)
-    .map(el => el.split('/'))
-    .map(el => el[el.length - 1]);
-  for (let i = 0; i < 3; i += 1) {
-    const charId = charIds[i];
-    const seriesId = seriesIds[i];
-      const authorId = authorIds[i];
-    comicsObject[0][`charac${i}`] = await api.getComicById({ charId });
-    comicsObject[0][`series${i}`] = await api.getSeriesById({ seriesId });
-    comicsObject[0][`authors${i}`] = await api.getCreatorsById({ authorId });
-  }
-  const markups = [createMarkupImages(comicsObject[0]), createMarkupText(comicsObject[0])];
+//  const creatorsIds = comicObject[0].creators.items
+//  .map(el => el.resourceURI)
+//  .map(el => el.split('/'))
+//     .map(el => el[el.length - 1]);
+      const characterIds = comicObject[0].characters.items
+      .map(el => el.resourceURI)
+      .map(el => el.split('/'))
+      .map(el => el[el.length - 1]);
+//      const seriesIds = comicObject[0].series.items
+//      .map(el => el.resourceURI)
+//      .map(el => el.split('/'))
+//      .map(el => el[el.length - 1]);
+    for (let i = 0; i < 2; i += 1) {
+  const characterId = characterIds[i];
+//      const creatorsId = creatorsIds[i];
+//          const seriesId = seriesIds[i];
 
-  modalHeroEl.innerHTML = markups[0];
-  comicsEl.innerHTML = markups[1];
+//  comicObject[0][`series${i}`] = await api.getSeriesById({ seriesId });
+  comicObject[0][`characters${i}`] = await api.getCharactersById({ characterId });
+// comicObject[0][`creators${i}`] = await api.getCreatorsById({ creatorsId });
+        }
+   const markups = [
+      createMarkupImages(comicObject[0]),
+    //  createMarkupText(comicObject[0]),
+   ];
+
+   modalHeroEl.innerHTML = markups[0];
+   comicsEl.innerHTML = markups[1];
 }
 
   
   
 
 function createMarkupImages(comics) {
-  const { id, thumbnail, name, description, modified, creators, series0, series1, series2  } = comics;
+  const { id, thumbnail, name, description, modified, creators0, images  } = comics;
   const markup = `
       <img
-        class="modal-main-img"
+      
         src="${thumbnail.path}.${thumbnail.extension}"
         alt="star"
         class="star-photo"
       />
-      <ul class="photo-slide">
-        <li>
-            <img class="photo-slide-image" src="${series0[0].thumbnail.path}.${series0[0].thumbnail.extension}" alt="crawl" data-id="${series0[0].id}" />
-        </li>
-        <li>
-            <img class="photo-slide-image" src="${series1[0].thumbnail.path}.${series1[0].thumbnail.extension}" alt="crawl" data-id="${series1[0].id}" />
-        </li>
-        <li>
-            <img class="photo-slide-image" src="${series2[0].thumbnail.path}.${series2[0].thumbnail.extension}" alt="crawl" data-id="${series2[0].id}" />
-        </li>
-    </ul>`
+        <ul class="photo-slide">
+          <li>
+            <img class="photo-slide-image" src="./img/modal2/image7.png" alt="crawl" />
+          </li>
+          <li>
+            <img class="photo-slide-image" src="./img/modal2/image7.png" alt="talk" />
+          </li>
+          <li>
+            <img class="photo-slide-image" src="./img/modal2/image8.png" alt="on-knee" />
+          </li>
+        </ul>`
     ;
   return markup;
 
