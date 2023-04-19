@@ -5,16 +5,17 @@
 
 
 .backdrop-two {
-    padding-top: 40px;
-    position: relative;
+
+ 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 1000;
-  
     background-color: rgba(90, 90, 90, 0.788);
 }
+
 
 .modal-box-two{
     position: relative;
@@ -22,10 +23,11 @@
     left: 0;
     margin: 0 auto;
     width: 335px;
-   
+    /* height: 100%; */
     background-color: var(--background);
     padding-right: 8px;
     
+    /* overflow: scroll; */
 }
 
 
@@ -37,6 +39,7 @@
 
 .modal-hero{
     padding-top: 40px;
+   
 }
 
 .modal-two-close-btn{
@@ -95,13 +98,10 @@
     width: 295px;
     
   
-    overflow: scroll;
+
 }
 
-/* .modal-hero {
-    height: 1886px;
-    overflow: scroll;
-} */
+
 .comics-movie-title{
     font-weight: 500;
     font-size: 18px;
@@ -195,12 +195,18 @@
 @media screen and (min-width: 768px) {
     .modal-box-two {
         width: 600px;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        /* height: 100%;
+        overflow: scroll; */
     
     }
    
     .backdrop-two {
         position: fixed;
-        padding-top: 60px;
+        padding-top: 20px;
     
     }
 
@@ -287,6 +293,7 @@
 
     .comics-list-movie {
         font-size: 14px;
+        max-width: 155px;
     }
 
 }
@@ -295,15 +302,11 @@
 @media screen  and (min-width: 1440px) {
     .modal-box-two {
         width: 1000px;
+        top: 50%;
          
     }
 
-    .backdrop-two {
-        position: fixed;
-        padding-top: 140px;
-      
-    }
-   
+
     .modal-main-img {
         width: 332px;
         height: 445px;
@@ -340,7 +343,7 @@
     .comics-list-el {
         width: 174px;
         height: 200px;
-        /* object-fit: cover; */
+        object-fit: cover;
         
     }
 
@@ -393,3 +396,13 @@
 
 
 
+@media screen and (max-width: 480px) {
+    .modal-box-two {
+       
+            height: 100%;
+            background-color: var(--background);
+            padding-right: 8px;
+    
+            overflow: scroll;
+        }
+}
