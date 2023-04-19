@@ -1,23 +1,23 @@
 import { api } from '../helpers/api';
 
-const swiperWrapperEl = document.querySelector('.swiper-wrapper');
-swiperWrapperEl.classList.add('rm-container');
+// const swiperWrapperEl = document.querySelector('.swiper-wrapper');
+// swiperWrapperEl.classList.add('rm-container');
 
-const closeBtnEl = document.querySelector('.modal-close-btn');
-const modalTwoClose = document.querySelector('.backdrop-one');
+const closeBtnEl = document.querySelector('.modal-close-icon-modal');
+const modalOneClose = document.querySelector('.backdrop-one');
 const rmContainer = document.querySelector('.rm-container');
 const modalHeroEl = document.querySelector('.images');
 const modalContainerEl = document.querySelector('.modal-comic-container');
 const comicsEl = document.querySelector('.description');
 function onCloseBtnElClick() {
-  modalTwoClose.classList.add('is-concealed');
+  modalOneClose.classList.add('display-none');
 }
-
+console.log(rmContainer);
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
 rmContainer.addEventListener('click', onContainerClick);
 
 async function onContainerClick(event) {
-  modalTwoClose.classList.remove('is-concealed');
+  modalOneClose.classList.remove('display-none');
   const id = event.target.dataset.id;
   const comicObject = await api.getComicById({ comicId: id });
 
@@ -105,15 +105,18 @@ function createMarkup({
 }) {
   // Get author name
   const writerObj = authors.filter(el => el.role === 'writer');
-  const writer = writerObj[0].name;
+  // console.log(!writerObj.length);
+  const writer = writerObj.length !== 0 ? writerObj[0].name : '';
 
   // Get parsed date
   const options = { month: 'long', day: 'numeric', year: 'numeric' };
   const unformattedDate = +Date.parse(modified);
   const dateString = new Date(unformattedDate);
-  const date = dateString.toLocaleDateString('en-US', options);
+  const date = !'Invalid Date'
+    ? dateString.toLocaleDateString('en-US', options)
+    : '';
   const year = new Date(dates[0].date).getFullYear();
-
+  console.log(date);
   return `
   <section class="images">
 
