@@ -117,6 +117,9 @@ function createMarkup({
   const year = new Date(dates[0].date).getFullYear();
 
   return `
+      <button class="modal-close-icon-modal" data-modal-close="">
+      <svg width="20" height="20"></svg>
+    </button>
   <section class="images">
 
         <img src="${thumbnail.path}.${

@@ -7,7 +7,10 @@
         font-size: 10px;
 
     }
-
+.aut-container{
+    display: flex;
+    width: 180px;
+}
     .is-concealed {
         opacity: 0;
         visibility: hidden;
@@ -26,18 +29,19 @@
     }
 
     .modal-box {
-        position: relative;
-        top: 0;
-        left: 0;
+    position: absolute;
+        top: 50%;
+        left: 50%;
         margin: 0 auto;
         width: 335px;
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
+        transform: translate(-50%, -50%) scale(1);
         background-color: var(--background);
+        border-radius: 8px;
     }
 
     .modal-close-icon-modal {
-
     top: 23px;
         right: 23px;
         position: absolute;
@@ -72,6 +76,7 @@
 
     .modal-comic-container{
         display: flex;
+        flex-direction: column;
         gap: 16px;
     }
 
@@ -196,6 +201,7 @@
         margin-bottom: 32px;
         align-items: center;
         flex-wrap: wrap;
+        justify-content:;
     }
 
     .author-img {
@@ -228,7 +234,7 @@
     .aut-desc {
         display: flex;
         flex-direction: column;
-
+margin-left: 14px;
 
     }
 
@@ -477,6 +483,7 @@
         padding-bottom: 64px;
         padding-left: 32px;
         padding-right: 32px;
+        flex-direction: row;
     }
 
     .images {
