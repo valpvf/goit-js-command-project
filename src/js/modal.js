@@ -5,11 +5,12 @@ const modalOneClose = document.querySelector('.backdrop-one');
 const rmContainer = document.querySelectorAll('.rm-container');
 // const modalHeroEl = document.querySelector('.images');
 const modalContainerEl = document.querySelector('.modal-comic-container');
-
+const modalTwoClose = document.querySelector('.backdrop-two');
 // const comicsEl = document.querySelector('.description');
 const modalTwo = document.querySelector(
-  '.modal-two.modal-box-two.rc-container'
+  '.modal-two.modal-box-two.rm-container'
 );
+console.log(modalTwoClose);
 
 const skeletonModal = document.querySelector('.skeleton-one');
 
@@ -21,8 +22,7 @@ rmContainer.forEach(el => el.addEventListener('click', onContainerClick));
 modalTwo.addEventListener('click', onContainerClick);
 
 async function onContainerClick(event) {
- 
-  modalTwo.classList.add('display-none');
+  modalTwoClose.classList.add('display-none');
 
   // modalTwoClose.classList.remove('is-concealed');
   // skeletonModal.classList.remove('display-none');
