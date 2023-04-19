@@ -1,25 +1,34 @@
 import { api } from '../helpers/api';
 // import iconsSprite from '../img/icons.svg';
 
-const characterCardEl = document.querySelector('.backdrop-two');
+// const characterCardEl = document.querySelector('.backdrop-two');
 const closeBtnEl = document.querySelector('.modal-two-close-btn');
 const modalTwoClose = document.querySelector('.backdrop-two');
-const rcContainer = document.querySelector('.rc-container');
+const rcContainer = document.querySelectorAll('.rc-container');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.comics');
 const skeletonModal = document.querySelector('.skeleton-modal');
+const modalOneClose = document.querySelector('.backdrop-one');
+const modalOne = document.querySelector(
+  '.modal-box.modal-comic-container.rc-container'
+);
+console.log(modalOneClose);
+
+// const skeletonModal = document.querySelector('.skeleton-two');
 
 function onCloseBtnElClick() {
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
-  modalTwoClose.classList.add('is-concealed');
+  modalTwoClose.classList.add('display-none');
+  // modalOneClose.classList.add('display-none');
 
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
 }
 
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
-rcContainer.addEventListener('click', onContainerClick);
+rcContainer.forEach(el => el.addEventListener('click', onContainerClick));
+modalOne.addEventListener('click', onContainerClick);
 
 async function getCharacter(id) {
   const character = await api.getCharactersById({ characterId: id });
@@ -27,7 +36,9 @@ async function getCharacter(id) {
 }
 
 async function onContainerClick(event) {
-  modalTwoClose.classList.remove('is-concealed');
+  console.log(2, event.target);
+  modalTwoClose.classList.remove('display-none');
+  modalOneClose.classList.add('display-none');
   skeletonModal.classList.remove('display-none');
   modalHeroEl.classList.add('display-none');
   comicsEl.classList.add('display-none');
@@ -88,7 +99,7 @@ function createMarkupImages(character) {
               alt="crawl"
               width="80"
               hieght="80"
-              data-id="${series0[0].id}"
+              
             />
           </li>
           <li>
@@ -98,7 +109,7 @@ function createMarkupImages(character) {
               alt="talk"
               width="80"
               hieght="80"
-              data-id="${series1[0].id}"
+              
             />
           </li>
           <li>
@@ -108,12 +119,16 @@ function createMarkupImages(character) {
               alt="on-knee"
               width="80"
               hieght="80"
-              data-id="${series2[0].id}"
+              
             />
           </li>
         </ul>`;
   return markup;
 }
+
+// data-id="${series0[0].id}"
+// data-id="${series1[0].id}"
+// data-id="${series2[0].id}"
 
 function createMarkupText(character) {
   const {
