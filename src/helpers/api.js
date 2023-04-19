@@ -40,7 +40,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
-      location.replace('../404.html');
+      // location.replace('../404.html');
     }
   },
   getCharactersById: async ({ characterId }) => {
@@ -50,7 +50,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
-      location.replace('../404.html');
+      // location.replace('../404.html');
     }
   },
   getComics: async ({
@@ -80,7 +80,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
-      location.replace('../404.html');
+      // location.replace('../404.html');
     }
   },
   getComicById: async ({ comicId }) => {
@@ -90,7 +90,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
-      location.replace('../404.html');
+      // location.replace('../404.html');
     }
   },
   getSeriesById: async ({ seriesId }) => {
@@ -100,7 +100,27 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
-      location.replace('../404.html');
+      // location.replace('../404.html');
+    }
+  },
+  getCreatorById: async ({ creatorId }) => {
+    try {
+      const res = await axiosInst.get(`/creators/${creatorId}`);
+      const data = res.data.data.results;
+      return data;
+    } catch (error) {
+      console.log(error);
+      // location.replace('../404.html');
+    }
+  },
+  getStoriesById: async ({ storyId }) => {
+    try {
+      const res = await axiosInst.get(`/stories/${storyId}`);
+      const data = res.data.data.results;
+      return data;
+    } catch (error) {
+      console.log(error);
+      // location.replace('../404.html');
     }
   },
   getAllCharacters: async ({
@@ -126,7 +146,7 @@ export const api = {
       return data;
     } catch (error) {
       console.log(error);
-      location.replace('../404.html');
+      // location.replace('../404.html');
     }
   },
 };
