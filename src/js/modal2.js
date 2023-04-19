@@ -4,10 +4,10 @@ import { api } from '../helpers/api';
 const characterCardEl = document.querySelector('.backdrop-two');
 const closeBtnEl = document.querySelector('.modal-two-close-btn');
 const modalTwoClose = document.querySelector('.backdrop-two');
-const rcContainer = document.querySelector('.rc-container');
+const rcContainer = document.querySelectorAll('.rc-container');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.comics');
-const skeletonModal = document.querySelector('.skeleton-modal');
+const skeletonModal = document.querySelector('.skeleton-two');
 
 function onCloseBtnElClick() {
   modalHeroEl.innerHTML = '';
@@ -19,7 +19,7 @@ function onCloseBtnElClick() {
 }
 
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
-rcContainer.addEventListener('click', onContainerClick);
+rcContainer.forEach(el => el.addEventListener('click', onContainerClick));
 
 async function getCharacter(id) {
   const character = await api.getCharactersById({ characterId: id });
