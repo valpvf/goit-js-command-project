@@ -43,7 +43,9 @@ const paginationOptions = {
   itemsPerPage: itemsPerPage,
   visiblePages: 2,
   page: 1,
+  centerAlign: true,
 };
+
 const pagination = new Pagination(refs.paginationEl, paginationOptions);
 
 let query = '';
