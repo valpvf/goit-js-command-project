@@ -15,13 +15,15 @@
 <a href="#" class="tui-page-btn tui-last">
 <span class="tui-ico-last">last</span></a></div> */
 
-.tui-pagination {
+/* .tui-pagination {
     color: var(--text);
 }
 
 .tui-is-disabled {}
-.tui-first { display: none !important;}
+    */   /* 
 .tui-ico-first { }
+    */    /* 
+
 .tui-page-btn  { 
     
     width: 35px  !important; 
@@ -59,9 +61,7 @@
  
 }
 
-.tui-pagination .tui-page-btn {
-    /* border-width: 1px 0; */
-}
+
 
 .tui-page-inputs .tui-page-current {
     color: var(--btn3) !important
@@ -84,3 +84,162 @@
     
 }
 
+.tui-pagination .tui-prev-is-ellip, .tui-pagination .tui-next-is-ellip {
+    padding: 0;
+    line-height: 1;
+   
+}
+
+.tui-next { color: var(--text)  !important;
+    border-width: none  !important;
+    border: 1px solid var(--text03)  !important;
+    line-height: 1.1 !important;}
+
+.tui-pagination .tui-next {
+        margin-left: 0px !important;
+
+        width: 35px  !important; 
+    height: 35px  !important;
+    margin: 8px  !important;
+    font-size: 14px  !important;
+    border-radius: 4px  !important;
+    color: var(--text)  !important;
+    border-width: none  !important;
+    border: 1px solid var(--text03)  !important;
+    line-height: 1.1 !important;
+    } 
+
+    .tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last, .tui-pagination .tui-prev-is-ellip, .tui-pagination .tui-next-is-ellip {
+        overflow: hidden !important;
+        height: 40px !important;
+        padding: 0 !important;
+        font-size: 0 !important;
+        line-height: 26px !important;
+        white-space: nowrap !important;
+        font-weight: normal !important;
+        border: 1px solid #ddd !important;
+
+
+        border-radius: 4px  !important;
+        color: var(--text)  !important;
+        border-width: none  !important;
+        border: 1px solid var(--text03)  !important;
+        line-height: 1.1 !important;
+    } */
+
+    /* .pag-first-el {
+        border-radius: 4px  !important;
+        color: var(--text)  !important;
+        border-width: none  !important;
+        border: 1px solid var(--text03)  !important;
+        line-height: 1.1 !important;
+    }
+
+    .pag-last-el { border-radius: 4px  !important;
+        color: var(--text)  !important;
+        border-width: none  !important;
+        border: 1px solid var(--text03)  !important;
+        line-height: 1.1 !important;} */
+
+        /* .tui-first { display: none !important;}
+
+        .tui-last { display: none !important;} */
+
+        .tui-page-btn  {
+            font-size: 14px  !important;
+            width: auto  !important; 
+            min-width: 32px !important; 
+            height: 32px  !important;
+            text-align: center !important;
+            color: var(--text)  !important;
+            border-width: none  !important;
+            border: 1px solid var(--text03)  !important;
+            margin: 8px  !important;
+            padding-top: 8px !important;
+            
+            line-height: 1 !important;
+            } 
+
+            .tui-next, .tui-prev {
+                /* padding-top: 16px !important; */
+                /* color: var(--text)  !important; */
+            }
+
+            .tui-next {
+                color: var(--text)  !important;
+                /* background: var(--btn3) !important;
+                border-color: var(--btn3) !important; */
+            }
+         
+            
+
+
+            .tui-page-inputs .tui-page-current {
+                color: var(--btn3) !important
+            }
+            
+            .tui-pagination .tui-is-selected, .tui-pagination strong {
+                color: #fff;
+                background: var(--btn3) !important;
+                border-color: var(--btn3) !important;
+                cursor: default;
+            }
+            
+            .tui-pagination .tui-is-selected:hover {
+                background-color: var(--btn3) !important
+            }
+
+            .tui-pagination { color: #fff !important;}
+        /* .tui-page-btn .tui-next-is-ellip {
+         
+            line-height: 34 !important;} */
+
+
+            .tui-is-disabled {
+                background: var(--btn3) !important;
+                border-color: var(--btn3) !important;
+                
+            }
+
+            .tui-pagination .tui-ico-first, .tui-pagination .tui-ico-prev, .tui-pagination .tui-ico-next, .tui-pagination .tui-ico-last, .tui-pagination .tui-ico-ellip {
+                /* background-image: url(../img/points.png) !important; */
+                 /* background-image: none !important; */
+                /* background: url(../img/points.png) no-repeat 0 0 !important; */
+                /* display: inline-block;
+                vertical-align: middle;
+                font-size: 0px; */
+            }
+
+        .tui-pagination .tui-ico-prev {
+                background: url(../img/pagination-left.png) no-repeat 0 0 !important;
+                background-size: auto 100% !important;
+
+
+            }
+            .tui-pagination .tui-ico-next {
+                background: url(../img/pagination-right.png) no-repeat 0 0 !important;
+                background-size: auto 100% !important;
+            }
+
+            .tui-pagination .tui-ico-ellip {
+             background: url(../img/points.png) no-repeat 0 0 !important;
+             width: 10px !important;
+             height: 2px !important;
+             margin-top: 8px !important;
+             vertical-align: top !important;
+             background-position: 0px 0px !important;
+                }
+
+        /* .tui-first { display: none !important;}
+
+        .tui-last { display: none !important;} */
+
+        .tui-pagination .tui-is-disabled:hover {
+            background: var(--btn3) !important;
+            cursor: default !important;
+        }
+
+        .tui-pagination .tui-page-btn:hover {
+            background-color: var(--btn3) !important;
+            border-color: var(--btn3) !important;
+        }
