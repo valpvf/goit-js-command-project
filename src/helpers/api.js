@@ -39,8 +39,8 @@ export const api = {
       const data = res.data.data.results;
       return data;
     } catch (error) {
-      location.replace("../404.html");
       console.log(error);
+      location.replace('../404.html');
     }
   },
   getCharactersById: async ({ characterId }) => {
@@ -49,8 +49,8 @@ export const api = {
       const data = res.data.data.results;
       return data;
     } catch (error) {
-      location.replace("../404.html");
       console.log(error);
+      location.replace('../404.html');
     }
   },
   getComics: async ({
@@ -79,8 +79,8 @@ export const api = {
       const data = res.data.data;
       return data;
     } catch (error) {
-      location.replace("../404.html");
       console.log(error);
+      location.replace('../404.html');
     }
   },
   getComicById: async ({ comicId }) => {
@@ -89,8 +89,8 @@ export const api = {
       const data = res.data.data.results;
       return data;
     } catch (error) {
-      location.replace("../404.html");
       console.log(error);
+      location.replace('../404.html');
     }
   },
   getSeriesById: async ({ seriesId }) => {
@@ -99,8 +99,8 @@ export const api = {
       const data = res.data.data.results;
       return data;
     } catch (error) {
-      location.replace("../404.html");
       console.log(error);
+      location.replace('../404.html');
     }
   },
   getAllCharacters: async ({
@@ -125,8 +125,8 @@ export const api = {
       const data = res.data.data;
       return data;
     } catch (error) {
-      location.replace("../404.html");
       console.log(error);
+      location.replace('../404.html');
     }
   },
 };
