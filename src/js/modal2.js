@@ -10,16 +10,17 @@ const comicsEl = document.querySelector('.comics');
 const skeletonModal = document.querySelector('.skeleton-modal');
 const modalOneClose = document.querySelector('.backdrop-one');
 const modalOne = document.querySelector(
-  '.modal-box.modal-comic-container.rm-container'
+  '.modal-box.modal-comic-container.rc-container'
 );
+console.log(modalOneClose);
 
 // const skeletonModal = document.querySelector('.skeleton-two');
-
 
 function onCloseBtnElClick() {
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
   modalTwoClose.classList.add('display-none');
+  // modalOneClose.classList.add('display-none');
 
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
