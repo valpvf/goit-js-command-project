@@ -4,7 +4,7 @@ import { api } from '../helpers/api';
 const characterCardEl = document.querySelector('.backdrop-two');
 const closeBtnEl = document.querySelector('.modal-two-close-btn');
 const modalTwoClose = document.querySelector('.backdrop-two');
-const rcContainer = document.querySelector('.rc-container');
+const rcContainer = document.querySelectorAll('.rc-container');
 const modalHeroEl = document.querySelector('.spray');
 const comicsEl = document.querySelector('.comics');
 const skeletonModal = document.querySelector('.skeleton-modal');
@@ -12,14 +12,14 @@ const skeletonModal = document.querySelector('.skeleton-modal');
 function onCloseBtnElClick() {
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
-  modalTwoClose.classList.add('is-concealed');
+  modalTwoClose.classList.add('display-none');
 
   modalHeroEl.innerHTML = '';
   comicsEl.innerHTML = '';
 }
 
 closeBtnEl.addEventListener('click', onCloseBtnElClick);
-rcContainer.addEventListener('click', onContainerClick);
+rcContainer.forEach(el => el.addEventListener('click', onContainerClick));
 
 async function getCharacter(id) {
   const character = await api.getCharactersById({ characterId: id });
@@ -27,7 +27,7 @@ async function getCharacter(id) {
 }
 
 async function onContainerClick(event) {
-  modalTwoClose.classList.remove('is-concealed');
+  modalTwoClose.classList.remove('display-none');
   skeletonModal.classList.remove('display-none');
   modalHeroEl.classList.add('display-none');
   comicsEl.classList.add('display-none');

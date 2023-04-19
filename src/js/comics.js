@@ -260,33 +260,35 @@ function createMarkup(data) {
     .map(card => {
       if (card.creators.available === 0) {
         return `
-    <div class="comics-card">
+    <div class="comics-card" data-id="${card.id}">
       <a class="comics-image-wrap" data-id="${card.id}" href="#">
         <img
           class="comics-card-image"
           src= "${card.thumbnail.path}/portrait_uncanny.${card.thumbnail.extension}"
           alt=""
           loading="lazy"
+          data-id="${card.id}"
         />
-        <div class="comics-card-descr">
-          <p class="comics-card-descr-name">${card.title}</p>
-          <p class="comics-card-descr-author">-</p>
+        <div class="comics-card-descr" data-id="${card.id}">
+          <p data-id="${card.id}" class="comics-card-descr-name">${card.title}</p>
+          <p data-id="${card.id}" class="comics-card-descr-author">-</p>
         </div>
       </a>
     </div>`;
       } else {
         return `
-    <div class="comics-card">
+    <div class="comics-card" data-id="${card.id}">
       <a class="comics-image-wrap" data-id="${card.id}" href="#">
         <img
           class="comics-card-image"
           src= "${card.thumbnail.path}/portrait_uncanny.${card.thumbnail.extension}"
           alt=""
           loading="lazy"
+          data-id="${card.id}"
         />
-        <div class="comics-card-descr">
-          <p class="comics-card-descr-name">${card.title}</p>
-          <p class="comics-card-descr-author">${card.creators.items[0].name}</p>
+        <div class="comics-card-descr" data-id="${card.id}">
+          <p data-id="${card.id}" class="comics-card-descr-name">${card.title}</p>
+          <p data-id="${card.id}" class="comics-card-descr-author">${card.creators.items[0].name}</p>
         </div>
       </a>
     </div>`;
