@@ -32,6 +32,13 @@
 }
 
 
+.rc-descr-item:hover .rc-descr-title ,
+ .rc-descr-item:hover .rc-descr-text{
+  color: var(--random_characters);
+
+}
+
+
 .rc-section {
   padding: 40px 0;
   background-color: var(--background);
@@ -53,6 +60,7 @@
   object-fit: cover;
   width: 335px;
   height: 367px;
+  cursor: pointer;
 }
 
 .rc-title {
@@ -64,6 +72,7 @@
   letter-spacing: -0.02em;
   margin-bottom: 44px;
   color: var(--text);
+
 }
 
 .rc-descr-item {
@@ -74,22 +83,30 @@
   gap: 16px;
 
   border-bottom: 1px solid var(--text05);
+  cursor: pointer;
+
 }
 
 
 
 .rc-descr-title {
   color: var(--text);
+  cursor: pointer;
+
 }
 
 .rc-descr-text {
   color: var(--text05);
+  cursor: pointer;
+
 }
 
 .rc-btn-container {
   text-align: end;
   margin-top: 20px;
   padding: 20px 0;
+  
+
 }
 
 .rc-btn {
@@ -104,6 +121,8 @@
   background-color: transparent;
   border: 1px solid var(--text05);
   border-radius: 1000px;
+  cursor: pointer;
+
 }
 
 @media screen and (min-width: 768px) {
