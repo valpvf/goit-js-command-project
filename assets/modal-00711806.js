@@ -93,9 +93,7 @@ Notiflix needs to be appended to the "<`+g+'>" element, but you called it before
           </li>`).join(".")}function Nr(t){return t.map(e=>`<li>
             <img class="photo-slide-image" src="${e.path}.${e.extension}" alt="crawl" />
           </li>`).join(".")}function Or({description:t,thumbnail:e,prices:n,title:s,format:i,modified:o,authors:r,characters:c,images:h,dates:a,pageCount:l}){const f=r.filter(m=>m.role==="writer"),p=f.length!==0?f[0].name:"",d="",u=new Date(a[0].date).getFullYear();return`
-      <button class="modal-close-icon-modal" data-modal-close="">
-      <svg width="20" height="20"></svg>
-    </button>
+  
   <section class="images">
 
         <img src="${e.path}.${e.extension}" alt="star" class="star-photo" />
