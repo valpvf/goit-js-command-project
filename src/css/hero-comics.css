@@ -1,26 +1,27 @@
 @import url(./costants.css);
 @import url(./reset.css);
+
 .comics-hero {
-  margin-top: -20px;
+  margin-top: -48px;
   background-color: rgba(12, 11, 11, 0);
-  background: linear-gradient(
-      270deg,
+  background: linear-gradient(270deg,
       rgba(12, 11, 11, 0) 0%,
-      rgba(12, 11, 11, 1) 96%
-    ),
+      rgba(12, 11, 11, 1) 96%),
     linear-gradient(0deg, rgba(12, 11, 11, 1) 5%, rgba(12, 11, 11, 0) 100%),
     linear-gradient(90deg, rgba(12, 11, 11, 1) 5%, rgba(12, 11, 11, 0) 50%),
     linear-gradient(360deg, rgba(12, 11, 11, 1) 0%, rgba(12, 11, 11, 0) 72%),
     url(../img/comics-mob-res.jpeg);
-  background-size: 768px 461px;
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
 .comics-section {
   height: 515px;
   /* display: flex;
   flex-wrap: wrap; */
 }
+
 .comics-text-block {
   padding-top: 171px;
   min-width: 335px;
@@ -31,10 +32,12 @@
   flex: 50%;
   padding-bottom: 0;
 }
+
 .comics-subtitle {
   font-size: 14px;
   line-height: 0.86;
 }
+
 .comics-title {
   box-sizing: border-box;
   display: flex;
@@ -44,6 +47,7 @@
   line-height: 0.67;
   letter-spacing: -0.02;
 }
+
 .comics-desc {
   vertical-align: middle;
   margin-right: 20px;
@@ -55,6 +59,7 @@
   text-align: left;
   letter-spacing: 0.02;
 }
+
 /* .btn-position-comics {
   display: flex;
   justify-content: end; */
@@ -68,24 +73,24 @@
   text-align: center;
   padding: 8px;
 }
+
 @media screen and (min-width: 768px) {
   .comics-hero {
-    height: 694px;
-    margin-top: 0px;
+    height: 100vh;
+    margin-top: -86px;
     background-color: rgba(12, 11, 11, 0);
-    background: linear-gradient(
-        270deg,
+    background: linear-gradient(270deg,
         rgba(12, 11, 11, 0) 0%,
-        rgba(12, 11, 11, 1) 96%
-      ),
+        rgba(12, 11, 11, 1) 96%),
       linear-gradient(0deg, rgba(12, 11, 11, 1) 5%, rgba(12, 11, 11, 0) 100%),
       linear-gradient(90deg, rgba(12, 11, 11, 1) 5%, rgba(12, 11, 11, 0) 50%),
       linear-gradient(360deg, rgba(12, 11, 11, 1) 0%, rgba(12, 11, 11, 0) 72%),
-      url(../img/comics-mob-res.jpeg);
-    background-size: 1085px 651px;
+      url(../img/comics-tab-res.jpeg);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: 169px;
+    background-position-x: 169px 86px;
   }
+
   .comics-text-block {
     padding-top: 192px;
     width: 830px;
@@ -97,48 +102,54 @@
     font-size: 150px;
     line-height: 150px;
   }
+
   .comics-desc {
     width: 459px;
     margin-left: 88px;
     font-size: 16px;
     line-height: 20px;
   }
+
   .comics-btn {
     margin-top: 428px;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .comics-hero {
     margin-top: -90px;
     height: 100vh;
     background-color: rgba(12, 11, 11, 0);
-    background: linear-gradient(
-        270deg,
+    background: linear-gradient(270deg,
         rgba(12, 11, 11, 0) 0%,
-        rgba(12, 11, 11, 1) 96%
-      ),
+        rgba(12, 11, 11, 1) 96%),
       linear-gradient(0deg, rgba(12, 11, 11, 1) 5%, rgba(12, 11, 11, 0) 100%),
       linear-gradient(90deg, rgba(12, 11, 11, 1) 5%, rgba(12, 11, 11, 0) 50%),
       linear-gradient(360deg, rgba(12, 11, 11, 1) 0%, rgba(12, 11, 11, 0) 72%),
-      url(../img/comics-mob-res.jpeg);
+      url(../img/comics-desk-res.jpeg);
     background-repeat: no-repeat;
-    background-size: 1281px 769px;
+    background-size: contain;
     background-position-x: 348px;
     background-position-y: 11px;
   }
+
   .comics-section {
     height: 780px;
   }
+
   .comics-text-block {
     padding-top: 278px;
   }
+
   .comics-subtitle {
     font-size: 18px;
     line-height: 29px;
   }
+
   .comics-title {
     height: 150px;
   }
+
   .comics-btn {
     margin-top: 396px;
   }
