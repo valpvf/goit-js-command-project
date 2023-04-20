@@ -89,9 +89,7 @@
           </li>`).join(".")}function rr(t){return t.map(n=>`<li>
             <img class="photo-slide-image" src="${n.path}.${n.extension}" alt="crawl" />
           </li>`).join(".")}function sr({description:t,thumbnail:n,prices:e,title:s,format:r,modified:o,authors:i,characters:c,images:m,dates:a,pageCount:l}){const d=i.filter(p=>p.role==="writer"),h=d.length!==0?d[0].name:"",f="",u=new Date(a[0].date).getFullYear();return`
-      <button class="modal-close-icon-modal" data-modal-close="">
-      <svg width="20" height="20"></svg>
-    </button>
+  
   <section class="images">
 
         <img src="${n.path}.${n.extension}" alt="star" class="star-photo" />
