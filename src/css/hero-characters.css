@@ -1,66 +1,141 @@
 @import url(./costants.css);
 @import url(./reset.css);
-.char-section {
+.char-hero {
   margin-top: -69px;
-  background-image: url(../img/characters-mob-res.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-position: top -60px; */
+  background-color: rgba(12, 11, 11, 0.31);
+  background-image: linear-gradient(
+      90deg,
+      rgba(12, 11, 11, 0.31) 0%,
+      rgba(12, 11, 11, 0) 100%
+    ),
+    url(../img/characters-mob-res.jpeg);
+  background-size: 922px 519px;
+  background-position: center;
 }
-.char-text-block {
-  min-width: 335px;
+.char-section {
+  height: 515px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: space-between;
+}
+.char-text-block {
+  margin-top: 224px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  text-align: start;
+  /* text-align: start; */
   flex: 50%;
+}
+.char-subtitle {
+  font-size: 14px;
+  line-height: 0.86;
 }
 .char-title {
   box-sizing: border-box;
   display: flex;
+  margin-top: 14px;
   font-weight: 500;
   font-size: 60px;
   line-height: 0.67;
-  letter-spacing: 0.02;
+  letter-spacing: -0.02;
 }
 .char-desc {
+  vertical-align: middle;
+  margin-right: 20px;
+  min-width: 320px;
+  margin-top: 16px;
+  height: auto;
   font-size: 16px;
   line-height: 0.83;
-  margin-bottom: 121px;
   text-align: left;
   letter-spacing: 0.02;
 }
+.btn-position {
+  display: flex;
+  justify-content: end;
+}
 .char-btn {
-  position: absolute;
   display: block;
-  bottom: 20px;
-  right: 0;
+  margin-top: 65px;
+  margin-bottom: 20px;
   text-align: center;
-  padding-top: 8px;
+  padding: 8px;
 }
 @media screen and (min-width: 768px) {
-  .char-section {
+  .char-hero {
     margin-top: -82px;
-    background-image: url(../img/characters-tab-res.jpeg);
+    background-color: rgba(12, 11, 11, 0.31);
+    background-image: linear-gradient(
+        90deg,
+        rgba(12, 11, 11, 0.31) 0%,
+        rgba(12, 11, 11, 0) 100%
+      ),
+      url(../img/characters-mob-res.jpeg);
+    background-size: 1534px 863px;
+    background-position: center;
   }
+  .char-section {
+    height: 780px;
+  }
+  .char-text-block {
+    width: 714px;
+    height: 240px;
+    margin-top: 278px;
+  }
+
   .char-title {
     font-size: 128px;
+    margin-top: 27px;
   }
   .char-desc {
-    width: 469px;
-    text-align: center;
+    width: 459px;
+    margin-left: 88px;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 0.83;
+    text-align: left;
+    letter-spacing: 0.02;
   }
   .char-btn {
-    bottom: 32px;
+    margin-top: 177px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .char-hero {
+    /* height: 85vh; */
+    background-color: rgba(12, 11, 11, 0.31);
+    background-image: linear-gradient(
+        90deg,
+        rgba(12, 11, 11, 0.31) 0%,
+        rgba(12, 11, 11, 0) 100%
+      ),
+      url(../img/characters-mob-res.jpeg);
+    background-repeat: no-repeat;
+    background-size: 1895px 1095px;
+    /* background-position-x: 130px; */
+  }
   .char-section {
-    background-image: url(../img/characters-desk-res.jpeg);
+    height: 780px;
+  }
+  .char-text-block {
+    width: 830px;
+    height: 251px;
+  }
+  .char-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .char-title {
+    margin-top: 16px;
+    font-size: 150px;
+    line-height: 0.67;
+  }
+  .char-desc {
+    margin-top: 16px;
   }
   .char-btn {
-    bottom: 64px;
+    margin-top: 145px;
   }
 }
